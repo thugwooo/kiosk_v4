@@ -10,7 +10,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 육류 함유량(고단백), 그레인프리'],
+      'pop_category': ['퍼피', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '칠면조', '계란'],
       'kibble': 3,
       'hash': ['그레인프리', '높은 육류 함유량']
@@ -25,7 +25,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리, NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO GMO·부산물'],
       'main_ingredient': ['대구'],
       'kibble': 2,
       'hash': ['단일단백질', '저알레르기']
@@ -40,7 +40,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모', '뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 어류 함유량(고단백), 그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '높은 어류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['정어리', '고등어', '민대구', '가자미', '볼락'],
       'kibble': 4,
       'hash': ['그레인프리', '높은 어류 함유량']
@@ -55,7 +55,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['혈액순환 / 혈관질환', '심장', '당뇨'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 2,
       'hash': ['']
@@ -70,7 +70,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 육류 함유량(고단백), 그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '칠면조', '계란'],
       'kibble': 4,
       'hash': ['그레인프리', '높은 육류 함유량']
@@ -85,7 +85,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['갑상선'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO GMO·부산물'],
+      'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭', '연어'],
       'kibble': 0,
       'hash': ['']
@@ -100,7 +100,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기', '노화방지/항산화', '눈'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 육류 함유량(고단백)'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '높은 육류 함유량(고단백)'],
       'main_ingredient': ['칠면조', '닭', '메추리'],
       'kibble': 2,
       'hash': ['관절건강', '작은알갱이']
@@ -115,7 +115,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['갑상선', '알레르기 예방'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO GMO·부산물, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물, 단일단백질'],
       'main_ingredient': ['연어'],
       'kibble': 0,
       'hash': ['']
@@ -130,7 +130,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 육류 함유량(고단백), 그레인프리'],
+      'pop_category': ['시니어', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '계란', '칠면조'],
       'kibble': 3,
       'hash': ['그레인프리', '높은 육류 함유량']
@@ -145,7 +145,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['갑상선', '알레르기 예방'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO GMO·부산물, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 0,
       'hash': ['']
@@ -160,7 +160,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '당뇨', '다이어트'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 육류 함유량(고단백), 그레인프리'],
+      'pop_category': ['어덜트', '시니어', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 4,
       'hash': ['그레인프리', '다이어트사료']
@@ -175,7 +175,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['갑상선', '알레르기 예방'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO GMO·부산물, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물, 단일단백질'],
       'main_ingredient': ['닭'],
       'kibble': 0,
       'hash': ['']
@@ -190,7 +190,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모', '뼈/관절', '알레르기예방', '혈액순환 / 혈관질환'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['오리'],
       'kibble': 4,
       'hash': ['단일단백질', '저알레르기']
@@ -205,7 +205,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, NO 감자'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자'],
       'main_ingredient': ['연어'],
       'kibble': 1,
       'hash': ['']
@@ -220,7 +220,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '알레르기예방'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['돼지'],
       'kibble': 4,
       'hash': ['단일단백질', '저알레르기']
@@ -235,7 +235,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리'],
+      'pop_category': ['퍼피', '단일단백질, 그레인프리'],
       'main_ingredient': ['연어'],
       'kibble': 1,
       'hash': ['']
@@ -250,7 +250,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '높은 육류 함량(고단백)'],
+      'pop_category': ['퍼피', '높은 육류 함량(고단백)'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 1,
       'hash': ['그레인프리', '작은알갱이']
@@ -265,7 +265,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['신장', '뼈/관절', '소화기', '혈액순환 / 혈관질환'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리'],
       'kibble': 1,
       'hash': ['']
@@ -280,7 +280,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '저알레르기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '저알레르기'],
+      'pop_category': ['어덜트', '저알레르기'],
       'main_ingredient': ['식용곤충'],
       'kibble': 1,
       'hash': ['곤충사료', '저알레르기']
@@ -295,7 +295,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, NO 감자'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자'],
       'main_ingredient': ['닭'],
       'kibble': 1,
       'hash': ['']
@@ -310,7 +310,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['연어', '감자'],
       'kibble': 2,
       'hash': ['단일단백질', '저알레르기']
@@ -325,7 +325,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, NO 감자'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자'],
       'main_ingredient': ['칠면조'],
       'kibble': 1,
       'hash': ['']
@@ -340,7 +340,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['다이어트', '뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', ''],
+      'pop_category': ['퍼피', '어덜트', '시니어', ''],
       'main_ingredient': ['칠면조', '닭', '연어'],
       'kibble': 2,
       'hash': ['소화기건강', '다이어트사료']
@@ -355,7 +355,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '글루텐프리, NO밀·옥수수·콩·GMO'],
+      'pop_category': ['퍼피', '글루텐프리, NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['칠면조', '연어'],
       'kibble': 1,
       'hash': ['관절건강', '면역력향상']
@@ -370,7 +370,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['칠면조', '닭', '연어'],
       'kibble': 2,
       'hash': ['그레인프리', '소화기건강']
@@ -385,7 +385,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '글루텐프리, NO밀·옥수수·콩·GMO'],
+      'pop_category': ['어덜트', '글루텐프리, NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['연어'],
       'kibble': 1,
       'hash': ['관절건강', '면역력향상']
@@ -400,7 +400,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO밀·콩·옥수수'],
+      'pop_category': ['시니어', 'NO밀·콩·옥수수'],
       'main_ingredient': ['칠면조', '닭'],
       'kibble': -1,
       'hash': ['그레인프리', '소화기건강', '노령견사료']
@@ -415,7 +415,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기', '다이어트'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '글루텐프리, NO밀·옥수수·콩·GMO'],
+      'pop_category': ['시니어', '글루텐프리, NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['오리'],
       'kibble': 1,
       'hash': ['']
@@ -430,7 +430,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['다이어트', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 다이어트, 생식코팅'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, 다이어트, 생식코팅'],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['그레인프리', '다이어트사료']
@@ -445,7 +445,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '희귀단백질, 글루텐프리, GMO프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '희귀단백질, 글루텐프리, GMO프리'],
       'main_ingredient': ['사슴', '양'],
       'kibble': 4,
       'hash': ['']
@@ -460,7 +460,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['뼈/관절', '눈', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, 생식코팅, 높은 육류 함유량(고단백)'],
+      'pop_category': ['시니어', '그레인프리, 글루텐프리, 생식코팅, 높은 육류 함유량(고단백)'],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['']
@@ -475,7 +475,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '기력 회복'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 글루텐프리, GMO프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질, 글루텐프리, GMO프리'],
       'main_ingredient': ['소'],
       'kibble': 4,
       'hash': ['관절건강', '그레인프리']
@@ -490,7 +490,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '혈액순환 / 혈관질환', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, 생식 코팅'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 생식 코팅'],
       'main_ingredient': ['오리'],
       'kibble': -1,
       'hash': ['']
@@ -505,7 +505,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['닭', '양'],
       'kibble': -1,
       'hash': ['']
@@ -520,7 +520,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, 생식 코팅'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 생식 코팅'],
       'main_ingredient': ['닭'],
       'kibble': -1,
       'hash': ['그레인프리', '면역력향상']
@@ -535,7 +535,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, NO 콩·밀'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 콩·밀'],
       'main_ingredient': ['염소', '양'],
       'kibble': -1,
       'hash': ['']
@@ -550,7 +550,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 높은 육류 함유량(고단백), 생식 코팅'],
+      'pop_category': ['퍼피', '어덜트', '그레인프리, 높은 육류 함유량(고단백), 생식 코팅'],
       'main_ingredient': ['닭'],
       'kibble': -1,
       'hash': ['면역력향상', '높은 육류 함유량']
@@ -565,7 +565,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '면역력', '뼈/관절', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['양'],
       'kibble': -1,
       'hash': ['']
@@ -580,7 +580,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO 옥수수·밀·대두, 생식코팅'],
+      'pop_category': ['어덜트', 'NO 옥수수·밀·대두, 생식코팅'],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['']
@@ -595,7 +595,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '면역력', '뼈/관절', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['소'],
       'kibble': -1,
       'hash': ['관절건강', '동결건조', '그레인프리']
@@ -610,7 +610,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', 'NO 옥수수·밀·대두, 생식코팅'],
+      'pop_category': ['어덜트', 'NO 옥수수·밀·대두, 생식코팅'],
       'main_ingredient': ['연어'],
       'kibble': 3,
       'hash': ['']
@@ -625,7 +625,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['면역력', '뼈/관절', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['사슴'],
       'kibble': -1,
       'hash': ['관절건강', '동결건조', '그레인프리']
@@ -640,7 +640,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, 저알레르기'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 저알레르기'],
       'main_ingredient': ['토끼'],
       'kibble': 4,
       'hash': ['']
@@ -655,7 +655,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '혈액순환 / 혈관질환'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭', '고구마'],
       'kibble': 4,
       'hash': ['']
@@ -670,7 +670,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['심장', '소화기', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['송어'],
       'kibble': 4,
       'hash': ['항산화', '그레인프리']
@@ -685,7 +685,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['연어'],
       'kibble': 4,
       'hash': ['']
@@ -700,7 +700,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['심장', '소화기', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 4,
       'hash': ['항산화', '그레인프리']
@@ -715,7 +715,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모', '소화기', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '그레인프리'],
       'main_ingredient': ['연어', '고구마'],
       'kibble': 2,
       'hash': ['']
@@ -730,7 +730,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['심장', '소화기', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['송어'],
       'kibble': 2,
       'hash': ['그레인프리', '부드러운알갱이']
@@ -745,7 +745,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭', '고구마'],
       'kibble': 4,
       'hash': ['']
@@ -760,7 +760,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['심장', '소화기', '피부/피모', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
       'hash': ['관절건강', '그레인프리']
@@ -775,7 +775,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 4,
       'hash': ['']
@@ -790,7 +790,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['심장', '소화기', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
       'hash': ['유산균', '그레인프리']
@@ -805,7 +805,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['피부/피모 개선'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['퍼피', '어덜트', '그레인프리'],
       'main_ingredient': ['연어'],
       'kibble': 4,
       'hash': ['']
@@ -820,7 +820,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['심장', '소화기', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리'],
+      'pop_category': ['퍼피', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 1,
       'hash': ['유산균', '그레인프리']
@@ -835,7 +835,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['다이어트', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '다이어트, 그레인프리'],
+      'pop_category': ['시니어', '다이어트, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 4,
       'hash': ['오븐베이크', '다이어트사료']
@@ -850,7 +850,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '소화기', '혈액순환 / 혈관질환'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인·글루텐프리, NO 감자, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['오리'],
       'kibble': 4,
       'hash': ['LID사료', '저알레르기']
@@ -865,7 +865,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 2,
       'hash': ['관절건강', '자유방목닭']
@@ -880,7 +880,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인·글루텐프리, NO 감자, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 4,
       'hash': ['LID사료', '저알레르기']
@@ -895,7 +895,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 4,
       'hash': ['관절건강', '자유방목닭']
@@ -910,7 +910,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인·글루텐프리, NO 감자, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['연어'],
       'kibble': 4,
       'hash': ['LID사료', '저알레르기']
@@ -925,7 +925,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '연어'],
       'kibble': 2,
       'hash': ['관절건강', '오븐베이크']
@@ -940,7 +940,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 글루텐프리, NO 감자, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['연어'],
       'kibble': 1,
       'hash': ['LID사료', '저알레르기']
@@ -955,7 +955,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['소화기'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리'],
+      'pop_category': ['어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '연어'],
       'kibble': 4,
       'hash': ['']
@@ -970,7 +970,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['양'],
       'kibble': 2,
       'hash': ['관절건강', '단일단백질', '저알레르기']
@@ -985,7 +985,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': [''],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', ''],
+      'pop_category': ['퍼피', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['']
@@ -1000,7 +1000,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['닭'],
       'kibble': 2,
       'hash': ['관절건강', '단일단백질', '저알레르기']
@@ -1015,7 +1015,7 @@ final petfood_list = [
       'life_stage': ['어덜트'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': [''],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', ''],
+      'pop_category': ['어덜트', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['']
@@ -1030,7 +1030,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['양'],
       'kibble': 2,
       'hash': ['관절건강', '단일단백질', '저알레르기']
@@ -1045,7 +1045,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': [''],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', ''],
+      'pop_category': ['시니어', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['']
@@ -1060,7 +1060,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '뼈/관절', '기력회복'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['소'],
       'kibble': 2,
       'hash': ['관절건강', '단일단백질', '저알레르기']
@@ -1075,7 +1075,7 @@ final petfood_list = [
       'life_stage': ['퍼피'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': [''],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', ''],
+      'pop_category': ['퍼피', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
       'hash': ['']
@@ -1090,7 +1090,7 @@ final petfood_list = [
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '뼈/관절'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, 단일단백질'],
+      'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['사슴'],
       'kibble': 2,
       'hash': ['관절건강', '단일단백질', '저알레르기']
@@ -1105,7 +1105,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리, NO부산물·방부제·색소·향미제'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO부산물·방부제·색소·향미제'],
       'main_ingredient': ['칠면조'],
       'kibble': -1,
       'hash': ['']
@@ -1120,7 +1120,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['저 알레르기', '피부/피모'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리, NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO GMO·부산물'],
       'main_ingredient': ['청어'],
       'kibble': 2,
       'hash': ['']
@@ -1135,7 +1135,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '면역력'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리, NO부산물·방부제·색소·향미제'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO부산물·방부제·색소·향미제'],
       'main_ingredient': ['닭'],
       'kibble': -1,
       'hash': ['']
@@ -1150,7 +1150,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['당뇨'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '그레인프리, NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 2,
       'hash': ['']
@@ -1165,7 +1165,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health': ['알레르기 예방', '당뇨'],
-      'pop_category': ['초소형', '소형', '중형', '대형', '초대형', '단일단백질, 그레인프리, NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO GMO·부산물'],
       'main_ingredient': ['멧돼지'],
       'kibble': 2,
       'hash': ['단일단백질', '저알레르기']
@@ -1182,7 +1182,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['눈', '심장'],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 2,
       'hash': ['']
@@ -1197,7 +1197,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['알레르기 예방', '소화기', '다이어트'],
-      'pop_category': ['', 'NO콩·방부제·설탕·항생제·부산물, 단일단백질'],
+      'pop_category': ['어덜트', '시니어', 'NO콩·방부제·설탕·항생제·부산물, 단일단백질'],
       'main_ingredient': ['대구'],
       'kibble': 10,
       'hash': ['']
@@ -1212,7 +1212,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['소화기'],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭'],
       'kibble': 2,
       'hash': ['']
@@ -1227,7 +1227,7 @@ final petfood_list = [
       'life_stage': ['키튼'],
       'size': [''],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['', 'NO방부제·설탕·항생제·부산물, 단일단백질'],
+      'pop_category': ['키튼', 'NO방부제·설탕·항생제·부산물, 단일단백질'],
       'main_ingredient': ['송어'],
       'kibble': 10,
       'hash': ['']
@@ -1242,7 +1242,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['피부｜피모'],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['청어', '고등어'],
       'kibble': 2,
       'hash': ['']
@@ -1257,7 +1257,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['비뇨 방광 결석'],
-      'pop_category': ['', 'NO콩·방부제·설탕·항생제·부산물'],
+      'pop_category': ['어덜트', '시니어', 'NO콩·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['쌀', '닭'],
       'kibble': 10,
       'hash': ['']
@@ -1272,7 +1272,7 @@ final petfood_list = [
       'life_stage': ['키튼'],
       'size': [''],
       'health': ['피부｜피모'],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '그레인프리'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 2,
       'hash': ['']
@@ -1287,7 +1287,7 @@ final petfood_list = [
       'life_stage': ['키튼'],
       'size': [''],
       'health': ['소화기'],
-      'pop_category': ['', 'NO방부제·설탕·항생제·부산물'],
+      'pop_category': ['키튼', 'NO방부제·설탕·항생제·부산물'],
       'main_ingredient': ['거위'],
       'kibble': 10,
       'hash': ['']
@@ -1302,7 +1302,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['피부｜피모'],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['정어리', '민대구', '고등어', '가자미', '볼락', '광어'],
       'kibble': 4,
       'hash': ['']
@@ -1317,7 +1317,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['', '그레인프리, NO옥수수 · 밀 ·방부제·설탕·항생제·부산물'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO옥수수 · 밀 ·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['연어'],
       'kibble': 2,
       'hash': ['']
@@ -1332,7 +1332,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['다이어트'],
-      'pop_category': ['', '다이어트'],
+      'pop_category': ['키튼', '어덜트', '시니어', '다이어트'],
       'main_ingredient': ['닭'],
       'kibble': 2,
       'hash': ['']
@@ -1347,7 +1347,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['소화기'],
-      'pop_category': ['', '그레인프리, NO옥수수 · 밀 ·방부제·설탕·항생제·부산물'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO옥수수 · 밀 ·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['대구'],
       'kibble': 2,
       'hash': ['']
@@ -1362,7 +1362,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['피부/피모'],
-      'pop_category': ['', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1377,7 +1377,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['소화기'],
-      'pop_category': ['', ''],
+      'pop_category': ['어덜트', '시니어', ''],
       'main_ingredient': ['참치'],
       'kibble': 2,
       'hash': ['']
@@ -1392,7 +1392,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['피부/피모'],
-      'pop_category': ['', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1407,7 +1407,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['소화기'],
-      'pop_category': ['', 'NO감자 ·방부제·설탕·항생제·부산물'],
+      'pop_category': ['키튼', '어덜트', '시니어', 'NO감자 ·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['멸치'],
       'kibble': 2,
       'hash': ['']
@@ -1422,7 +1422,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['피부/피모'],
-      'pop_category': ['', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1437,7 +1437,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['다이어트', '뼈/관절'],
-      'pop_category': ['', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1452,7 +1452,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['다이어트', '뼈/관절'],
-      'pop_category': ['', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1467,7 +1467,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['다이어트', '뼈/관절'],
-      'pop_category': ['', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
+      'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1482,7 +1482,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': [''],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['정어리', '청어'],
       'kibble': 10,
       'hash': ['']
@@ -1497,7 +1497,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': [''],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['정어리', '청어'],
       'kibble': 10,
       'hash': ['']
@@ -1512,7 +1512,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': [''],
-      'pop_category': ['', '그레인프리, 글루텐프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['소'],
       'kibble': 10,
       'hash': ['']
@@ -1527,7 +1527,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': [''],
-      'pop_category': ['', '그레인프리, 글루텐프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['소'],
       'kibble': 10,
       'hash': ['']
@@ -1542,7 +1542,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['피부/피모'],
-      'pop_category': ['', '그레인프리, 글루텐프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['양'],
       'kibble': 10,
       'hash': ['']
@@ -1557,7 +1557,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['피부/피모'],
-      'pop_category': ['', '그레인프리, 글루텐프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['양'],
       'kibble': 10,
       'hash': ['']
@@ -1572,7 +1572,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['', '그레인프리, 글루텐프리, 단일단백질'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
       'hash': ['']
@@ -1587,7 +1587,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['알레르기 예방', '소화기'],
-      'pop_category': ['', '그레인프리, 글루텐프리, 단일단백질'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
       'hash': ['']
@@ -1602,7 +1602,7 @@ final petfood_list = [
       'life_stage': ['키튼', '어덜트', '시니어'],
       'size': [''],
       'health': ['피부/피모'],
-      'pop_category': ['', '그레인프리'],
+      'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['송어', '연어'],
       'kibble': 2,
       'hash': ['']
@@ -1617,7 +1617,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['혈액순환 / 혈관질환', '심장', '당뇨'],
-      'pop_category': ['', 'NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1632,7 +1632,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['혈액순환 / 혈관질환', '심장', '당뇨'],
-      'pop_category': ['', 'NO GMO·부산물'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['대구'],
       'kibble': 10,
       'hash': ['']
@@ -1647,7 +1647,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['저알레르기', '소화기'],
-      'pop_category': ['', 'NO GMO·부산물, 그레인프리'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']
@@ -1662,7 +1662,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['저알레르기', '소화기'],
-      'pop_category': ['', 'NO GMO·부산물, 그레인프리'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['멧돼지'],
       'kibble': 10,
       'hash': ['']
@@ -1677,7 +1677,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['알레르기 예방', '소화기', '피부/피모'],
-      'pop_category': ['', 'NO GMO·부산물, 그레인프리'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['청어'],
       'kibble': 10,
       'hash': ['']
@@ -1692,7 +1692,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': [''],
-      'pop_category': ['', 'NO GMO·부산물, 그레인프리'],
+      'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['오리'],
       'kibble': 10,
       'hash': ['']
@@ -1707,7 +1707,7 @@ final petfood_list = [
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
       'health': ['다이어트', '소화기'],
-      'pop_category': ['', ''],
+      'pop_category': ['어덜트', '시니어', ''],
       'main_ingredient': ['칠면조'],
       'kibble': 10,
       'hash': ['']
@@ -1722,7 +1722,7 @@ final petfood_list = [
       'life_stage': ['시니어'],
       'size': [''],
       'health': ['소화기'],
-      'pop_category': ['', 'NO콩·방부제·설탕·항생제·부산물'],
+      'pop_category': ['시니어', 'NO콩·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 10,
       'hash': ['']

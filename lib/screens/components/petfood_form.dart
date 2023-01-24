@@ -5,16 +5,17 @@ import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 
 class PetfoodForm extends StatelessWidget {
-  PetfoodForm({super.key, required this.petfood_data});
+  PetfoodForm({super.key, required this.petfood_data, this.width, this.height});
   var user_controller = Get.put(UserController());
   var screen_controller = Get.put(ScreenController());
   var petfood_data;
+  var width, height;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        width: 93.w,
-        height: 128.h,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.w),

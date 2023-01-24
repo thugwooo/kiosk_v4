@@ -27,7 +27,11 @@ class MainScreen extends StatelessWidget {
                       if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['location'].toString().contains('A'))
                         Padding(
                           padding: EdgeInsets.only(right: 20.0.w),
-                          child: PetfoodForm(petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index]),
+                          child: PetfoodForm(
+                            petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
+                            width: 93.w,
+                            height: 128.h,
+                          ),
                         ),
                   ],
                 ),
@@ -38,7 +42,11 @@ class MainScreen extends StatelessWidget {
                       if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['location'].toString().contains('B'))
                         Padding(
                           padding: EdgeInsets.only(right: 20.0.w),
-                          child: PetfoodForm(petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index]),
+                          child: PetfoodForm(
+                            petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
+                            width: 93.w,
+                            height: 128.h,
+                          ),
                         ),
                   ],
                 ),

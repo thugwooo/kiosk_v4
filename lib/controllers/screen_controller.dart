@@ -15,6 +15,7 @@ class ScreenController extends GetxController {
   var search_petfood = [];
   RxInt search_petfood_length = 0.obs;
   RxInt pop_category_index = 0.obs;
+  RxInt sort_index = 0.obs;
 
   bool is_selected_bottom_navi_index(index) {
     return index == bottom_navi_index.value;
@@ -66,8 +67,21 @@ class ScreenController extends GetxController {
     pop_category_index(index);
   }
 
+  void set_sort_index(index) {
+    sort_index(index);
+    // TODO: 가격 데이터 정리되면 정렬 시작
+  }
+
+  bool is_selected_pop_category_index(index) {
+    return pop_category_index.value == index;
+  }
+
   bool search_text_bool() {
     return search_text.value != '';
+  }
+
+  bool is_selected_sort_index(index) {
+    return sort_index.value == index;
   }
 
   void set_search_petfood() {
