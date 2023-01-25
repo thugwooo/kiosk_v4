@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/style.dart';
+import 'package:kiosk_v4/controllers/filter_controller.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 import 'package:kiosk_v4/screens/components/petfood_detail_container.dart';
@@ -14,6 +15,7 @@ class BasicForm extends StatelessWidget {
 
   var screen_controller = Get.put(ScreenController());
   var user_controller = Get.put(UserController());
+  var filter_controller = Get.put(FilterController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -334,6 +336,7 @@ class BasicForm extends StatelessWidget {
         ),
         onTap: () {
           user_controller.set_user_info(text: 'pet', value: index);
+          filter_controller.change_pet();
         },
       ),
     );

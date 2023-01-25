@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../screens/curation/curation_exist_user_screen.dart';
+import '../screens/curation/curation_input_screen.dart';
 import '../screens/curation/curation_main_screen.dart';
+import '../screens/curation/curation_new_user_screen.dart';
+import '../screens/curation/curation_pet_screen.dart';
+import '../screens/curation/curation_recommend_petfood_screen.dart';
+import '../screens/curation/curation_record_petfood_screen.dart';
 import '../screens/main_screen/main_screen.dart';
 import '../screens/petfood_filter_screen/petfood_filter_screen.dart';
 import '../screens/popular_categories_screen/popular_category_display_screen.dart';
@@ -30,10 +36,10 @@ List<Widget> screen_list = [
   PetfoodFilterScreen(),
   CurationMainScreen(),
   PopularCategoryDisplayScreen(),
-  // CurationNewUserScreen(),
-  // CurationExistUserScreen(),
-  // CurationInputScreen(),
-  // CurationPetScreen(),
-  // CurationRecordPetfoodScreen(),
-  // CurationRecommendPetfoodScreen(),
+  CurationNewUserScreen(),
+  CurationExistUserScreen(),
+  CurationInputScreen(),
+  CurationPetScreen(),
+  CurationRecordPetfoodScreen(),
+  CurationRecommendPetfoodScreen(),
 ];

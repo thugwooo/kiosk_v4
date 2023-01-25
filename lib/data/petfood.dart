@@ -13,6 +13,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '칠면조', '계란'],
       'kibble': 3,
+      'retail_price': ['39000'],
       'hash': ['그레인프리', '높은 육류 함유량']
     },
     {
@@ -28,6 +29,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO GMO·부산물'],
       'main_ingredient': ['대구'],
       'kibble': 2,
+      'retail_price': ['52000'],
       'hash': ['단일단백질', '저알레르기']
     },
     {
@@ -43,6 +45,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '높은 어류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['정어리', '고등어', '민대구', '가자미', '볼락'],
       'kibble': 4,
+      'retail_price': ['45000'],
       'hash': ['그레인프리', '높은 어류 함유량']
     },
     {
@@ -58,6 +61,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 2,
+      'retail_price': ['39500'],
       'hash': ['']
     },
     {
@@ -73,6 +77,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '칠면조', '계란'],
       'kibble': 4,
+      'retail_price': ['39000'],
       'hash': ['그레인프리', '높은 육류 함유량']
     },
     {
@@ -88,6 +93,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭', '연어'],
       'kibble': 0,
+      'retail_price': ['5500'],
       'hash': ['']
     },
     {
@@ -103,6 +109,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '높은 육류 함유량(고단백)'],
       'main_ingredient': ['칠면조', '닭', '메추리'],
       'kibble': 2,
+      'retail_price': ['36000'],
       'hash': ['관절건강', '작은알갱이']
     },
     {
@@ -118,6 +125,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물, 단일단백질'],
       'main_ingredient': ['연어'],
       'kibble': 0,
+      'retail_price': ['5500'],
       'hash': ['']
     },
     {
@@ -133,6 +141,7 @@ final petfood_list = [
       'pop_category': ['시니어', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '계란', '칠면조'],
       'kibble': 3,
+      'retail_price': ['39000'],
       'hash': ['그레인프리', '높은 육류 함유량']
     },
     {
@@ -148,6 +157,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 0,
+      'retail_price': ['5500'],
       'hash': ['']
     },
     {
@@ -163,6 +173,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '높은 육류 함유량(고단백), 그레인프리'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 4,
+      'retail_price': ['39000'],
       'hash': ['그레인프리', '다이어트사료']
     },
     {
@@ -178,6 +189,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', 'NO GMO·부산물, 단일단백질'],
       'main_ingredient': ['닭'],
       'kibble': 0,
+      'retail_price': ['5500'],
       'hash': ['']
     },
     {
@@ -193,6 +205,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['오리'],
       'kibble': 4,
+      'retail_price': ['34000'],
       'hash': ['단일단백질', '저알레르기']
     },
     {
@@ -208,6 +221,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자'],
       'main_ingredient': ['연어'],
       'kibble': 1,
+      'retail_price': ['39900'],
       'hash': ['']
     },
     {
@@ -223,6 +237,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['돼지'],
       'kibble': 4,
+      'retail_price': ['33000'],
       'hash': ['단일단백질', '저알레르기']
     },
     {
@@ -238,6 +253,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '단일단백질, 그레인프리'],
       'main_ingredient': ['연어'],
       'kibble': 1,
+      'retail_price': ['37900'],
       'hash': ['']
     },
     {
@@ -253,6 +269,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '높은 육류 함량(고단백)'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 1,
+      'retail_price': ['29000'],
       'hash': ['그레인프리', '작은알갱이']
     },
     {
@@ -268,6 +285,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리'],
       'kibble': 1,
+      'retail_price': ['37900'],
       'hash': ['']
     },
     {
@@ -283,6 +301,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '저알레르기'],
       'main_ingredient': ['식용곤충'],
       'kibble': 1,
+      'retail_price': ['28000'],
       'hash': ['곤충사료', '저알레르기']
     },
     {
@@ -298,6 +317,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자'],
       'main_ingredient': ['닭'],
       'kibble': 1,
+      'retail_price': ['35500'],
       'hash': ['']
     },
     {
@@ -313,6 +333,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['연어', '감자'],
       'kibble': 2,
+      'retail_price': ['40000'],
       'hash': ['단일단백질', '저알레르기']
     },
     {
@@ -328,6 +349,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자'],
       'main_ingredient': ['칠면조'],
       'kibble': 1,
+      'retail_price': ['37900'],
       'hash': ['']
     },
     {
@@ -343,6 +365,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', ''],
       'main_ingredient': ['칠면조', '닭', '연어'],
       'kibble': 2,
+      'retail_price': ['29000'],
       'hash': ['소화기건강', '다이어트사료']
     },
     {
@@ -358,6 +381,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '글루텐프리, NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['칠면조', '연어'],
       'kibble': 1,
+      'retail_price': ['42000'],
       'hash': ['관절건강', '면역력향상']
     },
     {
@@ -373,6 +397,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['칠면조', '닭', '연어'],
       'kibble': 2,
+      'retail_price': ['32000'],
       'hash': ['그레인프리', '소화기건강']
     },
     {
@@ -388,6 +413,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '글루텐프리, NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['연어'],
       'kibble': 1,
+      'retail_price': ['42000'],
       'hash': ['관절건강', '면역력향상']
     },
     {
@@ -403,6 +429,7 @@ final petfood_list = [
       'pop_category': ['시니어', 'NO밀·콩·옥수수'],
       'main_ingredient': ['칠면조', '닭'],
       'kibble': -1,
+      'retail_price': ['26000'],
       'hash': ['그레인프리', '소화기건강', '노령견사료']
     },
     {
@@ -418,6 +445,7 @@ final petfood_list = [
       'pop_category': ['시니어', '글루텐프리, NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['오리'],
       'kibble': 1,
+      'retail_price': ['42000'],
       'hash': ['']
     },
     {
@@ -433,6 +461,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, 다이어트, 생식코팅'],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['48000'],
       'hash': ['그레인프리', '다이어트사료']
     },
     {
@@ -448,6 +477,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '희귀단백질, 글루텐프리, GMO프리'],
       'main_ingredient': ['사슴', '양'],
       'kibble': 4,
+      'retail_price': ['14000'],
       'hash': ['']
     },
     {
@@ -463,6 +493,7 @@ final petfood_list = [
       'pop_category': ['시니어', '그레인프리, 글루텐프리, 생식코팅, 높은 육류 함유량(고단백)'],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['49000'],
       'hash': ['']
     },
     {
@@ -478,6 +509,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질, 글루텐프리, GMO프리'],
       'main_ingredient': ['소'],
       'kibble': 4,
+      'retail_price': ['13000'],
       'hash': ['관절건강', '그레인프리']
     },
     {
@@ -493,6 +525,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 생식 코팅'],
       'main_ingredient': ['오리'],
       'kibble': -1,
+      'retail_price': ['43000'],
       'hash': ['']
     },
     {
@@ -508,6 +541,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['닭', '양'],
       'kibble': -1,
+      'retail_price': ['13000'],
       'hash': ['']
     },
     {
@@ -523,6 +557,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 생식 코팅'],
       'main_ingredient': ['닭'],
       'kibble': -1,
+      'retail_price': ['48000'],
       'hash': ['그레인프리', '면역력향상']
     },
     {
@@ -538,6 +573,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 콩·밀'],
       'main_ingredient': ['염소', '양'],
       'kibble': -1,
+      'retail_price': ['1100', '49000', '138000'],
       'hash': ['']
     },
     {
@@ -553,6 +589,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '그레인프리, 높은 육류 함유량(고단백), 생식 코팅'],
       'main_ingredient': ['닭'],
       'kibble': -1,
+      'retail_price': ['54000'],
       'hash': ['면역력향상', '높은 육류 함유량']
     },
     {
@@ -568,6 +605,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['양'],
       'kibble': -1,
+      'retail_price': ['1100', '49000', '138000'],
       'hash': ['']
     },
     {
@@ -583,6 +621,7 @@ final petfood_list = [
       'pop_category': ['어덜트', 'NO 옥수수·밀·대두, 생식코팅'],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['30000'],
       'hash': ['']
     },
     {
@@ -598,6 +637,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['소'],
       'kibble': -1,
+      'retail_price': ['1100', '49000', '138000'],
       'hash': ['관절건강', '동결건조', '그레인프리']
     },
     {
@@ -613,6 +653,7 @@ final petfood_list = [
       'pop_category': ['어덜트', 'NO 옥수수·밀·대두, 생식코팅'],
       'main_ingredient': ['연어'],
       'kibble': 3,
+      'retail_price': ['32000'],
       'hash': ['']
     },
     {
@@ -628,6 +669,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['사슴'],
       'kibble': -1,
+      'retail_price': ['49000'],
       'hash': ['관절건강', '동결건조', '그레인프리']
     },
     {
@@ -643,6 +685,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 저알레르기'],
       'main_ingredient': ['토끼'],
       'kibble': 4,
+      'retail_price': ['45000'],
       'hash': ['']
     },
     {
@@ -658,6 +701,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭', '고구마'],
       'kibble': 4,
+      'retail_price': ['42000'],
       'hash': ['']
     },
     {
@@ -673,6 +717,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['송어'],
       'kibble': 4,
+      'retail_price': [''],
       'hash': ['항산화', '그레인프리']
     },
     {
@@ -688,6 +733,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['연어'],
       'kibble': 4,
+      'retail_price': ['44000'],
       'hash': ['']
     },
     {
@@ -703,6 +749,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 4,
+      'retail_price': ['26000'],
       'hash': ['항산화', '그레인프리']
     },
     {
@@ -718,6 +765,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '그레인프리'],
       'main_ingredient': ['연어', '고구마'],
       'kibble': 2,
+      'retail_price': ['27000', '42000', '69000'],
       'hash': ['']
     },
     {
@@ -733,6 +781,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['송어'],
       'kibble': 2,
+      'retail_price': ['28000'],
       'hash': ['그레인프리', '부드러운알갱이']
     },
     {
@@ -748,6 +797,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭', '고구마'],
       'kibble': 4,
+      'retail_price': ['27000', '69000'],
       'hash': ['']
     },
     {
@@ -763,6 +813,7 @@ final petfood_list = [
       'pop_category': ['시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
+      'retail_price': ['26000'],
       'hash': ['관절건강', '그레인프리']
     },
     {
@@ -778,6 +829,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 4,
+      'retail_price': ['61000', '136000'],
       'hash': ['']
     },
     {
@@ -793,6 +845,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
+      'retail_price': ['26000'],
       'hash': ['유산균', '그레인프리']
     },
     {
@@ -808,6 +861,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '그레인프리'],
       'main_ingredient': ['연어'],
       'kibble': 4,
+      'retail_price': ['27000', '69000'],
       'hash': ['']
     },
     {
@@ -823,6 +877,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '그레인프리, 글루텐프리'],
       'main_ingredient': ['칠면조'],
       'kibble': 1,
+      'retail_price': ['28000'],
       'hash': ['유산균', '그레인프리']
     },
     {
@@ -838,6 +893,7 @@ final petfood_list = [
       'pop_category': ['시니어', '다이어트, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 4,
+      'retail_price': ['50000'],
       'hash': ['오븐베이크', '다이어트사료']
     },
     {
@@ -853,6 +909,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['오리'],
       'kibble': 4,
+      'retail_price': ['25000'],
       'hash': ['LID사료', '저알레르기']
     },
     {
@@ -868,6 +925,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 2,
+      'retail_price': ['50000'],
       'hash': ['관절건강', '자유방목닭']
     },
     {
@@ -883,6 +941,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 4,
+      'retail_price': ['25000'],
       'hash': ['LID사료', '저알레르기']
     },
     {
@@ -898,6 +957,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 4,
+      'retail_price': ['50000'],
       'hash': ['관절건강', '자유방목닭']
     },
     {
@@ -913,6 +973,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['연어'],
       'kibble': 4,
+      'retail_price': ['25000'],
       'hash': ['LID사료', '저알레르기']
     },
     {
@@ -928,6 +989,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '연어'],
       'kibble': 2,
+      'retail_price': ['55000'],
       'hash': ['관절건강', '오븐베이크']
     },
     {
@@ -943,6 +1005,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 글루텐프리, NO 감자, 단일단백질'],
       'main_ingredient': ['연어'],
       'kibble': 1,
+      'retail_price': ['25000'],
       'hash': ['LID사료', '저알레르기']
     },
     {
@@ -958,6 +1021,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '연어'],
       'kibble': 4,
+      'retail_price': ['55000'],
       'hash': ['']
     },
     {
@@ -973,6 +1037,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['양'],
       'kibble': 2,
+      'retail_price': ['63500'],
       'hash': ['관절건강', '단일단백질', '저알레르기']
     },
     {
@@ -988,6 +1053,7 @@ final petfood_list = [
       'pop_category': ['퍼피', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['37000'],
       'hash': ['']
     },
     {
@@ -1003,6 +1069,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['닭'],
       'kibble': 2,
+      'retail_price': ['62000'],
       'hash': ['관절건강', '단일단백질', '저알레르기']
     },
     {
@@ -1018,6 +1085,7 @@ final petfood_list = [
       'pop_category': ['어덜트', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['37000'],
       'hash': ['']
     },
     {
@@ -1033,6 +1101,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['양'],
       'kibble': 2,
+      'retail_price': ['63500'],
       'hash': ['관절건강', '단일단백질', '저알레르기']
     },
     {
@@ -1048,6 +1117,7 @@ final petfood_list = [
       'pop_category': ['시니어', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['37000'],
       'hash': ['']
     },
     {
@@ -1063,6 +1133,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['소'],
       'kibble': 2,
+      'retail_price': ['63500'],
       'hash': ['관절건강', '단일단백질', '저알레르기']
     },
     {
@@ -1078,6 +1149,7 @@ final petfood_list = [
       'pop_category': ['퍼피', ''],
       'main_ingredient': ['닭'],
       'kibble': 3,
+      'retail_price': ['33500'],
       'hash': ['']
     },
     {
@@ -1093,6 +1165,7 @@ final petfood_list = [
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리, 단일단백질'],
       'main_ingredient': ['사슴'],
       'kibble': 2,
+      'retail_price': ['91500'],
       'hash': ['관절건강', '단일단백질', '저알레르기']
     },
     {
@@ -1108,6 +1181,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO부산물·방부제·색소·향미제'],
       'main_ingredient': ['칠면조'],
       'kibble': -1,
+      'retail_price': ['53000'],
       'hash': ['']
     },
     {
@@ -1123,6 +1197,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO GMO·부산물'],
       'main_ingredient': ['청어'],
       'kibble': 2,
+      'retail_price': ['54200'],
       'hash': ['']
     },
     {
@@ -1138,6 +1213,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO부산물·방부제·색소·향미제'],
       'main_ingredient': ['닭'],
       'kibble': -1,
+      'retail_price': ['53000'],
       'hash': ['']
     },
     {
@@ -1153,6 +1229,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 2,
+      'retail_price': ['52000'],
       'hash': ['']
     },
     {
@@ -1168,6 +1245,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '단일단백질, 그레인프리, NO GMO·부산물'],
       'main_ingredient': ['멧돼지'],
       'kibble': 2,
+      'retail_price': ['52000'],
       'hash': ['단일단백질', '저알레르기']
     }
   ],
@@ -1185,6 +1263,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 2,
+      'retail_price': ['38500'],
       'hash': ['']
     },
     {
@@ -1200,6 +1279,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO콩·방부제·설탕·항생제·부산물, 단일단백질'],
       'main_ingredient': ['대구'],
       'kibble': 10,
+      'retail_price': ['33000'],
       'hash': ['']
     },
     {
@@ -1215,6 +1295,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭'],
       'kibble': 2,
+      'retail_price': ['38500'],
       'hash': ['']
     },
     {
@@ -1230,6 +1311,7 @@ final petfood_list = [
       'pop_category': ['키튼', 'NO방부제·설탕·항생제·부산물, 단일단백질'],
       'main_ingredient': ['송어'],
       'kibble': 10,
+      'retail_price': ['31000'],
       'hash': ['']
     },
     {
@@ -1245,6 +1327,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['청어', '고등어'],
       'kibble': 2,
+      'retail_price': ['39000'],
       'hash': ['']
     },
     {
@@ -1260,6 +1343,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO콩·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['쌀', '닭'],
       'kibble': 10,
+      'retail_price': ['31000'],
       'hash': ['']
     },
     {
@@ -1275,6 +1359,7 @@ final petfood_list = [
       'pop_category': ['키튼', '그레인프리'],
       'main_ingredient': ['닭', '칠면조'],
       'kibble': 2,
+      'retail_price': ['42000'],
       'hash': ['']
     },
     {
@@ -1290,6 +1375,7 @@ final petfood_list = [
       'pop_category': ['키튼', 'NO방부제·설탕·항생제·부산물'],
       'main_ingredient': ['거위'],
       'kibble': 10,
+      'retail_price': ['35000'],
       'hash': ['']
     },
     {
@@ -1305,6 +1391,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['정어리', '민대구', '고등어', '가자미', '볼락', '광어'],
       'kibble': 4,
+      'retail_price': ['45000'],
       'hash': ['']
     },
     {
@@ -1320,6 +1407,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO옥수수 · 밀 ·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['연어'],
       'kibble': 2,
+      'retail_price': ['40000'],
       'hash': ['']
     },
     {
@@ -1335,6 +1423,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '다이어트'],
       'main_ingredient': ['닭'],
       'kibble': 2,
+      'retail_price': ['42000'],
       'hash': ['']
     },
     {
@@ -1350,6 +1439,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO옥수수 · 밀 ·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['대구'],
       'kibble': 2,
+      'retail_price': ['41000'],
       'hash': ['']
     },
     {
@@ -1365,6 +1455,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['44000'],
       'hash': ['']
     },
     {
@@ -1380,6 +1471,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', ''],
       'main_ingredient': ['참치'],
       'kibble': 2,
+      'retail_price': [''],
       'hash': ['']
     },
     {
@@ -1395,6 +1487,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['70000'],
       'hash': ['']
     },
     {
@@ -1410,6 +1503,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', 'NO감자 ·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['멸치'],
       'kibble': 2,
+      'retail_price': ['35000'],
       'hash': ['']
     },
     {
@@ -1425,6 +1519,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['138000'],
       'hash': ['']
     },
     {
@@ -1440,6 +1535,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['44000'],
       'hash': ['']
     },
     {
@@ -1455,6 +1551,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['70000'],
       'hash': ['']
     },
     {
@@ -1470,6 +1567,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', '그레인프리, NO 보존료·착색료·향료·밀·콩·옥수수'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['138000'],
       'hash': ['']
     },
     {
@@ -1485,6 +1583,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['정어리', '청어'],
       'kibble': 10,
+      'retail_price': ['44000'],
       'hash': ['']
     },
     {
@@ -1500,6 +1599,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['정어리', '청어'],
       'kibble': 10,
+      'retail_price': ['138000'],
       'hash': ['']
     },
     {
@@ -1515,6 +1615,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['소'],
       'kibble': 10,
+      'retail_price': ['11000'],
       'hash': ['']
     },
     {
@@ -1530,6 +1631,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['소'],
       'kibble': 10,
+      'retail_price': ['49000'],
       'hash': ['']
     },
     {
@@ -1545,6 +1647,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['양'],
       'kibble': 10,
+      'retail_price': ['11000'],
       'hash': ['']
     },
     {
@@ -1560,6 +1663,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리'],
       'main_ingredient': ['양'],
       'kibble': 10,
+      'retail_price': ['49000'],
       'hash': ['']
     },
     {
@@ -1575,6 +1679,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
+      'retail_price': ['58000'],
       'hash': ['']
     },
     {
@@ -1590,6 +1695,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리, 글루텐프리, 단일단백질'],
       'main_ingredient': ['칠면조'],
       'kibble': 2,
+      'retail_price': ['116000'],
       'hash': ['']
     },
     {
@@ -1605,6 +1711,7 @@ final petfood_list = [
       'pop_category': ['키튼', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['송어', '연어'],
       'kibble': 2,
+      'retail_price': [''],
       'hash': ['']
     },
     {
@@ -1620,6 +1727,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['32000'],
       'hash': ['']
     },
     {
@@ -1635,6 +1743,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['대구'],
       'kibble': 10,
+      'retail_price': ['32000'],
       'hash': ['']
     },
     {
@@ -1650,6 +1759,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['44600'],
       'hash': ['']
     },
     {
@@ -1665,6 +1775,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['멧돼지'],
       'kibble': 10,
+      'retail_price': ['44600'],
       'hash': ['']
     },
     {
@@ -1680,6 +1791,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['청어'],
       'kibble': 10,
+      'retail_price': ['44600'],
       'hash': ['']
     },
     {
@@ -1695,6 +1807,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물, 그레인프리'],
       'main_ingredient': ['오리'],
       'kibble': 10,
+      'retail_price': ['47700'],
       'hash': ['']
     },
     {
@@ -1710,6 +1823,7 @@ final petfood_list = [
       'pop_category': ['어덜트', '시니어', ''],
       'main_ingredient': ['칠면조'],
       'kibble': 10,
+      'retail_price': ['33000'],
       'hash': ['']
     },
     {
@@ -1725,6 +1839,7 @@ final petfood_list = [
       'pop_category': ['시니어', 'NO콩·방부제·설탕·항생제·부산물'],
       'main_ingredient': ['닭'],
       'kibble': 10,
+      'retail_price': ['31000'],
       'hash': ['']
     }
   ]
