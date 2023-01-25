@@ -31,6 +31,8 @@ class UserController extends GetxController {
   var curation_data = {}.obs;
   var curation_petfood = [];
   RxInt curation_petfood_length = 0.obs;
+  var selected_petfood_list = [];
+  RxInt selected_petfood_list_length = 0.obs;
 
   String pet_age_sex_data({index}) {
     var str_data = '';
@@ -202,5 +204,28 @@ class UserController extends GetxController {
       }
     }
     return text;
+  }
+
+  void set_selected_petfood_list(petfood_name) {
+    if (selected_petfood_list.indexOf(petfood_name) == -1) {
+      selected_petfood_list.add(petfood_name);
+    } else {
+      selected_petfood_list.remove(petfood_name);
+    }
+    set_selected_petfood_list_length();
+  }
+
+  void set_selected_petfood_list_length() {
+    selected_petfood_list_length(selected_petfood_list.length);
+  }
+
+  void post_selected_petfood() {
+    post_data(url: 'set-petfood/', data: {
+      'member_id': pet_list[selected_pet_index.value]['member_id']['member_id'],
+      'name': pet_list[selected_pet_index.value]['name'],
+      'petfood': selected_petfood_list,
+    }).then((response) {
+      print(response);
+    });
   }
 }
