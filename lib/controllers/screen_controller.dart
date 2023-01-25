@@ -5,8 +5,8 @@ import 'package:kiosk_v4/data/screen.dart';
 
 class ScreenController extends GetxController {
   var user_controller = Get.put(UserController());
-  RxInt screen_index = ScreenState.petfood_filter_screen.index.obs;
-  RxInt bottom_navi_index = 2.obs;
+  RxInt screen_index = ScreenState.curation_input_screen.index.obs;
+  RxInt bottom_navi_index = 3.obs;
   RxBool grey_background = false.obs;
   RxBool petfood_detail_container = false.obs;
   RxMap petfood_detail_data = {}.obs;
@@ -86,12 +86,14 @@ class ScreenController extends GetxController {
 
   void set_search_petfood() {
     var temp = [];
-    for (var petfood_index = 0; petfood_index < petfood_list[user_controller.user_info['pet']].length; petfood_index++) {
+    for (var petfood_index = 0; petfood_index < petfood_list[user_controller.user_info['pet'].value].length; petfood_index++) {
       // print(petfood_list[petfood_index]['name'].toString().contains(search_text.value));
-      if (petfood_list[user_controller.user_info['pet']][petfood_index]['name'].toString().contains(search_text.value)) {
-        temp.add(petfood_list[user_controller.user_info['pet']][petfood_index]);
-      } else if (petfood_list[user_controller.user_info['pet']][petfood_index]['brand'].toString().contains(search_text.value)) {
-        temp.add(petfood_list[user_controller.user_info['pet']][petfood_index]);
+      if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['name'].toString().contains(search_text.value)) {
+        temp.add(petfood_list[user_controller.user_info['pet'].value][petfood_index]);
+      } else if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['brand'].toString().contains(search_text.value)) {
+        temp.add(petfood_list[user_controller.user_info['pet'].value][petfood_index]);
+      } else if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['short_name'].toString().contains(search_text.value)) {
+        temp.add(petfood_list[user_controller.user_info['pet'].value][petfood_index]);
       }
     }
     search_petfood = temp;

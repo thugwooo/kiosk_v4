@@ -323,14 +323,14 @@ class BasicForm extends StatelessWidget {
           width: 62.w,
           height: 25.h,
           decoration: BoxDecoration(
-            color: user_controller.is_selected_user_info(text: 'pet', value: index) ? main_color : grey_color,
+            color: user_controller.is_selected_user_info(text: 'pet', index: index) ? main_color : grey_color,
             borderRadius:
                 index == 0 ? BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)) : BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
           ),
           child: Center(
             child: Text(
               '${pet_text[index]}',
-              style: TextStyle(fontSize: 11.sp, color: user_controller.is_selected_user_info(text: 'pet', value: index) ? Colors.white : Colors.black, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 11.sp, color: user_controller.is_selected_user_info(text: 'pet', index: index) ? Colors.white : Colors.black, fontWeight: FontWeight.w500),
             ),
           ),
         ),
