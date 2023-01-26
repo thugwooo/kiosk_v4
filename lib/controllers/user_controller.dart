@@ -24,6 +24,7 @@ class UserController extends GetxController {
     'weight': "".obs,
   }.obs;
   RxBool agreement = false.obs;
+  RxInt petfood_list_length = petfood_list[0].length.obs;
   var pet_list = [];
   RxInt pet_length = 0.obs;
   RxInt selected_pet_index = 0.obs;
@@ -33,6 +34,12 @@ class UserController extends GetxController {
   RxInt curation_petfood_length = 0.obs;
   var selected_petfood_list = [];
   RxInt selected_petfood_list_length = 0.obs;
+
+  void set_petfood_list_length() {
+    petfood_list_length++;
+    petfood_list_length--;
+    print('asdf');
+  }
 
   String pet_age_sex_data({index}) {
     var str_data = '';

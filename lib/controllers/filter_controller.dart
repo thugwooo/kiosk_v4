@@ -102,6 +102,8 @@ class FilterController extends GetxController {
 
   void set_filtered_petfood_length() {
     filtered_petfood_length[user_controller.user_info['pet'].value](filtered_petfood_list.length);
+    filtered_petfood_length[user_controller.user_info['pet'].value]++;
+    filtered_petfood_length[user_controller.user_info['pet'].value]--;
   }
 
   void remove_selected_filter_list(category_name) {

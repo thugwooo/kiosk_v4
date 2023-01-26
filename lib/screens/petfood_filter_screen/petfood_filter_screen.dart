@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/controllers/filter_controller.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
+import 'package:kiosk_v4/data/petfood.dart';
 
 import '../../components/style.dart';
 import '../../data/category.dart';
@@ -30,7 +31,7 @@ class PetfoodFilterScreen extends StatelessWidget {
             children: [
               SizedBox(height: 30.h),
               _category_button_container(),
-              SortPetfoodContainer(),
+              SortPetfoodContainer(petfood_list: petfood_list),
               SizedBox(height: 10.h),
               Expanded(
                 child: SingleChildScrollView(

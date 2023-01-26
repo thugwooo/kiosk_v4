@@ -5,8 +5,8 @@ import 'package:kiosk_v4/data/screen.dart';
 
 class ScreenController extends GetxController {
   var user_controller = Get.put(UserController());
-  RxInt screen_index = ScreenState.curation_pet_screen.index.obs;
-  RxInt bottom_navi_index = 3.obs;
+  RxInt screen_index = ScreenState.popular_display_screen.index.obs;
+  RxInt bottom_navi_index = 1.obs;
   RxBool grey_background = false.obs;
   RxBool petfood_detail_container = false.obs;
   RxMap petfood_detail_data = {}.obs;
@@ -69,6 +69,8 @@ class ScreenController extends GetxController {
 
   void set_sort_index(index) {
     sort_index(index);
+
+    refresh();
     // TODO: 가격 데이터 정리되면 정렬 시작
   }
 

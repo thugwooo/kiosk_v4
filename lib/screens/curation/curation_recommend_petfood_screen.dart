@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kiosk_v4/components/petfood_function.dart';
+import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 import 'package:kiosk_v4/screens/components/petfood_form.dart';
-import 'package:kiosk_v4/screens/components/sort_petfood_container.dart';
 
 import '../../components/basic_function.dart';
 import '../../components/style.dart';
+import '../../data/category.dart';
 
 class CurationRecommendPetfoodScreen extends StatelessWidget {
   CurationRecommendPetfoodScreen({super.key});
   var user_controller = Get.put(UserController());
+  var screen_controller = Get.put(ScreenController());
   @override
   Widget build(BuildContext context) {
     user_controller.get_curation_petfood();
@@ -50,7 +53,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15.h),
-              SortPetfoodContainer(),
+              _sort_container(),
               SizedBox(height: 15.h),
               Wrap(
                 spacing: 20.w,
@@ -67,6 +70,50 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Row _sort_container() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        _sort_button(index: 0),
+        SizedBox(width: 4.w),
+        Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
+        SizedBox(width: 4.w),
+        _sort_button(index: 1),
+        SizedBox(width: 4.w),
+        Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
+        SizedBox(width: 4.w),
+        _sort_button(index: 2),
+        SizedBox(width: 4.w),
+        Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
+        SizedBox(width: 4.w),
+        _sort_button(index: 3),
+        SizedBox(width: 4.w),
+        Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
+        SizedBox(width: 4.w),
+        _sort_button(index: 4),
+      ],
+    );
+  }
+
+  _sort_button({index}) {
+    return Obx(
+      () => InkWell(
+        child: Text(
+          '${sort_text[index]}',
+          style: TextStyle(
+            fontSize: 8.sp,
+            color: screen_controller.is_selected_sort_index(index) ? Colors.black : Color.fromRGBO(152, 152, 152, 1),
+            fontWeight: screen_controller.is_selected_sort_index(index) ? FontWeight.bold : FontWeight.w400,
+          ),
+        ),
+        onTap: () {
+          screen_controller.set_sort_index(index);
+          sort_curation_petfood(sort_index: index, petfood_list: user_controller.curation_petfood);
+        },
       ),
     );
   }

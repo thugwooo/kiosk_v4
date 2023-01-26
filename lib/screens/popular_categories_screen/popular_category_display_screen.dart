@@ -28,7 +28,7 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SizedBox(height: 20.h),
-            Container(width: 420.w, child: SortPetfoodContainer()),
+            Container(width: 420.w, child: SortPetfoodContainer(petfood_list: petfood_list)),
             SizedBox(height: 10.h),
             Expanded(
               child: SingleChildScrollView(
@@ -39,7 +39,7 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
                       spacing: 21.w,
                       runSpacing: 10.h,
                       children: [
-                        for (var petfood_index = 0; petfood_index < petfood_list[user_controller.user_info['pet'].value].length; petfood_index++)
+                        for (var petfood_index = 0; petfood_index < user_controller.petfood_list_length.value; petfood_index++)
                           if (pop_cate_filter(
                             petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
                             sort_text: popular_category_text[user_controller.user_info['pet'].value][screen_controller.pop_category_index.value],
