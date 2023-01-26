@@ -206,6 +206,18 @@ class UserController extends GetxController {
     return text;
   }
 
+  void get_selected_petfood() {
+    post_data(url: 'get-petfood/', data: {
+      'member_id': pet_list[selected_pet_index.value]['member_id']['member_id'],
+      'name': pet_list[selected_pet_index.value]['name'],
+    }).then((response) {
+      print(response);
+      selected_petfood_list = str_to_list(response['petfood']);
+      set_selected_petfood_list_length();
+    });
+    set_selected_petfood_list_length();
+  }
+
   void set_selected_petfood_list(petfood_name) {
     if (selected_petfood_list.indexOf(petfood_name) == -1) {
       selected_petfood_list.add(petfood_name);

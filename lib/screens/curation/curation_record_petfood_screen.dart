@@ -4,12 +4,14 @@ import 'package:get/get.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 
 import '../../components/style.dart';
+import '../../data/petfood.dart';
 
 class CurationRecordPetfoodScreen extends StatelessWidget {
   CurationRecordPetfoodScreen({super.key});
   var user_controller = Get.put(UserController());
   @override
   Widget build(BuildContext context) {
+    user_controller.get_selected_petfood();
     return SingleChildScrollView(
       child: Obx(
         () => Column(
@@ -21,13 +23,17 @@ class CurationRecordPetfoodScreen extends StatelessWidget {
             ),
             SizedBox(height: 15.h),
             Container(
+              width: 600.h,
               height: 150.h,
               decoration: BoxDecoration(color: grey_color),
-              child: Row(
-                children: [
-                  for (var selected_petfood_index = 0; selected_petfood_index < user_controller.selected_petfood_list_length.value; selected_petfood_index++)
-                    _selected_petfood_form(index: selected_petfood_index),
-                ],
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (var selected_petfood_index = 0; selected_petfood_index < user_controller.selected_petfood_list_length.value; selected_petfood_index++)
+                      _selected_petfood_form(index: selected_petfood_index),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 15.h),
@@ -51,29 +57,38 @@ class CurationRecordPetfoodScreen extends StatelessWidget {
               runSpacing: 15.h,
               children: [
                 // TODO : petfood_list 에 있으면 출력하지 않기
-                // for (var petfood_index = 0; petfood_index < petfood_name_list.length; petfood_index++)
-                //   InkWell(
-                //     child: Column(
-                //       children: [
-                //         Container(
-                //           width: 130.w,
-                //           height: 130.h,
-                //           color: grey_color,
-                //           // TODO: 사진
-                //           child: Image.asset('assets/images/A000001.png'),
-                //         ),
-                //         Container(width: 130.w, child: Text(petfood_name_list[petfood_index])),
-                //       ],
-                //     ),
-                //     onTap: () {
-                //       user_controller.set_selected_petfood_list(petfood_name_list[petfood_index]);
-                //     },
-                //   ),
+                for (var petfood_index = 0; petfood_index < petfood_list[user_controller.user_info['pet'].value].length; petfood_index++)
+                  if (user_controller.selected_petfood_list.indexOf(petfood_list[user_controller.user_info['pet'].value][petfood_index]['short_name']) == -1) _petfood_form(petfood_index),
               ],
             )
           ],
         ),
       ),
+    );
+  }
+
+  InkWell _petfood_form(int petfood_index) {
+    return InkWell(
+      child: Column(
+        children: [
+          Container(
+            width: 130.w,
+            height: 130.h,
+            color: grey_color,
+            // TODO: 사진
+            child: Image.asset('assets/images/A000001.png'),
+          ),
+          Container(
+            width: 130.w,
+            child: Text(
+              petfood_list[user_controller.user_info['pet'].value][petfood_index]['short_name'].toString(),
+            ),
+          ),
+        ],
+      ),
+      onTap: () {
+        user_controller.set_selected_petfood_list(petfood_list[user_controller.user_info['pet'].value][petfood_index]['short_name']);
+      },
     );
   }
 

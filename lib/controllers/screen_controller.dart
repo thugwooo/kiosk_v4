@@ -5,7 +5,7 @@ import 'package:kiosk_v4/data/screen.dart';
 
 class ScreenController extends GetxController {
   var user_controller = Get.put(UserController());
-  RxInt screen_index = ScreenState.curation_input_screen.index.obs;
+  RxInt screen_index = ScreenState.curation_pet_screen.index.obs;
   RxInt bottom_navi_index = 3.obs;
   RxBool grey_background = false.obs;
   RxBool petfood_detail_container = false.obs;
