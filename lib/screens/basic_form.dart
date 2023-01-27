@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/components/style.dart';
 import 'package:kiosk_v4/controllers/filter_controller.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
@@ -273,6 +274,9 @@ class BasicForm extends StatelessWidget {
           ],
         ),
         onTap: () {
+          if (index == 0) {
+            sort_location();
+          }
           screen_controller.set_navi_index(index);
         },
       ),

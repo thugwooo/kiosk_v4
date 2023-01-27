@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
+import 'package:kiosk_v4/data/petfood.dart';
 
 var user_controller = Get.put(UserController());
 var screen_controller = Get.put(ScreenController());
@@ -12,6 +13,11 @@ bool pop_cate_filter({petfood_data, sort_text}) {
   var temp = petfood_data['pop_category'].indexOf(sort_text);
 
   return temp != -1;
+}
+
+void sort_location() {
+  petfood_list[0].sort(((a, b) => (a['location'] as String).compareTo(b['location'] as String)));
+  petfood_list[1].sort(((a, b) => (a['location'] as String).compareTo(b['location'] as String)));
 }
 
 void sort_petfood({sort_index, petfood_list}) {
