@@ -153,7 +153,6 @@ class UserController extends GetxController {
       // print(response['dsc_price'][0]);
       curation_data(response['curation_data']);
       curation_data['algs'] = str_to_list([...curation_data['alg'], ...curation_data['alg_sub']]);
-      print(curation_data['algs']);
       curation_petfood = response['dsc_price'];
       for (var c_index = 0; c_index < curation_petfood.length; c_index++) {
         for (var m_index = 0; m_index < petfood_list[user_info['pet'].value].length; m_index++) {
@@ -169,6 +168,8 @@ class UserController extends GetxController {
   }
 
   void set_curation_petfood_length() {
+    curation_petfood_length--;
+    curation_petfood_length++;
     curation_petfood_length(curation_petfood.length);
   }
 

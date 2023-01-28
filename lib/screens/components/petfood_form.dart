@@ -22,7 +22,7 @@ class PetfoodForm extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: 5.h),
+            SizedBox(height: 10.h),
             Image.asset('assets/images/' + petfood_data['eng_name'] + '.png', width: 70.w),
             SizedBox(height: 5.h),
             Text(petfood_data['brand'].toString(), style: TextStyle(fontSize: 9.sp)),

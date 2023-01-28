@@ -46,7 +46,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                   children: [
                     _pet_info_row(title: '연령', curation_info: user_controller.curation_data['life_stage']),
                     SizedBox(height: 5.h),
-                    // _pet_info_row(title: '제외된 단백질', curation_info: list_to_str([...user_controller.curation_data['algs'], ...user_controller.curation_data['alg_sub']])),
+                    _pet_info_row(title: '제외된 단백질', curation_info: list_to_str([...user_controller.curation_data['algs'], ...user_controller.curation_data['alg_sub']])),
                     SizedBox(height: 5.h),
                     _pet_info_row(title: '건강 고려사항', curation_info: list_to_str(user_controller.curation_data['health'])),
                   ],
@@ -59,11 +59,11 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                 spacing: 20.w,
                 runSpacing: 10.h,
                 children: [
-                  for (var index = 0; index < user_controller.curation_petfood.length; index++)
+                  for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
                     PetfoodForm(
                       petfood_data: user_controller.curation_petfood[index],
                       width: 115.w,
-                      height: 160.h,
+                      height: 140.h,
                     ),
                 ],
               ),
@@ -112,6 +112,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
         ),
         onTap: () {
           screen_controller.set_sort_index(index);
+          user_controller.set_curation_petfood_length();
           sort_curation_petfood(sort_index: index, petfood_list: user_controller.curation_petfood);
         },
       ),
