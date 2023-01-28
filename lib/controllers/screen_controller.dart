@@ -1,9 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kiosk_v4/components/basic_function.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 import 'package:kiosk_v4/data/screen.dart';
 
 class ScreenController extends GetxController {
+  var scroll_controller = ScrollController().obs;
   var user_controller = Get.put(UserController());
   RxInt screen_index = ScreenState.popular_display_screen.index.obs;
   RxInt bottom_navi_index = 1.obs;
@@ -16,6 +19,16 @@ class ScreenController extends GetxController {
   RxInt search_petfood_length = 0.obs;
   RxInt pop_category_index = 0.obs;
   RxInt sort_index = 0.obs;
+  RxBool show_petfood_detail = false.obs;
+
+  void scroll_up() {
+    scroll_controller.value.animateTo(0, duration: Duration(microseconds: 100), curve: Curves.ease);
+  }
+
+  void set_show_petfood_detail() {
+    show_petfood_detail(!show_petfood_detail.value);
+    print(show_petfood_detail);
+  }
 
   bool is_selected_bottom_navi_index(index) {
     return index == bottom_navi_index.value;
@@ -84,6 +97,20 @@ class ScreenController extends GetxController {
 
   bool is_selected_sort_index(index) {
     return sort_index.value == index;
+  }
+
+  String set_life_stage_text() {
+    return petfood_detail_data['life_stage'].length == 3 ? '무관' : list_to_str(petfood_detail_data['life_stage']);
+  }
+
+  String set_size_text() {
+    return petfood_detail_data['size'].length == 5 ? '무관' : list_to_str(petfood_detail_data['size']);
+  }
+
+  String set_main_ingredient() {
+    return petfood_detail_data['main_ingredient'].length > 2
+        ? petfood_detail_data['main_ingredient'][0] + ', ' + petfood_detail_data['main_ingredient'][1]
+        : list_to_str(petfood_detail_data['main_ingredient']);
   }
 
   void set_search_petfood() {
