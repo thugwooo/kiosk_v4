@@ -64,6 +64,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                       petfood_data: user_controller.curation_petfood[index],
                       width: 115.w,
                       height: 140.h,
+                      img_size: 80.w,
                     ),
                 ],
               ),

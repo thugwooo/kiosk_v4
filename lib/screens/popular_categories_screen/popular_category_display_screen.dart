@@ -48,6 +48,7 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
                               petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
                               width: 125.w,
                               height: 160.h,
+                              img_size: 85.w,
                             )
                       ],
                     ),

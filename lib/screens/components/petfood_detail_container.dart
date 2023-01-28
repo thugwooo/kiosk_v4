@@ -34,6 +34,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                   SizedBox(height: 10.h),
                   Container(
                     height: screen_controller.show_petfood_detail.value ? 320.h : 200.h,
+                    decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
                     child: SingleChildScrollView(
                       controller: screen_controller.scroll_controller.value,
                       child: Column(
@@ -41,7 +42,10 @@ class PetfoodDetailContainer extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.only(left: 20.w, top: 20.h),
                             width: 440.w,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: background_blue_color),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.w),
+                              color: background_blue_color,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

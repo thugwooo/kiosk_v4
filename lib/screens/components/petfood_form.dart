@@ -5,11 +5,11 @@ import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 
 class PetfoodForm extends StatelessWidget {
-  PetfoodForm({super.key, required this.petfood_data, this.width, this.height});
+  PetfoodForm({super.key, required this.petfood_data, this.width, this.height, this.img_size});
   var user_controller = Get.put(UserController());
   var screen_controller = Get.put(ScreenController());
   var petfood_data;
-  var width, height;
+  var width, height, img_size;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -23,7 +23,7 @@ class PetfoodForm extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 10.h),
-            Image.asset('assets/images/' + petfood_data['eng_name'] + '.png', width: 70.w),
+            Image.asset('assets/images/' + petfood_data['eng_name'] + '.png', width: img_size),
             SizedBox(height: 5.h),
             Text(petfood_data['brand'].toString(), style: TextStyle(fontSize: 9.sp)),
             Text(petfood_data['short_name'].toString(), style: TextStyle(fontSize: 9.sp)),

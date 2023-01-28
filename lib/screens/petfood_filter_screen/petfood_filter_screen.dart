@@ -47,6 +47,7 @@ class PetfoodFilterScreen extends StatelessWidget {
                               petfood_data: filter_controller.filtered_petfood_list[petfood_index],
                               width: 125.w,
                               height: 160.h,
+                              img_size: 85.w,
                             ),
                         ],
                       ),
