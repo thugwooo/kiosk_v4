@@ -340,6 +340,7 @@ class BasicForm extends StatelessWidget {
         ),
         onTap: () {
           user_controller.set_user_info(text: 'pet', value: index);
+          user_controller.set_petfood_list_length();
           filter_controller.change_pet();
         },
       ),

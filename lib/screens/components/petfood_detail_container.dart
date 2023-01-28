@@ -472,7 +472,7 @@ class PetfoodDetailContainer extends StatelessWidget {
               width: 95.w,
               height: 95.h,
               child: Image.asset(
-                'assets/images/A000001.png',
+                'assets/images/' + screen_controller.petfood_detail_data['eng_name'] + '.png',
                 width: 95.w,
               ),
             ),
@@ -498,11 +498,9 @@ class PetfoodDetailContainer extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Container(
+            Image.asset(
+              'assets/qr/' + screen_controller.petfood_detail_data['eng_name'] + '.png',
               width: 50.w,
-              height: 50.h,
-              decoration: test_line,
-              child: Center(child: Text('qr코드')),
             ),
             Text(
               '웹사이트\n바로가기',

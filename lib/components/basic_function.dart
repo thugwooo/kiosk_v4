@@ -17,6 +17,10 @@ dynamic list_to_str(list_data) {
     return list_data;
   }
   var temp = list_data;
+  if (list_data == null) {
+    return '';
+  }
+  print(list_data);
   for (var index = 0; index < temp.length; index++) {
     if (temp[index] == '') {
       temp.remove('');

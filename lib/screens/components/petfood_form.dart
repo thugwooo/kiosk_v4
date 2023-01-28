@@ -22,7 +22,9 @@ class PetfoodForm extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image.asset('assets/images/A000001.png', width: 84.w),
+            SizedBox(height: 5.h),
+            Image.asset('assets/images/' + petfood_data['eng_name'] + '.png', width: 70.w),
+            SizedBox(height: 5.h),
             Text(petfood_data['brand'].toString(), style: TextStyle(fontSize: 9.sp)),
             Text(petfood_data['short_name'].toString(), style: TextStyle(fontSize: 9.sp)),
             Text(petfood_data['weight'].toString() + ' / ' + petfood_data['retail_price'].toString() + '원', style: TextStyle(fontSize: 9.sp)),

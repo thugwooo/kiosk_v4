@@ -36,9 +36,9 @@ class UserController extends GetxController {
   RxInt selected_petfood_list_length = 0.obs;
 
   void set_petfood_list_length() {
+    petfood_list_length(petfood_list[user_info['pet'].value].length);
     petfood_list_length++;
     petfood_list_length--;
-    print('asdf');
   }
 
   String pet_age_sex_data({index}) {
@@ -148,11 +148,12 @@ class UserController extends GetxController {
   }
 
   void get_curation_petfood() {
-    post_data(url: 'curation/', data: pet_list[selected_pet_index.value]).then((response) {
-      print(response['curation_data']);
-
+    post_data(url: 'curation-kiosk/', data: pet_list[selected_pet_index.value]).then((response) {
+      // print(response['curation_data']);
+      // print(response['dsc_price'][0]);
       curation_data(response['curation_data']);
       curation_data['algs'] = str_to_list([...curation_data['alg'], ...curation_data['alg_sub']]);
+      print(curation_data['algs']);
       curation_petfood = response['dsc_price'];
       for (var c_index = 0; c_index < curation_petfood.length; c_index++) {
         for (var m_index = 0; m_index < petfood_list[user_info['pet'].value].length; m_index++) {

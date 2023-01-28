@@ -46,7 +46,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                   children: [
                     _pet_info_row(title: '연령', curation_info: user_controller.curation_data['life_stage']),
                     SizedBox(height: 5.h),
-                    _pet_info_row(title: '제외된 단백질', curation_info: list_to_str([...user_controller.curation_data['algs'], ...user_controller.curation_data['alg_sub']])),
+                    // _pet_info_row(title: '제외된 단백질', curation_info: list_to_str([...user_controller.curation_data['algs'], ...user_controller.curation_data['alg_sub']])),
                     SizedBox(height: 5.h),
                     _pet_info_row(title: '건강 고려사항', curation_info: list_to_str(user_controller.curation_data['health'])),
                   ],
