@@ -114,6 +114,10 @@ class UserController extends GetxController {
     set_whole_user_info(pet_list[index]);
   }
 
+  void modify_button() {
+    set_whole_user_info(curation_data);
+  }
+
   void recommend_button(index) {
     set_selected_pet_index(index);
   }

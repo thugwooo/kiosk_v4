@@ -49,7 +49,9 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
                               width: 125.w,
                               height: 160.h,
                               img_size: 85.w,
-                            )
+                              top_space: 10.h,
+                              bottom_space: 5.h,
+                            ),
                       ],
                     ),
                   ),

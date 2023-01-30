@@ -9,6 +9,7 @@ import 'package:kiosk_v4/screens/components/petfood_form.dart';
 import '../../components/basic_function.dart';
 import '../../components/style.dart';
 import '../../data/category.dart';
+import '../../data/screen.dart';
 
 class CurationRecommendPetfoodScreen extends StatelessWidget {
   CurationRecommendPetfoodScreen({super.key});
@@ -25,12 +26,48 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 15.h),
-              Text(
-                '[ ${user_controller.curation_data["name"]}를 위한 맞춤형 사료 ]',
-                style: TextStyle(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '[ ${user_controller.curation_data["name"]}를 위한 맞춤형 사료 ]',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                        child: Container(
+                          width: 100.w,
+                          height: 30.h,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
+                          child: Center(
+                              child: Text(
+                            '수정하기',
+                            style: TextStyle(color: Colors.white, fontSize: 12.sp),
+                          )),
+                        ),
+                        onTap: () {
+                          user_controller.modify_button();
+                          screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
+                        },
+                      ),
+                      SizedBox(width: 10.w),
+                      Container(
+                        width: 100.w,
+                        height: 30.h,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
+                        child: Center(
+                            child: Text(
+                          '뒤로가기',
+                          style: TextStyle(color: Colors.white, fontSize: 12.sp),
+                        )),
+                      ),
+                    ],
+                  ),
+                ],
               ),
               SizedBox(height: 10.h),
               Text(
@@ -65,6 +102,8 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                       width: 115.w,
                       height: 140.h,
                       img_size: 80.w,
+                      top_space: 10.h,
+                      bottom_space: 5.h,
                     ),
                 ],
               ),

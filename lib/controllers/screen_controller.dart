@@ -27,7 +27,6 @@ class ScreenController extends GetxController {
 
   void set_show_petfood_detail() {
     show_petfood_detail(!show_petfood_detail.value);
-    print(show_petfood_detail);
   }
 
   bool is_selected_bottom_navi_index(index) {

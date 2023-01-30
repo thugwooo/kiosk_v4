@@ -39,10 +39,12 @@ class PopularCategoryScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.w),
           ),
           child: Column(children: [
+            SizedBox(height: 10.h),
             Image.asset(
               'assets/images/A000001.png',
               width: 63.w,
             ),
+            SizedBox(height: 3.h),
             Text(
               '${popular_category_text[user_controller.user_info["pet"].value][index]}',
               style: TextStyle(fontSize: 12.sp),

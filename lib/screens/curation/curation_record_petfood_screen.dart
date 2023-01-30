@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
+import 'package:kiosk_v4/data/screen.dart';
 
 import '../../components/style.dart';
 import '../../data/petfood.dart';
@@ -17,9 +19,31 @@ class CurationRecordPetfoodScreen extends StatelessWidget {
         () => Column(
           children: [
             SizedBox(height: 15.h),
-            Text(
-              user_controller.pet_list[user_controller.selected_pet_index.value]['name'] + '(이)가 먹을 수 있는 사료 리스트',
-              style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold, color: main_color),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(),
+                Text(
+                  user_controller.pet_list[user_controller.selected_pet_index.value]['name'] + '(이)가 먹을 수 있는 사료 리스트',
+                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold, color: main_color),
+                ),
+                InkWell(
+                  child: Container(
+                    width: 100.w,
+                    height: 30.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.w),
+                      color: main_color,
+                    ),
+                    child: Center(
+                      child: Text('뒤로가기', style: TextStyle(color: Colors.white, fontSize: 13.sp, fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                  onTap: () {
+                    screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+                  },
+                ),
+              ],
             ),
             SizedBox(height: 15.h),
             Container(
@@ -32,6 +56,15 @@ class CurationRecordPetfoodScreen extends StatelessWidget {
                   children: [
                     for (var selected_petfood_index = 0; selected_petfood_index < user_controller.selected_petfood_list_length.value; selected_petfood_index++)
                       _selected_petfood_form(index: selected_petfood_index),
+                    if (user_controller.selected_petfood_list_length.value == 0)
+                      Container(
+                        width: 600.w,
+                        child: Text(
+                          user_controller.pet_list[user_controller.selected_pet_index.value]['name'] + '(이)가 먹을 수 있는 사료를 아래에서 찾아 클릭 후 저장해주세요',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 15.sp, color: Color.fromRGBO(167, 166, 166, 1)),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -76,12 +109,24 @@ class CurationRecordPetfoodScreen extends StatelessWidget {
             height: 130.h,
             color: grey_color,
             // TODO: 사진
-            child: Image.asset('assets/images/A000001.png'),
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/' + petfood_list[user_controller.user_info['pet'].value][petfood_index]['eng_name'].toString() + '.png',
+                    width: 100.w,
+                  ),
+                ],
+              ),
+            ),
           ),
           Container(
             width: 130.w,
             child: Text(
               petfood_list[user_controller.user_info['pet'].value][petfood_index]['short_name'].toString(),
+              style: TextStyle(fontSize: 12.sp),
+              textAlign: TextAlign.center,
             ),
           ),
         ],
@@ -102,8 +147,12 @@ class CurationRecordPetfoodScreen extends StatelessWidget {
             height: 100.h,
             decoration: pet_container_style,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/A000001.png'),
+                Image.asset(
+                  'assets/images/' + petfood_list[user_controller.user_info['pet'].value][index]['eng_name'].toString() + '.png',
+                  width: 60.w,
+                ),
                 Text(user_controller.selected_petfood_list[index]),
               ],
             ),
