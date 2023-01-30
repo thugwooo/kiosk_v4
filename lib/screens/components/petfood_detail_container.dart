@@ -139,7 +139,7 @@ class PetfoodDetailContainer extends StatelessWidget {
               ],
             ),
             SizedBox(height: 10.h),
-            for (var index = 0; index < screen_controller.petfood_detail_data['content'].length; index++) _contents_explain(index),
+            for (var index = 0; index < screen_controller.petfood_detail_data['title'].length; index++) _contents_explain(index),
             Row(
               children: [Image.asset('assets/icons/nutrients.png', width: 50.w), Text('영양성분', style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.bold))],
             ),
@@ -331,13 +331,13 @@ class PetfoodDetailContainer extends StatelessWidget {
             children: [
               SizedBox(height: 8.h),
               Text(
-                screen_controller.petfood_detail_data['content'][index],
+                screen_controller.petfood_detail_data['title'][index],
                 style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold, color: main_color),
               ),
               SizedBox(height: 3.h),
               Container(
                 width: 360.w,
-                child: Text(screen_controller.petfood_detail_data['explain'][index], style: TextStyle(fontSize: 13.sp)),
+                child: Text(screen_controller.petfood_detail_data['content'][index], style: TextStyle(fontSize: 13.sp)),
               ),
             ],
           ),

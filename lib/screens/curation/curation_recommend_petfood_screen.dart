@@ -55,15 +55,20 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                         },
                       ),
                       SizedBox(width: 10.w),
-                      Container(
-                        width: 100.w,
-                        height: 30.h,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
-                        child: Center(
-                            child: Text(
-                          '뒤로가기',
-                          style: TextStyle(color: Colors.white, fontSize: 12.sp),
-                        )),
+                      InkWell(
+                        child: Container(
+                          width: 100.w,
+                          height: 30.h,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
+                          child: Center(
+                              child: Text(
+                            '뒤로가기',
+                            style: TextStyle(color: Colors.white, fontSize: 12.sp),
+                          )),
+                        ),
+                        onTap: () {
+                          screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+                        },
                       ),
                     ],
                   ),
