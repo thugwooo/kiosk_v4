@@ -45,7 +45,11 @@ class FilterController extends GetxController {
   void set_selected_filter_category_list(category_index, index) {
     selected_filter_category_list[user_controller.user_info['pet'].value][category_index][index](!selected_filter_category_list[user_controller.user_info['pet'].value][category_index][index].value);
     set_selected_filter_list(filter_category_list[user_controller.user_info['pet'].value][category_index][index]);
-    filtered_petfood_list = filtering_brand_category(petfood_list[user_controller.user_info['pet'].value], 0);
+    filtering_petfood(petfood_list);
+  }
+
+  void filtering_petfood(food_list) {
+    filtered_petfood_list = filtering_brand_category(food_list[user_controller.user_info['pet'].value], 0);
     filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 1, 'health');
     filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 2, 'main_ingredient');
     set_filtered_petfood_length();
@@ -55,12 +59,11 @@ class FilterController extends GetxController {
     List<Map<String, Object>> temp_list = [];
     int count = selected_filter_category_list[user_controller.user_info['pet'].value][category_index].where((value) => value == true).length;
     if (count != 0) {
-      for (var index = 0; index < selected_filter_category_list[user_controller.user_info['pet'].value][category_index].length; index++) {
-        if (selected_filter_category_list[user_controller.user_info['pet'].value][category_index][index].value) {
-          for (var petfood_index = 0; petfood_index < current_petfood.length; petfood_index++) {
-            if (filter_category_list[user_controller.user_info['pet'].value][category_index][index] == current_petfood[petfood_index]['brand']) {
-              temp_list.add(current_petfood[petfood_index]);
-            }
+      for (var petfood_index = 0; petfood_index < current_petfood.length; petfood_index++) {
+        for (var brand_index = 0; brand_index < selected_filter_category_list[user_controller.user_info['pet'].value][category_index].length; brand_index++) {
+          if (selected_filter_category_list[user_controller.user_info['pet'].value][category_index][brand_index].value &&
+              filter_category_list[user_controller.user_info['pet'].value][category_index][brand_index] == current_petfood[petfood_index]['brand']) {
+            temp_list.add(current_petfood[petfood_index]);
           }
         }
       }
@@ -102,8 +105,8 @@ class FilterController extends GetxController {
 
   void set_filtered_petfood_length() {
     filtered_petfood_length[user_controller.user_info['pet'].value](filtered_petfood_list.length);
-    filtered_petfood_length[user_controller.user_info['pet'].value]++;
     filtered_petfood_length[user_controller.user_info['pet'].value]--;
+    filtered_petfood_length[user_controller.user_info['pet'].value]++;
   }
 
   void remove_selected_filter_list(category_name) {

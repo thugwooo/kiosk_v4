@@ -53,6 +53,7 @@ class SortPetfoodContainer extends StatelessWidget {
           sort_petfood(sort_index: index, petfood_list: petfood_list);
           screen_controller.set_sort_index(index);
           filter_controller.set_filtered_petfood_length();
+          filter_controller.filtering_petfood(petfood_list);
         },
       ),
     );

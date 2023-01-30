@@ -26,17 +26,14 @@ void sort_petfood({sort_index, petfood_list}) {
   } else if (sort_index == SortState.asc_price.index) {
     // 가격 내림차순
     petfood_list[user_controller.user_info['pet'].value].sort((a, b) => (a['retail_price'] as int).compareTo(b['retail_price'] as int));
-    print(petfood_list[user_controller.user_info['pet'].value][0]);
   } else if (sort_index == SortState.dsc_price.index) {
     petfood_list[user_controller.user_info['pet'].value].sort((a, b) => (b['retail_price'] as int).compareTo(a['retail_price'] as int));
-    print(petfood_list[user_controller.user_info['pet'].value][0]);
   } else if (sort_index == SortState.asc_kibble.index) {
     petfood_list[user_controller.user_info['pet'].value].sort((a, b) => (a['kibble'] as int).compareTo(b['kibble'] as int));
-    print(petfood_list[user_controller.user_info['pet'].value][0]);
   } else if (sort_index == SortState.dsc_kibble.index) {
     petfood_list[user_controller.user_info['pet'].value].sort((a, b) => (b['kibble'] as int).compareTo(a['kibble'] as int));
-    print(petfood_list[user_controller.user_info['pet'].value][0]);
   }
+  print(petfood_list[user_controller.user_info['pet'].value][0]['name']);
   user_controller.set_petfood_list_length();
 }
 
