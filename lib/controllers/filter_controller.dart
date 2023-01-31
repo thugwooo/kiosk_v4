@@ -100,6 +100,7 @@ class FilterController extends GetxController {
     } else {
       selected_filter_list[user_controller.user_info['pet'].value].add(category_name);
     }
+    print(selected_filter_list);
     selected_filter_list_length.value = selected_filter_list[user_controller.user_info['pet'].value].length;
   }
 

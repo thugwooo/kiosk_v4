@@ -19,7 +19,8 @@ class PetfoodDetailContainer extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            AnimatedContainer(
+              duration: Duration(milliseconds: 1),
               padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 10.h),
               width: 500.w,
               height: screen_controller.show_petfood_detail.value ? 450.h : 350.h,
@@ -32,7 +33,8 @@ class PetfoodDetailContainer extends StatelessWidget {
                   SizedBox(height: 10.h),
                   _header_info(),
                   SizedBox(height: 10.h),
-                  Container(
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 100),
                     height: screen_controller.show_petfood_detail.value ? 320.h : 200.h,
                     decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
                     child: SingleChildScrollView(

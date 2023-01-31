@@ -91,24 +91,37 @@ class BasicForm extends StatelessWidget {
                       child: Container(
                         width: 400.w,
                         height: 200.h,
-                        decoration: test_line,
+                        // decoration: test_line,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: screen_controller.search_petfood_length.value,
                           itemBuilder: ((context, index) {
                             return Padding(
-                              padding: EdgeInsets.symmetric(vertical: 25.h),
+                              padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 5.w),
                               child: Container(
                                 width: 100.w,
                                 height: 100.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.w),
-                                  border: Border.all(color: main_color),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10.w),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey,
+                                      blurRadius: 3, // soften the shadow
+                                      spreadRadius: 3, //extend the shadow
+                                      offset: Offset(2.w, 2.h),
+                                    )
+                                  ],
                                 ),
-                                child: Column(children: [
-                                  Image.asset('assets/images/A000001.png'),
-                                  Text(screen_controller.search_petfood[index]['name']),
-                                ]),
+                                child: Column(
+                                  children: [
+                                    SizedBox(height: 10.h),
+                                    // Image.asset('assets/images/A000001.png'),
+                                    Image.asset('assets/images/' + screen_controller.search_petfood[index]['eng_name'] + '.png'),
+                                    SizedBox(height: 10.h),
+                                    Text(screen_controller.search_petfood[index]['name']),
+                                  ],
+                                ),
                               ),
                             );
                           }),

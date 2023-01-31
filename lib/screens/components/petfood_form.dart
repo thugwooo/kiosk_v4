@@ -24,6 +24,7 @@ class PetfoodForm extends StatelessWidget {
           children: [
             SizedBox(height: top_space),
             Image.asset('assets/images/' + petfood_data['eng_name'] + '.png', width: img_size),
+            // Image.asset('assets/images/ㅁㅁㅁㅁ.png', width: img_size),
             SizedBox(height: bottom_space),
             Text(petfood_data['brand'].toString(), style: TextStyle(fontSize: 9.sp)),
             Text(petfood_data['short_name'].toString(), style: TextStyle(fontSize: 9.sp)),
