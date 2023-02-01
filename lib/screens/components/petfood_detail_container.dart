@@ -13,14 +13,15 @@ class PetfoodDetailContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => Positioned(
+      () => AnimatedPositioned(
+        duration: Duration(milliseconds: animated_velocity),
         left: 50.w,
         top: screen_controller.show_petfood_detail.value ? 5.h : 50.h,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AnimatedContainer(
-              duration: Duration(milliseconds: 1),
+              duration: Duration(milliseconds: animated_velocity),
               padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 10.h),
               width: 500.w,
               height: screen_controller.show_petfood_detail.value ? 450.h : 350.h,
@@ -34,7 +35,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                   _header_info(),
                   SizedBox(height: 10.h),
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 100),
+                    duration: Duration(milliseconds: animated_velocity),
                     height: screen_controller.show_petfood_detail.value ? 320.h : 200.h,
                     decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
                     child: SingleChildScrollView(

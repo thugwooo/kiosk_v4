@@ -48,7 +48,7 @@ class BasicForm extends StatelessWidget {
     );
   }
 
-  Obx _search_container() {
+  Widget _search_container() {
     return Obx(
       () => Visibility(
         visible: screen_controller.search_container.value,
@@ -91,37 +91,44 @@ class BasicForm extends StatelessWidget {
                       child: Container(
                         width: 400.w,
                         height: 200.h,
-                        // decoration: test_line,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: screen_controller.search_petfood_length.value,
                           itemBuilder: ((context, index) {
                             return Padding(
                               padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 5.w),
-                              child: Container(
-                                width: 100.w,
-                                height: 100.h,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10.w),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey,
-                                      blurRadius: 3, // soften the shadow
-                                      spreadRadius: 3, //extend the shadow
-                                      offset: Offset(2.w, 2.h),
-                                    )
-                                  ],
+                              child: InkWell(
+                                child: Container(
+                                  width: 100.w,
+                                  height: 100.h,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(5.w),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey,
+                                        blurRadius: 3, // soften the shadow
+                                        spreadRadius: 3, //extend the shadow
+                                        offset: Offset(2.w, 2.h),
+                                      )
+                                    ],
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 10.h),
+                                      // Image.asset('assets/images/A000001.png'),
+                                      Image.asset('assets/images/' + screen_controller.search_petfood[index]['eng_name'] + '.png'),
+                                      SizedBox(height: 10.h),
+                                      Text(
+                                        screen_controller.search_petfood[index]['short_name'],
+                                        style: TextStyle(fontSize: 9.sp),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                child: Column(
-                                  children: [
-                                    SizedBox(height: 10.h),
-                                    // Image.asset('assets/images/A000001.png'),
-                                    Image.asset('assets/images/' + screen_controller.search_petfood[index]['eng_name'] + '.png'),
-                                    SizedBox(height: 10.h),
-                                    Text(screen_controller.search_petfood[index]['name']),
-                                  ],
-                                ),
+                                onTap: () {
+                                  screen_controller.set_petfood_detail_container(petfood_data: screen_controller.search_petfood[index]);
+                                },
                               ),
                             );
                           }),
@@ -131,7 +138,7 @@ class BasicForm extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(width: 10.w),
+              SizedBox(width: 3.w),
               InkWell(
                 child: Icon(
                   Icons.cancel,

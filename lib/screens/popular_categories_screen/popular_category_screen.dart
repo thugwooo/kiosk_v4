@@ -41,7 +41,7 @@ class PopularCategoryScreen extends StatelessWidget {
           child: Column(children: [
             SizedBox(height: 10.h),
             Image.asset(
-              'assets/images/A000001.png',
+              'assets/images/ㅁㅁㅁㅁ.png',
               width: 63.w,
             ),
             SizedBox(height: 3.h),

@@ -24,3 +24,5 @@ final curation_contents_style = TextStyle(fontSize: 8.sp, fontWeight: FontWeight
 final curation_selected_contents_style = TextStyle(fontSize: 8.sp, fontWeight: FontWeight.w500, color: Colors.white);
 
 final pet_container_style = BoxDecoration(border: Border.all(color: main_color, width: 1.w), borderRadius: BorderRadius.circular(15.w), color: Colors.white);
+
+final animated_velocity = 300;
