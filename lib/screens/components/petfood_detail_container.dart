@@ -456,7 +456,7 @@ class PetfoodDetailContainer extends StatelessWidget {
   Container _main_info_container({title, info}) {
     return Container(
       width: 68.w,
-      height: 68.h,
+      height: 70.h,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.w), color: Colors.white),
       child: Column(
         children: [
@@ -464,7 +464,6 @@ class PetfoodDetailContainer extends StatelessWidget {
           Image.asset('assets/icons/check.png', width: 10.w),
           SizedBox(height: 4.h),
           Text('${title}', style: TextStyle(fontSize: 11.sp, color: Color.fromRGBO(128, 128, 128, 1))),
-          SizedBox(height: 4.h),
           Text('${info}', style: TextStyle(fontSize: 12.sp), overflow: TextOverflow.ellipsis)
         ],
       ),

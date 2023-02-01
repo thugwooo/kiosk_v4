@@ -121,11 +121,21 @@ class FilterController extends GetxController {
 
   void change_pet() {
     filtered_petfood_list = petfood_list[user_controller.user_info['pet'].value];
+    user_controller.user_info['pet'].value = user_controller.user_info['pet'].value == 0 ? 1 : 0;
+    user_controller.user_info['pet'].value = user_controller.user_info['pet'].value == 0 ? 1 : 0;
     set_filtered_petfood_length();
+    print(selected_filter_list);
     selected_filter_list = [[], []];
     selected_filter_list_length = 0.obs;
     unfold_big_category = List.generate(big_category_list.length, (index) => false.obs).obs;
     show_all_filter_category = List.generate(big_category_list.length, (index) => false.obs).obs;
+    // for (var index = 0; index < selected_filter_category_list.length; index++) {
+    //   for (var category_index = 0; category_index < selected_filter_category_list[index].length; category_index++) {
+    //     for (var content_index = 0; content_index < selected_filter_category_list[index][category_index].length; content_index) {
+    //       selected_filter_category_list[index][category_index][content_index].value = false;
+    //     }
+    //   }
+    // }
     selected_filter_category_list = [
       [
         List.generate(filter_category_list[0][0].length, (index) => false.obs),
@@ -138,5 +148,6 @@ class FilterController extends GetxController {
         List.generate(filter_category_list[1][2].length, (index) => false.obs),
       ]
     ].obs;
+    refresh();
   }
 }

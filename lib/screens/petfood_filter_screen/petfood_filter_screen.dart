@@ -121,9 +121,21 @@ class PetfoodFilterScreen extends StatelessWidget {
         SizedBox(height: 10.h),
         Padding(
           padding: EdgeInsets.only(left: 20.w),
-          child: Text(
-            '사료 필터',
-            style: TextStyle(fontSize: 15.sp),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('사료 필터', style: TextStyle(fontSize: 15.sp)),
+              SizedBox(width: 5.w),
+              Padding(
+                padding: EdgeInsets.only(top: 2.h),
+                child: InkWell(
+                  child: Icon(Icons.refresh, size: 15.w),
+                  onTap: () {
+                    filter_controller.change_pet();
+                  },
+                ),
+              ),
+            ],
           ),
         ),
         Divider(

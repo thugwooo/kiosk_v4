@@ -99,7 +99,14 @@ class ScreenController extends GetxController {
   }
 
   String set_life_stage_text() {
-    return petfood_detail_data['life_stage'].length == 3 ? '무관' : list_to_str(petfood_detail_data['life_stage']);
+    String return_text = '';
+
+    if (petfood_detail_data['life_stage'].length == 3) {
+      return_text = '무관';
+    } else {
+      return_text = list_to_str(petfood_detail_data['life_stage']).replaceAll(', ', '\n');
+    }
+    return return_text;
   }
 
   String set_size_text() {
