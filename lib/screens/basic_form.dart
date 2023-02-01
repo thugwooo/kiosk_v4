@@ -85,10 +85,13 @@ class BasicForm extends StatelessWidget {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: '검색어를 입력해주세요.',
-                              suffixIcon: Icon(
-                                Icons.search,
-                                size: 20.w,
-                                color: Colors.black,
+                              suffixIcon: Padding(
+                                padding: EdgeInsets.only(top: 2.h),
+                                child: Icon(
+                                  Icons.search,
+                                  size: 20.w,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                             onChanged: (value) {
@@ -317,6 +320,7 @@ class BasicForm extends StatelessWidget {
 
   Widget _header() {
     return Container(
+      margin: EdgeInsets.only(top: 10.h),
       child: Row(
         children: [
           SizedBox(width: 20.w),
@@ -338,14 +342,11 @@ class BasicForm extends StatelessWidget {
             ],
           ),
           SizedBox(width: 15.w),
-          Padding(
-            padding: EdgeInsets.only(top: 10.w),
-            child: Container(
-              decoration: test_line,
-              width: 420.w,
-              height: 83.h,
-              child: Center(child: Text('광고')),
-            ),
+          Container(
+            decoration: test_line,
+            width: 420.w,
+            height: 83.h,
+            child: Center(),
           ),
         ],
       ),
