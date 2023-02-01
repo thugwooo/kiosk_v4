@@ -111,13 +111,16 @@ class PetfoodDetailContainer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 3.w),
-            InkWell(
-              child: Icon(Icons.cancel, size: 30.w),
-              onTap: () {
-                screen_controller.set_petfood_detail_container();
-                screen_controller.show_petfood_detail(false);
-              },
+            AnimatedPadding(
+              duration: Duration(milliseconds: animated_velocity),
+              padding: EdgeInsets.only(left: 3.w, top: screen_controller.show_petfood_detail.value ? 45.h : 0.h),
+              child: InkWell(
+                child: Icon(Icons.cancel, size: 30.w),
+                onTap: () {
+                  screen_controller.set_petfood_detail_container();
+                  screen_controller.show_petfood_detail(false);
+                },
+              ),
             ),
           ],
         ),

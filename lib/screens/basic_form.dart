@@ -19,31 +19,36 @@ class BasicForm extends StatelessWidget {
   var filter_controller = Get.put(FilterController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: background_color,
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              _header(),
-              Obx(
-                () => Expanded(
-                  child: screen_list[screen_controller.screen_index.value],
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: background_color,
+        body: Stack(
+          children: [
+            Column(
+              children: [
+                _header(),
+                Obx(
+                  () => Expanded(
+                    child: screen_list[screen_controller.screen_index.value],
+                  ),
                 ),
-              ),
-              _custom_bottom_navigation(),
-            ],
-          ),
-          _speech_bubble(),
-          _background(),
-          _search_container(),
-          Obx(
-            () => Visibility(
-              visible: screen_controller.petfood_detail_container.value,
-              child: PetfoodDetailContainer(),
+                _custom_bottom_navigation(),
+              ],
             ),
-          ),
-        ],
+            _speech_bubble(),
+            _background(),
+            _search_container(),
+            Obx(
+              () => Visibility(
+                visible: screen_controller.petfood_detail_container.value,
+                child: PetfoodDetailContainer(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -63,7 +68,7 @@ class BasicForm extends StatelessWidget {
                 height: 300.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(30.w),
+                  borderRadius: BorderRadius.circular(5.w),
                 ),
                 child: Column(
                   children: [
@@ -77,7 +82,15 @@ class BasicForm extends StatelessWidget {
                           padding: EdgeInsets.only(left: 10.w),
                           decoration: BoxDecoration(border: Border.all(color: Colors.black), borderRadius: BorderRadius.circular(10.w)),
                           child: TextFormField(
-                            decoration: InputDecoration(border: InputBorder.none, hintText: '검색어를 입력해주세요.'),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: '검색어를 입력해주세요.',
+                              suffixIcon: Icon(
+                                Icons.search,
+                                size: 20.w,
+                                color: Colors.black,
+                              ),
+                            ),
                             onChanged: (value) {
                               screen_controller.set_search_text(value);
                             },
@@ -118,11 +131,10 @@ class BasicForm extends StatelessWidget {
                                       SizedBox(height: 10.h),
                                       // Image.asset('assets/images/A000001.png'),
                                       Image.asset('assets/images/' + screen_controller.search_petfood[index]['eng_name'] + '.png'),
-                                      SizedBox(height: 10.h),
-                                      Text(
-                                        screen_controller.search_petfood[index]['short_name'],
-                                        style: TextStyle(fontSize: 9.sp),
-                                      ),
+                                      SizedBox(height: 5.h),
+                                      Text(screen_controller.search_petfood[index]['brand'], style: TextStyle(fontSize: 9.sp)),
+
+                                      Text(screen_controller.search_petfood[index]['short_name'], style: TextStyle(fontSize: 9.sp)),
                                     ],
                                   ),
                                 ),
