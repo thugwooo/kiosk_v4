@@ -80,16 +80,17 @@ class CurationPetScreen extends StatelessWidget {
             decoration: pet_container_style,
             child: Column(
               children: [
+                SizedBox(height: 5.h),
                 Text(
                   user_controller.pet_list[pet_index]['name'],
-                  style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold, color: main_color),
+                  style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold, color: main_color),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       user_controller.pet_age_sex_data(index: pet_index),
-                      style: TextStyle(fontSize: 14.sp, color: main_color),
+                      style: TextStyle(fontSize: 12.sp, color: main_color),
                     ),
                     user_controller.pet_list[pet_index]['sex'] == '0' ? Icon(Icons.male, color: main_color, size: 20.w) : Icon(Icons.female, color: Colors.red, size: 20.w),
                   ],
@@ -117,7 +118,7 @@ class CurationPetScreen extends StatelessWidget {
                   child: Container(
                     width: 80.w,
                     height: 25.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: main_color),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
                     child: Center(
                       child: Text('추천받기', style: TextStyle(fontSize: 11.sp, color: Colors.white)),
                     ),
@@ -132,7 +133,7 @@ class CurationPetScreen extends StatelessWidget {
                   child: Container(
                     width: 80.w,
                     height: 25.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: Color.fromRGBO(239, 245, 255, 1)),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: Color.fromRGBO(239, 245, 255, 1)),
                     child: Center(
                       child: Text('사료기록', style: TextStyle(fontSize: 11.sp, color: main_color)),
                     ),
