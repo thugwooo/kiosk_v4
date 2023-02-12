@@ -20,6 +20,7 @@ class PetfoodFilterScreen extends StatelessWidget {
     return Row(
       children: [
         Container(
+          margin: EdgeInsets.only(top: 20.h),
           width: 100.w,
           child: _category_container(),
         ),
@@ -29,7 +30,6 @@ class PetfoodFilterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30.h),
               _category_button_container(),
               SortPetfoodContainer(petfood_list: petfood_list),
               SizedBox(height: 10.h),
@@ -69,7 +69,6 @@ class PetfoodFilterScreen extends StatelessWidget {
       () => Padding(
         padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Container(
-          height: 20.h,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -124,7 +123,7 @@ class PetfoodFilterScreen extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('사료 필터', style: TextStyle(fontSize: 15.sp)),
+              Text('사료 필터', style: TextStyle(fontSize: 13.sp)),
               SizedBox(width: 5.w),
               Padding(
                 padding: EdgeInsets.only(top: 2.h),
@@ -163,23 +162,26 @@ class PetfoodFilterScreen extends StatelessWidget {
     return Obx(
       () => Column(
         children: [
-          InkWell(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  big_category_list[category_index],
-                  style: TextStyle(fontSize: 11.sp),
-                ),
-                Icon(
-                  Icons.keyboard_arrow_down_outlined,
-                  size: 15.w,
-                ),
-              ],
+          Container(
+            margin: EdgeInsets.only(bottom: 3.h),
+            child: InkWell(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    big_category_list[category_index],
+                    style: TextStyle(fontSize: 11.sp),
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_down_outlined,
+                    size: 15.w,
+                  ),
+                ],
+              ),
+              onTap: () {
+                filter_controller.set_unfold_big_category(category_index);
+              },
             ),
-            onTap: () {
-              filter_controller.set_unfold_big_category(category_index);
-            },
           ),
           Visibility(
             visible: filter_controller.unfold_big_category[category_index].value,

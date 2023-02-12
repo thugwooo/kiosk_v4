@@ -320,19 +320,17 @@ class BasicForm extends StatelessWidget {
 
   Widget _header() {
     return Container(
-      margin: EdgeInsets.only(top: 10.h),
+      margin: EdgeInsets.only(top: 15.h),
       child: Row(
         children: [
           SizedBox(width: 20.w),
           Column(
             children: [
-              //강아지 고양이 버튼
-              SizedBox(height: 20.h),
               Image.asset(
                 'assets/icons/vertical_logo.png',
                 width: 126.w,
               ),
-              SizedBox(height: 10.h),
+              SizedBox(height: 5.h),
               Row(
                 children: [
                   _pet_button(index: 0),
@@ -342,11 +340,11 @@ class BasicForm extends StatelessWidget {
             ],
           ),
           SizedBox(width: 15.w),
+          // TODO: 광고
           Container(
-            decoration: test_line,
             width: 420.w,
             height: 83.h,
-            child: Center(),
+            child: Image.asset('assets/images/banner_1.jpg'),
           ),
         ],
       ),

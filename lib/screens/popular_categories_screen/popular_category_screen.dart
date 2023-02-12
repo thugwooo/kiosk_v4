@@ -38,18 +38,12 @@ class PopularCategoryScreen extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(10.w),
           ),
-          child: Column(children: [
-            SizedBox(height: 10.h),
-            Image.asset(
-              'assets/images/ㅁㅁㅁㅁ.png',
-              width: 63.w,
-            ),
-            SizedBox(height: 3.h),
-            Text(
+          child: Center(
+            child: Text(
               '${popular_category_text[user_controller.user_info["pet"].value][index]}',
-              style: TextStyle(fontSize: 12.sp),
+              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
             ),
-          ]),
+          ),
         ),
       ),
       onTap: () {
