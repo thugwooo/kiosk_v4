@@ -21,8 +21,10 @@ class MainScreen extends StatelessWidget {
             () => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 5.h),
                 Row(
                   children: [
+                    SizedBox(width: 5.w),
                     for (var petfood_index = 0; petfood_index < petfood_list[user_controller.user_info['pet'].value].length; petfood_index++)
                       if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['location'].toString().contains('A'))
                         Padding(
@@ -30,7 +32,7 @@ class MainScreen extends StatelessWidget {
                           child: PetfoodForm(
                             petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
                             width: 93.w,
-                            height: 128.h,
+                            height: 123.h,
                             img_size: 65.w,
                             top_space: 10.h,
                             bottom_space: 5.h,
@@ -41,6 +43,7 @@ class MainScreen extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(width: 5.w),
                     for (var petfood_index = 0; petfood_index < petfood_list[user_controller.user_info['pet'].value].length; petfood_index++)
                       if (petfood_list[user_controller.user_info['pet'].value][petfood_index]['location'].toString().contains('B'))
                         Padding(
@@ -48,7 +51,7 @@ class MainScreen extends StatelessWidget {
                           child: PetfoodForm(
                             petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
                             width: 93.w,
-                            height: 128.h,
+                            height: 123.h,
                             img_size: 65.w,
                             top_space: 10.h,
                             bottom_space: 5.h,

@@ -20,11 +20,11 @@ class PetfoodFilterScreen extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: EdgeInsets.only(top: 20.h),
-          width: 100.w,
+          margin: EdgeInsets.only(top: 12.h),
+          width: 120.w,
           child: _category_container(),
         ),
-        SizedBox(width: 61.w),
+        SizedBox(width: 41.w),
         Container(
           width: 420.w,
           child: Column(
@@ -37,6 +37,7 @@ class PetfoodFilterScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Obx(
                     () => Container(
+                      padding: EdgeInsets.only(top: 5.h, left: 5.w),
                       width: 420.w,
                       child: Wrap(
                         spacing: 21.w,
@@ -45,7 +46,7 @@ class PetfoodFilterScreen extends StatelessWidget {
                           for (var petfood_index = 0; petfood_index < filter_controller.filtered_petfood_length[user_controller.user_info['pet'].value].value; petfood_index++)
                             PetfoodForm(
                               petfood_data: filter_controller.filtered_petfood_list[petfood_index],
-                              width: 125.w,
+                              width: 123.w,
                               height: 160.h,
                               img_size: 85.w,
                               top_space: 10.h,
@@ -117,12 +118,12 @@ class PetfoodFilterScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 10.h),
         Padding(
           padding: EdgeInsets.only(left: 20.w),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(width: 10.w),
               Text('사료 필터', style: TextStyle(fontSize: 13.sp)),
               SizedBox(width: 5.w),
               Padding(

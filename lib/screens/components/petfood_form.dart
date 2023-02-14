@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kiosk_v4/components/style.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 
@@ -17,14 +18,21 @@ class PetfoodForm extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10.w),
+          color: grey_0,
+          borderRadius: BorderRadius.circular(5.w),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.7),
+              blurRadius: 1.0.w,
+              spreadRadius: 1.0.w,
+              offset: Offset(1.w, 1.h),
+            ),
+          ],
         ),
         child: Column(
           children: [
             SizedBox(height: top_space),
             Image.asset('assets/images/' + petfood_data['eng_name'] + '.png', width: img_size),
-            // Image.asset('assets/images/ㅁㅁㅁㅁ.png', width: img_size),
             SizedBox(height: bottom_space),
             Text(petfood_data['brand'].toString(), style: TextStyle(fontSize: 9.sp)),
             Text(petfood_data['short_name'].toString(), style: TextStyle(fontSize: 9.sp)),

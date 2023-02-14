@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kiosk_v4/components/style.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 
@@ -33,10 +34,18 @@ class PopularCategoryScreen extends StatelessWidget {
       child: Obx(
         () => Container(
           width: 92.w,
-          height: 105.h,
+          height: 115.h,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10.w),
+            color: grey_0,
+            borderRadius: BorderRadius.circular(5.w),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.7),
+                blurRadius: 1.0.w,
+                spreadRadius: 1.0.w,
+                offset: Offset(1.w, 1.h),
+              ),
+            ],
           ),
           child: Center(
             child: Text(

@@ -55,18 +55,6 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                           screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
                         },
                       ),
-                      // SizedBox(width: 10.w),
-                      // InkWell(
-                      //   child: Container(
-                      //     width: 100.w,
-                      //     height: 30.h,
-                      //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: Colors.white),
-                      //     child: Center(child: Text('뒤로가기', style: TextStyle(fontSize: 12.sp))),
-                      //   ),
-                      //   onTap: () {
-                      //     screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
-                      //   },
-                      // ),
                     ],
                   ),
                   SizedBox(height: 15.h),
@@ -87,20 +75,23 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                   SizedBox(height: 15.h),
                   _sort_container(),
                   SizedBox(height: 15.h),
-                  Wrap(
-                    spacing: 20.w,
-                    runSpacing: 10.h,
-                    children: [
-                      for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
-                        PetfoodForm(
-                          petfood_data: user_controller.curation_petfood[index],
-                          width: 115.w,
-                          height: 140.h,
-                          img_size: 80.w,
-                          top_space: 10.h,
-                          bottom_space: 5.h,
-                        ),
-                    ],
+                  Container(
+                    padding: EdgeInsets.only(left: 5.w, top: 5.h),
+                    child: Wrap(
+                      spacing: 20.w,
+                      runSpacing: 10.h,
+                      children: [
+                        for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
+                          PetfoodForm(
+                            petfood_data: user_controller.curation_petfood[index],
+                            width: 112.w,
+                            height: 140.h,
+                            img_size: 80.w,
+                            top_space: 10.h,
+                            bottom_space: 5.h,
+                          ),
+                      ],
+                    ),
                   ),
                 ],
               ),

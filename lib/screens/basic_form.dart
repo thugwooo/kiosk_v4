@@ -24,7 +24,7 @@ class BasicForm extends StatelessWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: Scaffold(
-        backgroundColor: background_color,
+        backgroundColor: Colors.white,
         body: Stack(
           children: [
             Column(
@@ -235,21 +235,25 @@ class BasicForm extends StatelessWidget {
             child: InkWell(
               child: Container(
                 height: 63.h,
-                decoration: BoxDecoration(color: Colors.white),
+                decoration: BoxDecoration(color: grey_2),
                 child: Stack(
                   children: [
                     Positioned(
                       right: 20.w,
-                      top: 14.h,
+                      top: 17.h,
                       child: Container(
                         width: 135.w,
                         height: 26.h,
-                        decoration: BoxDecoration(color: grey_color, borderRadius: BorderRadius.circular(10.w)),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5.w),
+                          border: Border.all(color: Colors.black),
+                        ),
                       ),
                     ),
                     Positioned(
                       right: 30.w,
-                      top: 17.h,
+                      top: 20.h,
                       child: Image.asset(
                         'assets/icons/magnifying-glass.png',
                         width: 20.w,
@@ -275,7 +279,7 @@ class BasicForm extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: screen_controller.is_selected_bottom_navi_index(index) ? main_color : Colors.white,
+                color: screen_controller.is_selected_bottom_navi_index(index) ? main_color : grey_2,
               ),
               width: 96.w,
               height: 63.h,
@@ -305,7 +309,11 @@ class BasicForm extends StatelessWidget {
                 left: 30.w,
                 child: Visibility(
                   visible: screen_controller.is_selected_bottom_navi_index(index),
-                  child: Image.asset('assets/icons/triangle.png', width: 13.w),
+                  child: Image.asset(
+                    'assets/icons/triangle.png',
+                    width: 13.w,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -361,7 +369,7 @@ class BasicForm extends StatelessWidget {
           width: 62.w,
           height: 25.h,
           decoration: BoxDecoration(
-            color: user_controller.is_selected_user_info(text: 'pet', index: index) ? main_color : grey_color,
+            color: user_controller.is_selected_user_info(text: 'pet', index: index) ? main_color : grey_2,
             borderRadius:
                 index == 0 ? BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)) : BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
           ),

@@ -21,7 +21,7 @@ class CurationPetScreen extends StatelessWidget {
           child: Obx(
             () => Container(
               width: 600.w,
-              decoration: BoxDecoration(color: Color.fromRGBO(248, 249, 250, 1)),
+              decoration: BoxDecoration(color: grey_1),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(

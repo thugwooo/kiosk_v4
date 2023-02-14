@@ -20,10 +20,10 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 100.w,
+          width: 120.w,
           child: _category_container(),
         ),
-        SizedBox(width: 61.w),
+        SizedBox(width: 41.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -34,6 +34,7 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Obx(
                   () => Container(
+                    padding: EdgeInsets.only(left: 5.w, top: 5.h),
                     width: 420.w,
                     child: Wrap(
                       spacing: 21.w,
@@ -46,7 +47,7 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
                           ))
                             PetfoodForm(
                               petfood_data: petfood_list[user_controller.user_info['pet'].value][petfood_index],
-                              width: 125.w,
+                              width: 123.w,
                               height: 160.h,
                               img_size: 85.w,
                               top_space: 10.h,
@@ -68,16 +69,7 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        SizedBox(height: 10.h),
-        Text(
-          '인기 카테고리',
-          style: TextStyle(fontSize: 15.sp),
-        ),
-        Divider(
-          thickness: 1.h,
-          color: Colors.black,
-        ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 45.h),
         for (var index = 0; index < popular_category_text[user_controller.user_info['pet'].value].length; index++) _popular_category_button(index),
       ],
     );
@@ -87,25 +79,24 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
     return Obx(
       () => InkWell(
         child: Container(
-          padding: EdgeInsets.only(
-            left: screen_controller.is_selected_pop_category_index(index) ? 30.w : 20.w,
-            top: 5.h,
-          ),
+          // padding: EdgeInsets.only(
+          //   left: screen_controller.is_selected_pop_category_index(index) ? 30.w : 20.w,
+          //   top: 5.h,
+          // ),
           width: 100.w,
           height: 26.h,
           decoration: BoxDecoration(
-            color: screen_controller.is_selected_pop_category_index(index) ? mint_color : background_color,
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(5.w),
-              bottomRight: Radius.circular(5.w),
-            ),
+            color: screen_controller.is_selected_pop_category_index(index) ? main_color : Colors.white,
+            borderRadius: BorderRadius.circular(5.w),
           ),
-          child: Text(
-            '${popular_category_text[user_controller.user_info['pet'].value][index]}',
-            style: TextStyle(
-              fontSize: 12.sp,
-              fontWeight: screen_controller.is_selected_pop_category_index(index) ? FontWeight.bold : FontWeight.w400,
-              color: screen_controller.is_selected_pop_category_index(index) ? Colors.black : Color.fromRGBO(128, 128, 128, 1),
+          child: Center(
+            child: Text(
+              '${popular_category_text[user_controller.user_info['pet'].value][index]}',
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: screen_controller.is_selected_pop_category_index(index) ? FontWeight.bold : FontWeight.w400,
+                color: screen_controller.is_selected_pop_category_index(index) ? Colors.white : Color.fromRGBO(128, 128, 128, 1),
+              ),
             ),
           ),
         ),
