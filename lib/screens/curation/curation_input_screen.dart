@@ -30,7 +30,7 @@ class CurationInputScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20.h),
-              _custom_textfield(title: '이름', text: 'name'),
+              _custom_textfield(title: '이름', text: 'name', is_number: false),
               SizedBox(height: 15.h),
               _breed_dropdown(),
               SizedBox(height: 15.h),
@@ -40,7 +40,7 @@ class CurationInputScreen extends StatelessWidget {
               SizedBox(height: 15.h),
               _neutering_form(),
               SizedBox(height: 15.h),
-              _custom_textfield(title: "몸무게", text: "weight", hint: 'Kg'),
+              _custom_textfield(title: "몸무게", text: "weight"),
               SizedBox(height: 15.h),
               _bcs_form(),
               SizedBox(height: 15.h),
@@ -48,13 +48,11 @@ class CurationInputScreen extends StatelessWidget {
               SizedBox(height: 15.h),
               _alg_form(),
               _healthcare_form(),
-              SizedBox(height: 20.h),
+              SizedBox(height: 30.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _screen_move_button(text: '이전', fill: false),
-                  SizedBox(width: 5.w),
-                  _screen_move_button(text: '다음', fill: true),
+                  _screen_move_button(text: '저장하기', fill: true),
                 ],
               ),
               SizedBox(height: 30.h),
@@ -68,18 +66,18 @@ class CurationInputScreen extends StatelessWidget {
   InkWell _screen_move_button({text, fill}) {
     return InkWell(
       child: Container(
-        width: 60.w,
-        height: 20.h,
+        width: small_container_width,
+        height: curation_box_height,
         decoration: fill
-            ? BoxDecoration(color: main_color, borderRadius: BorderRadius.circular(5.w))
+            ? BoxDecoration(color: grey_color, borderRadius: BorderRadius.circular(5.w))
             : BoxDecoration(
-                border: Border.all(color: main_color, width: 2.w),
+                border: Border.all(color: main_color, width: 0.5.w),
                 borderRadius: BorderRadius.circular(5.w),
               ),
         child: Center(
           child: Text(
             text,
-            style: TextStyle(fontSize: 5.sp, color: fill ? Colors.white : main_color, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10.sp, color: fill ? Colors.black : main_color, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -120,7 +118,7 @@ class CurationInputScreen extends StatelessWidget {
                 runSpacing: 5.h,
                 children: [
                   for (var health_index = 0; health_index < healthcare[user_controller.user_info['pet'].value].length; health_index++)
-                    _multi_select_button(index: health_index, text: 'health', list: healthcare),
+                    _multi_select_button(index: health_index, text: 'health', list: healthcare, width: 58.w, height: 20.h),
                 ],
               ),
             ),
@@ -149,7 +147,8 @@ class CurationInputScreen extends StatelessWidget {
                           spacing: 5.w,
                           runSpacing: 5.h,
                           children: [
-                            for (var alg_index = 0; alg_index < alg[user_controller.user_info['pet'].value].length; alg_index++) _multi_select_button(index: alg_index, text: 'alg', list: alg),
+                            for (var alg_index = 0; alg_index < alg[user_controller.user_info['pet'].value].length; alg_index++)
+                              _multi_select_button(index: alg_index, text: 'alg', list: alg, width: 37.w, height: 20.h),
                           ],
                         ),
                         _alg_sub_form(),
@@ -244,12 +243,12 @@ class CurationInputScreen extends StatelessWidget {
     );
   }
 
-  Obx _multi_select_button({index, text, list}) {
+  Obx _multi_select_button({index, text, list, width, height}) {
     return Obx(
       () => InkWell(
         child: Container(
-          width: 37.w,
-          height: 20.h,
+          width: width,
+          height: height,
           decoration: user_controller.is_selected_list_button(text: text, value: list[user_controller.user_info['pet'].value][index]) ? louis_box_deco : white_box_deco,
           child: Center(
             child: Text(
@@ -396,22 +395,32 @@ class CurationInputScreen extends StatelessWidget {
     );
   }
 
-  Widget _custom_textfield({title, text, hint}) {
+  Widget _custom_textfield({title, text, is_number = true}) {
     return _row_form(
       child: Row(
         children: [
           _custom_title_form(title: title),
           Container(
-            width: curation_container_width,
+            width: text != "weight" ? curation_container_width : small_container_width,
             height: curation_box_height,
             padding: EdgeInsets.only(left: 10.w),
             decoration: white_box_deco,
             child: TextFormField(
-              decoration: InputDecoration(border: InputBorder.none, hintText: hint ?? ""),
+              decoration: InputDecoration(border: InputBorder.none),
               initialValue: user_controller.user_info[text].value,
+              keyboardType: is_number ? TextInputType.number : TextInputType.text,
               onChanged: (value) {
                 user_controller.set_user_info(text: text, value: value);
               },
+            ),
+          ),
+          Visibility(
+            visible: text == 'weight',
+            child: Row(
+              children: [
+                SizedBox(width: 10.w),
+                Text('kg', style: TextStyle(fontSize: 10.w)),
+              ],
             ),
           ),
         ],

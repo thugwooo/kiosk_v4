@@ -41,8 +41,9 @@ class CurationMainScreen extends StatelessWidget {
         width: 130.w,
         height: 80.h,
         decoration: BoxDecoration(
-          color: grey_color,
+          color: Color.fromRGBO(248, 249, 250, 1),
           borderRadius: BorderRadius.circular(10.w),
+          border: Border.all(color: Colors.black, width: 0.5.w),
         ),
         child: Center(
           child: Text(

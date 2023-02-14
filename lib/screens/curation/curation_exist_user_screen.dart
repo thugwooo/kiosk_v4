@@ -16,7 +16,7 @@ class CurationExistUserScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 60.h),
+          SizedBox(height: 80.h),
           Text(
             '기존에 등록된 휴대폰 번호를 입력해주세요.\n지난 번 입력한 반려동물 정보를 불러올게요!',
             textAlign: TextAlign.center,
@@ -24,8 +24,7 @@ class CurationExistUserScreen extends StatelessWidget {
               fontSize: 13.sp,
             ),
           ),
-          SizedBox(height: 20.h),
-          SizedBox(height: 20.h),
+          SizedBox(height: 30.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -51,7 +50,7 @@ class CurationExistUserScreen extends StatelessWidget {
                 child: Container(
                   width: 52.w,
                   height: 30.h,
-                  decoration: black_border,
+                  decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 1.w), borderRadius: BorderRadius.circular(5.w)),
                   child: Center(
                     child: Text('확인', style: TextStyle(fontSize: 15.sp)),
                   ),

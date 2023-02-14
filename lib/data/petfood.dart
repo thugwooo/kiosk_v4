@@ -187,7 +187,7 @@ final petfood_list = [
       'brand': '파미나',
       'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
-      'health': ['혈액순환 / 혈관질환', '심장', '당뇨'],
+      'health': ['혈액순환', '심장', '당뇨'],
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'all_ingredient':
@@ -508,7 +508,7 @@ final petfood_list = [
       'brand': '아카나',
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
-      'health': ['피부/피모', '뼈/관절', '알레르기예방', '혈액순환 / 혈관질환'],
+      'health': ['피부/피모', '뼈/관절', '알레르기예방', '혈액순환'],
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질', '그레인프리'],
       'main_ingredient': ['오리'],
       'all_ingredient':
@@ -1258,7 +1258,7 @@ final petfood_list = [
       'brand': '토우',
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
-      'health': ['소화기', '혈액순환 / 혈관질환'],
+      'health': ['소화기', '혈액순환'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭', '고구마'],
       'all_ingredient':
@@ -2276,7 +2276,7 @@ final petfood_list = [
       'brand': 'GO!',
       'life_stage': ['퍼피', '어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
-      'health': ['알레르기 예방', '소화기', '혈액순환 / 혈관질환'],
+      'health': ['알레르기 예방', '소화기', '혈액순환'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'main_ingredient': ['오리'],
       'all_ingredient':
@@ -3829,7 +3829,7 @@ final petfood_list = [
       'brand': '파미나',
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
-      'health': ['혈액순환 / 혈관질환', '심장', '당뇨'],
+      'health': ['혈액순환', '심장', '당뇨'],
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'all_ingredient':
@@ -3865,7 +3865,7 @@ final petfood_list = [
       'brand': '파미나',
       'life_stage': ['어덜트', '시니어'],
       'size': [''],
-      'health': ['혈액순환 / 혈관질환', '심장', '당뇨'],
+      'health': ['혈액순환', '심장', '당뇨'],
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['대구'],
       'all_ingredient':

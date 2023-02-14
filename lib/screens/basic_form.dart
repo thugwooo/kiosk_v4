@@ -299,11 +299,14 @@ class BasicForm extends StatelessWidget {
                 ],
               ),
             ),
-            Positioned(
-              left: index != 2 ? 30.w : 60.w,
-              child: Visibility(
-                visible: screen_controller.is_selected_bottom_navi_index(index),
-                child: Image.asset('assets/icons/triangle.png', width: 13.w),
+            Visibility(
+              visible: [0, 1].contains(index),
+              child: Positioned(
+                left: 30.w,
+                child: Visibility(
+                  visible: screen_controller.is_selected_bottom_navi_index(index),
+                  child: Image.asset('assets/icons/triangle.png', width: 13.w),
+                ),
               ),
             ),
           ],

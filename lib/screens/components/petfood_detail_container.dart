@@ -38,58 +38,60 @@ class PetfoodDetailContainer extends StatelessWidget {
                     duration: Duration(milliseconds: animated_velocity),
                     height: screen_controller.show_petfood_detail.value ? 320.h : 200.h,
                     decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
-                    child: SingleChildScrollView(
-                      controller: screen_controller.scroll_controller.value,
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(left: 20.w, top: 25.h),
-                            width: 440.w,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.w),
-                              color: background_blue_color,
+                    child: InteractiveViewer(
+                      child: SingleChildScrollView(
+                        controller: screen_controller.scroll_controller.value,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(left: 20.w, top: 25.h),
+                              width: 440.w,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.w),
+                                color: background_blue_color,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  _main_info_1(),
+                                  SizedBox(height: 15.h),
+                                  _main_info2(),
+                                  SizedBox(height: 30.h),
+                                  _detail_info(),
+                                ],
+                              ),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                _main_info_1(),
-                                SizedBox(height: 15.h),
-                                _main_info2(),
-                                SizedBox(height: 30.h),
-                                _detail_info(),
-                              ],
-                            ),
-                          ),
-                          Visibility(
-                            visible: screen_controller.show_petfood_detail.value,
-                            child: Column(
-                              children: [
-                                SizedBox(height: 30.h),
-                                _rotation_feed_container(),
-                                SizedBox(height: 30.h),
-                                _rotation_days_container(),
-                                SizedBox(height: 30.h),
-                                InkWell(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text('맨 위로', style: TextStyle(fontSize: 12.sp)),
-                                      Icon(
-                                        Icons.keyboard_arrow_up,
-                                        size: 20.w,
-                                      )
-                                    ],
+                            Visibility(
+                              visible: screen_controller.show_petfood_detail.value,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 30.h),
+                                  _rotation_feed_container(),
+                                  SizedBox(height: 30.h),
+                                  _rotation_days_container(),
+                                  SizedBox(height: 30.h),
+                                  InkWell(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text('맨 위로', style: TextStyle(fontSize: 12.sp)),
+                                        Icon(
+                                          Icons.keyboard_arrow_up,
+                                          size: 20.w,
+                                        )
+                                      ],
+                                    ),
+                                    onTap: () {
+                                      screen_controller.scroll_up();
+                                    },
                                   ),
-                                  onTap: () {
-                                    screen_controller.scroll_up();
-                                  },
-                                ),
-                                SizedBox(height: 30.h),
-                              ],
+                                  SizedBox(height: 30.h),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

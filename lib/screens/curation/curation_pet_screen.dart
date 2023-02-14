@@ -16,17 +16,17 @@ class CurationPetScreen extends StatelessWidget {
     user_controller.set_pet_list();
     return Column(
       children: [
-        SizedBox(height: 30.h),
-        Text('등록하기', style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
-        SizedBox(height: 30.h),
+        SizedBox(height: 45.h),
         Expanded(
           child: Obx(
             () => Container(
               width: 600.w,
-              decoration: BoxDecoration(color: grey_color),
+              decoration: BoxDecoration(color: Color.fromRGBO(248, 249, 250, 1)),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     for (var pet_index = 0; pet_index < user_controller.pet_length.value; pet_index++) _pet_container_form(pet_index),
                     _add_new_pet_button(),
@@ -36,6 +36,7 @@ class CurationPetScreen extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 45.h),
       ],
     );
   }
@@ -45,8 +46,8 @@ class CurationPetScreen extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(10.w),
         child: Container(
-          width: 120.w,
-          height: 150.h,
+          width: 100.w,
+          height: 130.h,
           decoration: pet_container_style,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -75,35 +76,38 @@ class CurationPetScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(10.w),
           child: Container(
-            width: 120.w,
-            height: 150.h,
+            width: 100.w,
+            height: 130.h,
             decoration: pet_container_style,
             child: Column(
               children: [
-                SizedBox(height: 5.h),
-                Text(
-                  user_controller.pet_list[pet_index]['name'],
-                  style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold, color: main_color),
+                SizedBox(height: 8.h),
+                Container(
+                  width: 90.w,
+                  child: Center(
+                    child: Text(
+                      user_controller.pet_list[pet_index]['name'],
+                      style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold, color: main_color),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       user_controller.pet_age_sex_data(index: pet_index),
-                      style: TextStyle(fontSize: 12.sp, color: main_color),
+                      style: TextStyle(fontSize: 10.sp),
                     ),
-                    user_controller.pet_list[pet_index]['sex'] == '0' ? Icon(Icons.male, color: main_color, size: 20.w) : Icon(Icons.female, color: Colors.red, size: 20.w),
+                    user_controller.pet_list[pet_index]['sex'] == '0' ? Icon(Icons.male, color: main_color, size: 15.w) : Icon(Icons.female, color: Colors.red, size: 15.w),
                   ],
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 4.h),
                 InkWell(
                   child: Container(
-                    width: 60.w,
-                    height: 20.h,
-                    decoration: BoxDecoration(
-                      color: grey_color,
-                      border: Border.all(color: Colors.grey),
-                    ),
+                    width: 40.w,
+                    height: 15.h,
+                    decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
                     child: Center(
                       child: Text('정보 수정'),
                     ),
@@ -116,11 +120,11 @@ class CurationPetScreen extends StatelessWidget {
                 SizedBox(height: 10.h),
                 InkWell(
                   child: Container(
-                    width: 80.w,
-                    height: 25.h,
+                    width: 75.w,
+                    height: 22.h,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
                     child: Center(
-                      child: Text('추천받기', style: TextStyle(fontSize: 11.sp, color: Colors.white)),
+                      child: Text('추천받기', style: TextStyle(fontSize: 10.sp, color: Colors.white, fontWeight: FontWeight.bold)),
                     ),
                   ),
                   onTap: () {
@@ -131,11 +135,11 @@ class CurationPetScreen extends StatelessWidget {
                 SizedBox(height: 5.h),
                 InkWell(
                   child: Container(
-                    width: 80.w,
-                    height: 25.h,
+                    width: 75.w,
+                    height: 22.h,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: Color.fromRGBO(239, 245, 255, 1)),
                     child: Center(
-                      child: Text('사료기록', style: TextStyle(fontSize: 11.sp, color: main_color)),
+                      child: Text('사료기록', style: TextStyle(fontSize: 10.sp, color: main_color)),
                     ),
                   ),
                   onTap: () {
@@ -148,13 +152,18 @@ class CurationPetScreen extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: 0,
-          top: 0,
+          right: 5,
+          top: 5,
           child: InkWell(
-            child: Icon(
-              Icons.do_not_disturb_on,
-              size: 30.w,
-              color: main_color,
+            child: Container(
+              width: 20.w,
+              height: 20.h,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30.w), color: main_color),
+              child: Icon(
+                Icons.remove,
+                color: Colors.white,
+                size: 15.w,
+              ),
             ),
             onTap: () {
               user_controller.delete_button(pet_index);
