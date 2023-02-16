@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/rest+api.dart';
 import 'package:kiosk_v4/data/petfood.dart';
@@ -34,6 +36,7 @@ class UserController extends GetxController {
   RxInt curation_petfood_length = 0.obs;
   var selected_petfood_list = [];
   RxInt selected_petfood_list_length = 0.obs;
+  var scroll_controller = ScrollController().obs;
 
   void set_petfood_list_length() {
     petfood_list_length(petfood_list[user_info['pet'].value].length);
@@ -252,5 +255,55 @@ class UserController extends GetxController {
     }).then((response) {
       print(response);
     });
+  }
+
+  dynamic input_check_form() {
+    var return_data = {'scroll': 0.0, 'dialog_text': ''};
+
+    if (user_info['show_alg'].value == 2) {
+      return_data['dialog_text'] = '알러지 여부를 선택해주세요';
+      return_data['scroll'] = 320.h;
+    }
+    if (user_info['bcs'].value == 3) {
+      return_data['dialog_text'] = '체형을 선택해주세요';
+      return_data['scroll'] = 280.h;
+    }
+    if (user_info['weight'].value == '') {
+      return_data['dialog_text'] = '몸무게를 채워주세요';
+      return_data['scroll'] = 240.h;
+    }
+    if (user_info['neutering'].value == 2) {
+      return_data['dialog_text'] = '중성화 여부를 선택해주세요.';
+      return_data['scroll'] = 200.h;
+    }
+    if (user_info['sex'].value == 2) {
+      return_data['dialog_text'] = '성별을 선택해주세요.';
+      return_data['scroll'] = 160.h;
+    }
+    if (user_info['birth_year'].value == '년' || user_info['birth_month'].value == '월' || user_info['birth_day'].value == '') {
+      return_data['dialog_text'] = '생년월일을 선택해주세요.';
+      return_data['scroll'] = 120.h;
+    }
+    if (user_info['pet'].value == 0) {
+      if (!dog_breed.contains(user_info['breed'].value)) {
+        return_data['dialog_text'] = '견종을 선택해주세요.';
+        return_data['scroll'] = 80.h;
+      }
+    } else {
+      if (!cat_breed.contains(user_info['breed'].value)) {
+        return_data['dialog_text'] = '묘종을 선택해주세요.';
+        return_data['scroll'] = 80.h;
+      }
+    }
+    if (user_info['name'].value == '') {
+      return_data['dialog_text'] = '이름을 채워주세요.';
+      return_data['scroll'] = 40.h;
+    }
+
+    return return_data;
+  }
+
+  void scroll_up(position) {
+    scroll_controller.value.animateTo(position, duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
 }

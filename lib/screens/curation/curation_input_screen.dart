@@ -22,6 +22,7 @@ class CurationInputScreen extends StatelessWidget {
         width: 600.w,
         color: Color.fromRGBO(248, 248, 248, 1),
         child: SingleChildScrollView(
+          controller: user_controller.scroll_controller.value,
           child: Column(
             children: [
               SizedBox(height: 20.h),
@@ -82,24 +83,43 @@ class CurationInputScreen extends StatelessWidget {
         ),
       ),
       onTap: () {
-        post_data(url: 'pet-save/', data: {
-          'member_id': user_controller.user_info['member_id'].value,
-          'pet': user_controller.user_info['pet'].value,
-          'name': user_controller.user_info['name'].value,
-          'breed': user_controller.user_info['breed'].value,
-          'birth_year': user_controller.user_info['birth_year'].value,
-          'birth_month': user_controller.user_info['birth_month'].value,
-          'birth_day': user_controller.user_info['birth_day'].value,
-          'sex': user_controller.user_info['sex'].value,
-          'neutering': user_controller.user_info['neutering'].value,
-          'weight': user_controller.user_info['weight'].value,
-          'bcs': user_controller.user_info['bcs'].value,
-          'alg': user_controller.user_info['alg'].value,
-          'alg_sub': user_controller.user_info['alg_sub'].value,
-          'health': user_controller.user_info['health'].value,
-        }).then((value) => {
-              screen_controller.set_screen_index(ScreenState.curation_pet_screen.index),
-            });
+        var dialog_data = user_controller.input_check_form();
+        if (dialog_data['dialog_text'] == '') {
+          post_data(url: 'pet-save/', data: {
+            'member_id': user_controller.user_info['member_id'].value,
+            'pet': user_controller.user_info['pet'].value,
+            'name': user_controller.user_info['name'].value,
+            'breed': user_controller.user_info['breed'].value,
+            'birth_year': user_controller.user_info['birth_year'].value,
+            'birth_month': user_controller.user_info['birth_month'].value,
+            'birth_day': user_controller.user_info['birth_day'].value,
+            'sex': user_controller.user_info['sex'].value,
+            'neutering': user_controller.user_info['neutering'].value,
+            'weight': user_controller.user_info['weight'].value,
+            'bcs': user_controller.user_info['bcs'].value,
+            'alg': user_controller.user_info['alg'].value,
+            'alg_sub': user_controller.user_info['alg_sub'].value,
+            'health': user_controller.user_info['health'].value,
+          }).then((value) => {
+                screen_controller.set_screen_index(ScreenState.curation_pet_screen.index),
+              });
+        } else {
+          Get.dialog(
+            AlertDialog(
+              title: Text('${dialog_data["dialog_text"]}'),
+              actions: [
+                TextButton(
+                  child: Text('Yes'),
+                  onPressed: () {
+                    Get.back();
+                    print(dialog_data['scroll']);
+                    user_controller.scroll_up(dialog_data['scroll']);
+                  },
+                ),
+              ],
+            ),
+          );
+        }
       },
     );
   }

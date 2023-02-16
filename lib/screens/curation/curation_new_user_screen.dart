@@ -34,7 +34,7 @@ class CurationNewUserScreen extends StatelessWidget {
                   Icon(
                     Icons.check_circle,
                     size: 20.w,
-                    color: user_controller.agreement.value ? main_color : Colors.white,
+                    color: user_controller.agreement.value ? main_color : Colors.grey,
                   ),
                   SizedBox(width: 10.w),
                   Text(
@@ -60,12 +60,10 @@ class CurationNewUserScreen extends StatelessWidget {
                 padding: EdgeInsets.only(left: 10.w),
                 decoration: black_border,
                 child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                  ),
+                  decoration: InputDecoration(border: InputBorder.none, hintText: "01012345678"),
                   keyboardType: TextInputType.number,
                   onChanged: ((value) {
-                    user_controller.set_user_info(text: 'member_id', value: value);
+                    user_controller.set_user_info(text: 'member_id', value: value.replaceAll('-', ''));
                   }),
                 ),
               ),
@@ -82,9 +80,32 @@ class CurationNewUserScreen extends StatelessWidget {
                 onTap: () {
                   // TODO : 동의를 안했을때 + 휴대폰번호 길이
                   if (!user_controller.agreement.value) {
-                    Get.snackbar('동의 안함', '동의를 해주시오.');
+                    Get.dialog(
+                      AlertDialog(
+                        title: Text('개인 정보 활용에 동의를 하지 않았습니다.'),
+                        actions: [
+                          TextButton(
+                            child: Text('닫기'),
+                            onPressed: () {
+                              Get.back();
+                            },
+                          )
+                        ],
+                      ),
+                    );
                   } else if (user_controller.user_info['member_id'].value.length != 11) {
-                    Get.snackbar('휴대폰 번호!!', '번호를 제대로 입력해주시오');
+                    Get.dialog(
+                      AlertDialog(
+                        title: Text('휴대폰 번호가 잘못되었습니다.'),
+                        actions: [
+                          TextButton(
+                              child: Text('닫기'),
+                              onPressed: () {
+                                Get.back();
+                              })
+                        ],
+                      ),
+                    );
                   } else {
                     screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
                   }
