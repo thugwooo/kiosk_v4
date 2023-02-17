@@ -37,7 +37,6 @@ class TestScreen extends StatelessWidget {
     return Container(
       width: 600.w,
       margin: EdgeInsets.only(top: 14.h),
-      decoration: test_line,
       child: CarouselSlider.builder(
         carouselController: _carousel_controller,
         options: CarouselOptions(

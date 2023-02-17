@@ -124,7 +124,6 @@ class FilterController extends GetxController {
     user_controller.user_info['pet'].value = user_controller.user_info['pet'].value == 0 ? 1 : 0;
     user_controller.user_info['pet'].value = user_controller.user_info['pet'].value == 0 ? 1 : 0;
     set_filtered_petfood_length();
-    print(selected_filter_list);
     selected_filter_list = [[], []];
     selected_filter_list_length = 0.obs;
     unfold_big_category = List.generate(big_category_list.length, (index) => false.obs).obs;
