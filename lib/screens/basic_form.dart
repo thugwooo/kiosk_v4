@@ -191,8 +191,8 @@ class BasicForm extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              left: 300.w,
-              bottom: 63.h,
+              left: 330.w,
+              bottom: 55.h,
               child: Container(
                 width: 165.w,
                 height: 18.h,
@@ -208,8 +208,8 @@ class BasicForm extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 318.w,
-              bottom: 55.h,
+              left: 348.w,
+              bottom: 47.h,
               child: Image.asset(
                 'assets/icons/triangle.png',
                 width: 13.w,
