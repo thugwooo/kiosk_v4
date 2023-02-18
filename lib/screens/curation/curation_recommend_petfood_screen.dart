@@ -18,6 +18,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     user_controller.get_curation_petfood();
+
     return Stack(
       children: [
         Padding(
@@ -149,7 +150,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
     return Obx(
       () => InkWell(
         child: Text(
-          '${sort_text[index]}',
+          index != 0 ? '${sort_text[index]}' : '루이스홈 추천',
           style: TextStyle(
             fontSize: 8.sp,
             color: screen_controller.is_selected_sort_index(index) ? Colors.black : Color.fromRGBO(152, 152, 152, 1),

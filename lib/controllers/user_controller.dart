@@ -5,6 +5,7 @@ import 'package:kiosk_v4/components/rest+api.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 
 import '../components/basic_function.dart';
+import '../components/petfood_function.dart';
 import '../data/curation.dart';
 
 class UserController extends GetxController {
@@ -170,6 +171,7 @@ class UserController extends GetxController {
       }
       set_curation_petfood_length();
       refresh();
+      sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
     });
     set_curation_petfood_length();
   }

@@ -11,8 +11,11 @@ enum SortState { sales, dsc_price, asc_price, dsc_kibble, asc_kibble }
 bool pop_cate_filter({petfood_data, sort_text}) {
   // var sort_text = popular_category_text[user_controller.user_info['pet'].value][screen_controller.sort_index.value];
   var temp = petfood_data['pop_category'].indexOf(sort_text);
-
-  return temp != -1;
+  var age = true;
+  if (['퍼피', '어덜트', '시니어'].contains(sort_text)) {
+    age = petfood_data['life_stage'].length == 1;
+  }
+  return temp != -1 && age;
 }
 
 void sort_location() {
@@ -40,7 +43,8 @@ void sort_petfood({sort_index, petfood_list}) {
 void sort_curation_petfood({sort_index, petfood_list}) {
   print(petfood_list[0]['retail_price'].runtimeType);
   if (sort_index == SortState.sales.index) {
-    // 판매량
+    // 루이스홈 추천
+    petfood_list.sort((a, b) => (a['life_stage'].length as int).compareTo(b['life_stage'].length as int));
   } else if (sort_index == SortState.asc_price.index) {
     // 가격 내림차순
     petfood_list.sort((a, b) => (a['retail_price'] as int).compareTo(b['retail_price'] as int));
