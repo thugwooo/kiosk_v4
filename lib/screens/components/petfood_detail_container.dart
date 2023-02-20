@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:kiosk_v4/components/basic_function.dart';
 import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/components/style.dart';
@@ -10,6 +11,7 @@ import 'package:kiosk_v4/data/detail_petfood.dart';
 class PetfoodDetailContainer extends StatelessWidget {
   PetfoodDetailContainer({super.key});
   var screen_controller = Get.put(ScreenController());
+  var price = NumberFormat('###,###,###,###');
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -504,7 +506,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                       Text(screen_controller.petfood_detail_data['short_name'], style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold, color: main_color)),
                     ],
                   ),
-                  Text('${screen_controller.petfood_detail_data['weight']} | ${screen_controller.petfood_detail_data['retail_price']}원', style: TextStyle(fontSize: 12.sp)),
+                  Text('${screen_controller.petfood_detail_data['weight']} | ${price.format(screen_controller.petfood_detail_data['retail_price'])}원', style: TextStyle(fontSize: 12.sp)),
                 ],
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:kiosk_v4/components/style.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
@@ -11,6 +12,7 @@ class PetfoodForm extends StatelessWidget {
   var screen_controller = Get.put(ScreenController());
   var petfood_data;
   var width, height, img_size, top_space, bottom_space;
+  var price = NumberFormat('###,###,###,###');
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -36,7 +38,7 @@ class PetfoodForm extends StatelessWidget {
             SizedBox(height: bottom_space),
             Text(petfood_data['brand'].toString(), style: TextStyle(fontSize: 9.sp)),
             Text(petfood_data['short_name'].toString(), style: TextStyle(fontSize: 9.sp)),
-            Text(petfood_data['weight'].toString() + ' / ' + petfood_data['retail_price'].toString() + '원', style: TextStyle(fontSize: 9.sp)),
+            Text(petfood_data['weight'].toString() + ' / ' + price.format(petfood_data['retail_price']) + '원', style: TextStyle(fontSize: 9.sp)),
           ],
         ),
       ),

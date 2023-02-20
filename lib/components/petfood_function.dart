@@ -12,7 +12,7 @@ bool pop_cate_filter({petfood_data, sort_text}) {
   // var sort_text = popular_category_text[user_controller.user_info['pet'].value][screen_controller.sort_index.value];
   var temp = petfood_data['pop_category'].indexOf(sort_text);
   var age = true;
-  if (['퍼피', '어덜트', '시니어'].contains(sort_text)) {
+  if (['퍼피', '시니어'].contains(sort_text)) {
     age = petfood_data['life_stage'].length == 1;
   }
   return temp != -1 && age;

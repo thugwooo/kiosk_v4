@@ -18,7 +18,6 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     user_controller.get_curation_petfood();
-
     return Stack(
       children: [
         Padding(

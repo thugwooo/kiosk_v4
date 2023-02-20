@@ -54,6 +54,7 @@ class CurationMainScreen extends StatelessWidget {
       ),
       onTap: () {
         screen_controller.set_screen_index(index + 5);
+        // TODO: 신규회원일때 초기화
       },
     );
   }
