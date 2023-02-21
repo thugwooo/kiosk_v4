@@ -25,5 +25,5 @@ dynamic list_to_str(list_data) {
       temp.remove('');
     }
   }
-  return temp.toString().replaceAll('[', '').replaceAll(']', '');
+  return temp.toString().replaceAll('[', '').replaceAll(']', '').replaceAll('  ', ' ').replaceAll('  ', ' ');
 }
