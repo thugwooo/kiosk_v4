@@ -7,6 +7,9 @@ dynamic str_to_list(str_data) {
   for (var index = 0; index < temp.length; index++) {
     if (temp[index] == '') {
       temp.remove('');
+    } else {
+      print(temp);
+      temp[index] = temp[index].trim();
     }
   }
   return temp;

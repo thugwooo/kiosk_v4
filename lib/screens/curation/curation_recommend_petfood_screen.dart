@@ -89,6 +89,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                             img_size: 80.w,
                             top_space: 10.h,
                             bottom_space: 5.h,
+                            curation: true,
                           ),
                       ],
                     ),

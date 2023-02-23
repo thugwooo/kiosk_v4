@@ -23,7 +23,7 @@ class UserController extends GetxController {
     'show_alg': 2.obs,
     'alg': [].obs,
     'alg_sub': [].obs,
-    'health': [].obs,
+    'health': ['', '', ''].obs,
     'weight': "".obs,
   }.obs;
   RxBool agreement = false.obs;
@@ -84,6 +84,34 @@ class UserController extends GetxController {
     }
   }
 
+  void set_health_ranking({value}) {
+    // TODO
+    int index = user_info['health'].indexOf(value);
+    if (index != -1) {
+      user_info['health'][index] = '';
+    } else {
+      for (var ranking_index = 0; ranking_index < 3; ranking_index++) {
+        if (user_info['health'][ranking_index] == '') {
+          user_info['health'][ranking_index] = value;
+          break;
+        }
+      }
+    }
+  }
+
+  void remove_health_ranking({index}) {
+    user_info['health'][index] = '';
+  }
+
+  int health_ranking({health_list}) {
+    for (var index = 0; index < curation_data['health'].length; index++) {
+      if (health_list.contains(curation_data['health'][index].trim())) {
+        return index;
+      }
+    }
+    return 3;
+  }
+
   void set_pet_list() {
     post_data(url: 'pet-info/', data: {'member_id': user_info['member_id'].value}).then((value) {
       pet_list = value;
@@ -103,13 +131,13 @@ class UserController extends GetxController {
       'birth_year': '년',
       'birth_month': '월',
       'birth_day': '일',
-      'sex': '0',
-      'neutering': '0',
-      'bcs': '0',
-      'show_alg': '1',
+      'sex': '2',
+      'neutering': '2',
+      'bcs': '3',
+      'show_alg': '2',
       'alg': [],
       'alg_sub': [],
-      'health': [],
+      'health': ['', '', ''],
       'weight': "",
     });
   }
@@ -151,14 +179,15 @@ class UserController extends GetxController {
     user_info['alg'](str_to_list(data['alg']));
     user_info['show_alg'](user_info['alg'].length > 0 ? 0 : 1);
     user_info['alg_sub'](str_to_list(data['alg_sub']));
-    user_info['health'](str_to_list(data['health']));
+    var health_data = str_to_list(data['health']);
+    for (var index = 0; index < health_data.length; index++) {
+      user_info['health'][index] = health_data[index].trim();
+    }
     user_info['weight'](data['weight']);
   }
 
   void get_curation_petfood() {
     post_data(url: 'curation-kiosk/', data: pet_list[selected_pet_index.value]).then((response) {
-      // print(response['curation_data']);
-      // print(response['dsc_price'][0]);
       curation_data(response['curation_data']);
       curation_data['algs'] = str_to_list([...curation_data['alg'], ...curation_data['alg_sub']]);
       curation_petfood = response['dsc_price'];
@@ -168,6 +197,9 @@ class UserController extends GetxController {
             curation_petfood[c_index]['short_name'] = petfood_list[user_info['pet'].value][m_index]['short_name'];
           }
         }
+      }
+      for (var c_index = 0; c_index < curation_petfood.length; c_index++) {
+        curation_petfood[c_index]['health_ranking'] = health_ranking(health_list: curation_petfood[c_index]['health']);
       }
       set_curation_petfood_length();
       refresh();
@@ -261,7 +293,10 @@ class UserController extends GetxController {
 
   dynamic input_check_form() {
     var return_data = {'scroll': 0.0, 'dialog_text': ''};
-
+    if (user_info['health'].contains('')) {
+      return_data['dialog_text'] = '건강 관리를 채워주세요.';
+      return_data['scroll'] = 360.h;
+    }
     if (user_info['show_alg'].value == 2) {
       return_data['dialog_text'] = '알러지 여부를 선택해주세요';
       return_data['scroll'] = 320.h;

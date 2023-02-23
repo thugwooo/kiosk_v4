@@ -14,6 +14,7 @@ class CurationInputScreen extends StatelessWidget {
   CurationInputScreen({Key? key}) : super(key: key);
   var user_controller = Get.put(UserController());
   var screen_controller = Get.put(ScreenController());
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -125,25 +126,78 @@ class CurationInputScreen extends StatelessWidget {
   }
 
   Widget _healthcare_form() {
-    return _row_form(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _custom_title_form(title: '건강관리'),
-          Container(
-            width: curation_container_width,
-            child: Obx(
-              () => Wrap(
-                spacing: 5.w,
-                runSpacing: 5.h,
-                children: [
-                  for (var health_index = 0; health_index < healthcare[user_controller.user_info['pet'].value].length; health_index++)
-                    _multi_select_button(index: health_index, text: 'health', list: healthcare, width: 58.w, height: 20.h),
-                ],
+    return Column(
+      children: [
+        _row_form(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _custom_title_form(title: '건강관리'),
+              _healthcare_ranking(index: 0),
+              SizedBox(
+                width: 5.w,
+              ),
+              _healthcare_ranking(index: 1),
+              SizedBox(
+                width: 5.w,
+              ),
+              _healthcare_ranking(index: 2),
+            ],
+          ),
+        ),
+        SizedBox(height: 15.h),
+        _row_form(
+            child: Row(
+          children: [
+            _custom_title_form(title: ''),
+            Container(
+              width: curation_container_width,
+              child: Obx(
+                () => Wrap(
+                  spacing: 5.w,
+                  runSpacing: 5.h,
+                  children: [
+                    for (var health_index = 0; health_index < healthcare[user_controller.user_info['pet'].value].length; health_index++)
+                      // 58.w,20.h
+                      InkWell(
+                        child: Container(
+                          width: 58.w,
+                          height: 20.h,
+                          decoration: user_controller.is_selected_list_button(text: 'health', value: healthcare[user_controller.user_info['pet'].value][health_index])
+                              ? BoxDecoration(
+                                  color: health_background_color[user_controller.user_info['health'].indexOf(healthcare[user_controller.user_info['pet'].value][health_index])],
+                                  borderRadius: BorderRadius.circular(5.w))
+                              : white_box_deco,
+                          child: Center(
+                            child: Text(healthcare[user_controller.user_info['pet'].value][health_index]),
+                          ),
+                        ),
+                        onTap: () {
+                          user_controller.set_health_ranking(value: healthcare[user_controller.user_info['pet'].value][health_index]);
+                        },
+                      )
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ))
+      ],
+    );
+  }
+
+  Widget _healthcare_ranking({index}) {
+    return Obx(
+      () => InkWell(
+        child: Container(
+          width: small_container_width,
+          height: curation_box_height,
+          decoration: BoxDecoration(border: Border.all(color: health_border_color[index]), borderRadius: BorderRadius.circular(5.w), color: Colors.white),
+          child: Center(child: Text(user_controller.user_info['health'][index] == '' ? '${index + 1}순위' : user_controller.user_info['health'][index])),
+        ),
+        onTap: () {
+          user_controller.remove_health_ranking(index: index);
+        },
       ),
     );
   }

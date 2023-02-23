@@ -5,7 +5,7 @@ var alg = [dog_alg, cat_alg];
 var pet_breed_text = ['견종', '묘종'];
 var sex = ['수컷', '암컷'];
 var y_n = ['YES', 'NO'];
-var bcs = ['날씬해요', '적당해요', '통통해요'];
+var bcs = ['말랐어요', '적당해요', '통통해요'];
 var healthcare = [dog_health, cat_health];
 var breed = [dog_breed, cat_breed];
 var birth_year = List.generate(24, (index) => (index + 2000).toString());
