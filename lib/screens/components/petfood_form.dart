@@ -46,15 +46,15 @@ class PetfoodForm extends StatelessWidget {
             ),
           ),
           Visibility(
-            visible: petfood_data['health_ranking'] < 3,
+            visible: user_controller.visible_ranking(curation: curation, petfood_data: petfood_data),
             child: Positioned(
               left: 10.w,
               top: 10.h,
               child: Container(
                 width: 15.w,
                 height: 15.h,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: health_border_color[petfood_data['health_ranking']]),
-                child: Center(child: Text('${petfood_data['health_ranking'] + 1}', style: TextStyle(color: Colors.white))),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: health_border_color[user_controller.health_ranking_index(curation: curation, petfood_data: petfood_data)]),
+                child: Center(child: Text('${user_controller.health_ranking_index(curation: curation, petfood_data: petfood_data) + 1}', style: TextStyle(color: Colors.white))),
               ),
             ),
           ),

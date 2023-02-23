@@ -112,6 +112,22 @@ class UserController extends GetxController {
     return 3;
   }
 
+  int health_ranking_index({curation, petfood_data}) {
+    if (curation) {
+      return petfood_data['ranking_health'];
+    }
+    return 3;
+  }
+
+  bool visible_ranking({curation, petfood_data}) {
+    if (curation) {
+      if (petfood_data['ranking_health'] < 3) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   void set_pet_list() {
     post_data(url: 'pet-info/', data: {'member_id': user_info['member_id'].value}).then((value) {
       pet_list = value;
@@ -189,6 +205,7 @@ class UserController extends GetxController {
   void get_curation_petfood() {
     post_data(url: 'curation-kiosk/', data: pet_list[selected_pet_index.value]).then((response) {
       curation_data(response['curation_data']);
+
       curation_data['algs'] = str_to_list([...curation_data['alg'], ...curation_data['alg_sub']]);
       curation_petfood = response['dsc_price'];
       for (var c_index = 0; c_index < curation_petfood.length; c_index++) {

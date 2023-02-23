@@ -36,12 +36,10 @@ void sort_petfood({sort_index, petfood_list}) {
   } else if (sort_index == SortState.dsc_kibble.index) {
     petfood_list[user_controller.user_info['pet'].value].sort((a, b) => (b['kibble'] as int).compareTo(a['kibble'] as int));
   }
-  print(petfood_list[user_controller.user_info['pet'].value][0]['name']);
   user_controller.set_petfood_list_length();
 }
 
 void sort_curation_petfood({sort_index, petfood_list}) {
-  print(petfood_list[0]['retail_price'].runtimeType);
   if (sort_index == SortState.sales.index) {
     // 루이스홈 추천
     petfood_list.sort((a, b) => (a['health_ranking'] as int).compareTo(b['health_ranking'] as int));
@@ -55,5 +53,4 @@ void sort_curation_petfood({sort_index, petfood_list}) {
   } else if (sort_index == SortState.dsc_kibble.index) {
     petfood_list.sort((a, b) => (b['kibble'] as int).compareTo(a['kibble'] as int));
   }
-  print(petfood_list[0]);
 }
