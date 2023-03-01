@@ -107,7 +107,24 @@ class CurationNewUserScreen extends StatelessWidget {
                       ),
                     );
                   } else {
-                    screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
+                    user_controller.user_exist().then((value) {
+                      if (value) {
+                        Get.dialog(AlertDialog(
+                          title: Text('이미 등록된 아이디 입니다. 등록된 화면으로 이동합니다.'),
+                          actions: [
+                            TextButton(
+                              child: Text('예'),
+                              onPressed: () {
+                                Get.back();
+                                screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+                              },
+                            ),
+                          ],
+                        ));
+                      } else {
+                        screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
+                      }
+                    });
                   }
                 },
               ),

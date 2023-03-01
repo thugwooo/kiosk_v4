@@ -21,12 +21,12 @@ class MainScreen extends StatelessWidget {
     return Obx(
       () => Stack(
         children: [
-          _custom_carousel(),
-          _previous_button(),
-          _next_button(),
+          Positioned(left: 8.w, child: _custom_carousel()),
+          Positioned(left: 10.w, top: 146.h, child: _previous_button()),
+          Positioned(right: 10.w, top: 146.h, child: _next_button()),
           Positioned(
             left: 275.w,
-            top: 287.h,
+            bottom: 15.h,
             child: Row(
               children: [
                 for (var index = 0; index < petfood_list[user_controller.user_info['pet'].value].length ~/ row_petfood_length ~/ 2; index++) _page_index_form(index: index),
@@ -41,10 +41,13 @@ class MainScreen extends StatelessWidget {
   Widget _custom_carousel() {
     return Container(
       width: 600.w,
-      margin: EdgeInsets.only(top: 20.h),
+      margin: EdgeInsets.only(top: 5.h),
+      padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
+      // decoration: test_line,
       child: CarouselSlider.builder(
         carouselController: _carousel_controller,
         options: CarouselOptions(
+          height: 320.h,
           scrollDirection: Axis.horizontal,
           aspectRatio: 2,
           viewportFraction: 1,
@@ -64,11 +67,11 @@ class MainScreen extends StatelessWidget {
                       if (container_index * row_petfood_length * 2 + container_index < petfood_list[user_controller.user_info['pet'].value].length)
                         //
                         Container(
-                          margin: EdgeInsets.only(right: 10.w, bottom: 10.h),
+                          margin: EdgeInsets.only(top: 3.h, right: 15.w, bottom: 25.h),
                           child: PetfoodForm(
                             petfood_data: petfood_list[user_controller.user_info['pet'].value][container_index * 8 + petfood_index],
                             width: 93.w,
-                            height: 123.h,
+                            height: 130.h,
                             img_size: 65.w,
                             top_space: 10.h,
                             bottom_space: 5.h,
@@ -83,43 +86,35 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Positioned _next_button() {
-    return Positioned(
-      right: 10.w,
-      top: 140.h,
-      child: InkWell(
-        child: Container(
-          width: 20.w,
-          height: 20.h,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: Colors.grey),
-          child: Center(
-            child: Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 20.w),
-          ),
+  Widget _next_button() {
+    return InkWell(
+      child: Container(
+        width: 20.w,
+        height: 20.h,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: Colors.grey),
+        child: Center(
+          child: Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 20.w),
         ),
-        onTap: () {
-          _carousel_controller.nextPage();
-        },
       ),
+      onTap: () {
+        _carousel_controller.nextPage();
+      },
     );
   }
 
-  Positioned _previous_button() {
-    return Positioned(
-      left: 10.w,
-      top: 140.h,
-      child: InkWell(
-        child: Container(
-          width: 20.w,
-          height: 20.h,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: Colors.grey),
-          child: Center(
-            child: Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 20.w),
-          ),
+  Widget _previous_button() {
+    return InkWell(
+      child: Container(
+        width: 20.w,
+        height: 20.h,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: Colors.grey),
+        child: Center(
+          child: Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 20.w),
         ),
-        onTap: () {
-          _carousel_controller.previousPage();
-        },
       ),
+      onTap: () {
+        _carousel_controller.previousPage();
+      },
     );
   }
 

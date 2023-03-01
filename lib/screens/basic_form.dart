@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,18 +19,24 @@ class BasicForm extends StatelessWidget {
   var screen_controller = Get.put(ScreenController());
   var user_controller = Get.put(UserController());
   var filter_controller = Get.put(FilterController());
+  var count = 0;
+
   @override
   Widget build(BuildContext context) {
+    screen_controller.start_timer();
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
-        print('asdf');
+        print('onTap');
+        screen_controller.restart_timer();
       },
       onPanDown: (details) {
-        print('asdf');
+        print('onPanDown');
+        screen_controller.restart_timer();
       },
       onScaleStart: (details) {
-        print('asdf');
+        print('ScaleStart');
+        screen_controller.restart_timer();
       },
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -249,39 +257,26 @@ class BasicForm extends StatelessWidget {
           _navi_button(index: 2),
           _navi_button(index: 3),
           Expanded(
-            child: InkWell(
-              child: Container(
-                height: 63.h,
-                decoration: BoxDecoration(color: grey_2),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      right: 20.w,
-                      top: 17.h,
-                      child: Container(
-                        width: 135.w,
-                        height: 26.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5.w),
-                          border: Border.all(color: Colors.black),
-                        ),
-                      ),
+            child: Container(
+              height: 63.h,
+              decoration: BoxDecoration(color: grey_2),
+              child: Row(
+                children: [
+                  SizedBox(width: 30.w),
+                  _pet_button(index: 0),
+                  _pet_button(index: 1),
+                  SizedBox(width: 20.w),
+                  InkWell(
+                    child: Image.asset(
+                      'assets/icons/magnifying-glass.png',
+                      width: 20.w,
                     ),
-                    Positioned(
-                      right: 30.w,
-                      top: 20.h,
-                      child: Image.asset(
-                        'assets/icons/magnifying-glass.png',
-                        width: 20.w,
-                      ),
-                    ),
-                  ],
-                ),
+                    onTap: () {
+                      screen_controller.set_search_container();
+                    },
+                  ),
+                ],
               ),
-              onTap: () {
-                screen_controller.set_search_container();
-              },
             ),
           ),
         ],
@@ -369,9 +364,10 @@ class BasicForm extends StatelessWidget {
           width: 62.w,
           height: 25.h,
           decoration: BoxDecoration(
-            color: user_controller.is_selected_user_info(text: 'pet', index: index) ? main_color : grey_2,
+            color: user_controller.is_selected_user_info(text: 'pet', index: index) ? main_color : Colors.white,
+            border: Border.all(color: Colors.grey),
             borderRadius:
-                index == 0 ? BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)) : BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+                index == 0 ? BorderRadius.only(topLeft: Radius.circular(5.w), bottomLeft: Radius.circular(5.w)) : BorderRadius.only(topRight: Radius.circular(5.w), bottomRight: Radius.circular(5.w)),
           ),
           child: Center(
             child: Text(

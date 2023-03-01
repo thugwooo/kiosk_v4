@@ -1,14 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/basic_function.dart';
+import 'package:kiosk_v4/controllers/filter_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 import 'package:kiosk_v4/data/screen.dart';
 
 class ScreenController extends GetxController {
+  var filter_controller = Get.put(FilterController());
   var scroll_controller = ScrollController().obs;
   var user_controller = Get.put(UserController());
   RxInt screen_index = ScreenState.main_screen.index.obs;
+  RxInt curation_screen_index = ScreenState.curation_main_screen.index.obs;
   RxInt bottom_navi_index = 0.obs;
   RxBool grey_background = false.obs;
   RxBool petfood_detail_container = false.obs;
@@ -19,6 +24,27 @@ class ScreenController extends GetxController {
   RxInt search_petfood_length = 0.obs;
   RxInt pop_category_index = 0.obs;
   RxInt sort_index = 0.obs;
+  int _count = 0;
+  late Timer _timer;
+  void start_timer() {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      _count++;
+      print(_count);
+      if (_count == 30) {
+        _count = 0;
+        set_navi_index(ScreenState.main_screen.index);
+      }
+    });
+  }
+
+  void cancel_timer() {
+    _timer.cancel();
+  }
+
+  void restart_timer() {
+    _count = 0;
+  }
+
   void scroll_up() {
     scroll_controller.value.animateTo(0, duration: Duration(microseconds: 100), curve: Curves.ease);
   }
@@ -36,8 +62,33 @@ class ScreenController extends GetxController {
   }
 
   void set_navi_index(index) {
-    screen_index(index);
-    bottom_navi_index(index);
+    if ([ScreenState.curation_input_screen.index, ScreenState.curation_pet_screen.index, ScreenState.curation_recommend_petfood_screen.index, ScreenState.curation_record_petfood_screen.index]
+        .contains(screen_index.value)) {
+      Get.dialog(AlertDialog(
+        title: Text('현재 화면을 벗어나실 경우 정보가 초기화 됩니다. 이동하시겠습니까?'),
+        actions: [
+          TextButton(
+            child: Text('예'),
+            onPressed: () {
+              Get.back();
+              set_screen_index(index);
+              bottom_navi_index(index);
+              filter_controller.change_pet();
+              user_controller.add_new_pet_button('');
+            },
+          ),
+          TextButton(
+            child: Text('아니오'),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+        ],
+      ));
+    } else {
+      set_screen_index(index);
+      bottom_navi_index(index);
+    }
   }
 
   void set_search_container() {

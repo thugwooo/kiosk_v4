@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kiosk_v4/screens/test_screen.dart';
 
 import '../screens/curation/curation_exist_user_screen.dart';
 import '../screens/curation/curation_input_screen.dart';
@@ -31,7 +30,7 @@ enum ScreenState {
 }
 
 List navi_icons = ['assets/icons/home.png', 'assets/icons/star.png', 'assets/icons/filter.png', 'assets/icons/cat.png'];
-List navi_Text = ['메인 화면', '인기 카테고리', '사료 필터', '1:1 사료 추천'];
+List navi_Text = ['메인 화면', '인기 카테고리', '카테고리', '인생 사료 추천'];
 List<Widget> screen_list = [
   MainScreen(),
   PopularCategoryScreen(),
@@ -44,5 +43,5 @@ List<Widget> screen_list = [
   CurationPetScreen(),
   CurationRecordPetfoodScreen(),
   CurationRecommendPetfoodScreen(),
-  TestScreen(),
+  // TestScreen(),
 ];
