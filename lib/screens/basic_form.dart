@@ -22,6 +22,13 @@ class BasicForm extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
+        print('asdf');
+      },
+      onPanDown: (details) {
+        print('asdf');
+      },
+      onScaleStart: (details) {
+        print('asdf');
       },
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -176,8 +183,18 @@ class BasicForm extends StatelessWidget {
         visible: screen_controller.grey_background.value,
         child: Opacity(
           opacity: 0.5,
-          child: Container(
-            color: Colors.grey,
+          child: InkWell(
+            child: Container(
+              color: Colors.grey,
+            ),
+            onTap: () {
+              if (screen_controller.petfood_detail_container.value) {
+                screen_controller.set_petfood_detail_container();
+              }
+              if (screen_controller.search_container.value) {
+                screen_controller.set_search_container();
+              }
+            },
           ),
         ),
       ),
@@ -335,28 +352,11 @@ class BasicForm extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: 20.w),
-          Column(
-            children: [
-              Image.asset(
-                'assets/icons/vertical_logo.png',
-                width: 126.w,
-              ),
-              SizedBox(height: 5.h),
-              Row(
-                children: [
-                  _pet_button(index: 0),
-                  _pet_button(index: 1),
-                ],
-              ),
-            ],
+          Image.asset(
+            'assets/icons/vertical_logo.png',
+            width: 126.w,
           ),
           SizedBox(width: 15.w),
-          // TODO: 광고
-          Container(
-            width: 420.w,
-            height: 83.h,
-            child: Image.asset('assets/images/banner_1.jpg'),
-          ),
         ],
       ),
     );

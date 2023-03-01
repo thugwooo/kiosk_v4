@@ -8,8 +8,8 @@ import 'package:kiosk_v4/data/screen.dart';
 class ScreenController extends GetxController {
   var scroll_controller = ScrollController().obs;
   var user_controller = Get.put(UserController());
-  RxInt screen_index = ScreenState.curation_input_screen.index.obs;
-  RxInt bottom_navi_index = 3.obs;
+  RxInt screen_index = ScreenState.main_screen.index.obs;
+  RxInt bottom_navi_index = 0.obs;
   RxBool grey_background = false.obs;
   RxBool petfood_detail_container = false.obs;
   RxMap petfood_detail_data = {}.obs;
@@ -19,14 +19,8 @@ class ScreenController extends GetxController {
   RxInt search_petfood_length = 0.obs;
   RxInt pop_category_index = 0.obs;
   RxInt sort_index = 0.obs;
-  RxBool show_petfood_detail = false.obs;
-
   void scroll_up() {
     scroll_controller.value.animateTo(0, duration: Duration(microseconds: 100), curve: Curves.ease);
-  }
-
-  void set_show_petfood_detail() {
-    show_petfood_detail(!show_petfood_detail.value);
   }
 
   bool is_selected_bottom_navi_index(index) {

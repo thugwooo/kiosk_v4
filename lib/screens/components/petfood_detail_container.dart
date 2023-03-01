@@ -15,18 +15,16 @@ class PetfoodDetailContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => AnimatedPositioned(
-        duration: Duration(milliseconds: animated_velocity),
+      () => Positioned(
         left: 50.w,
-        top: screen_controller.show_petfood_detail.value ? 5.h : 50.h,
+        top: 5.h,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AnimatedContainer(
-              duration: Duration(milliseconds: animated_velocity),
+            Container(
               padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 10.h),
               width: 500.w,
-              height: screen_controller.show_petfood_detail.value ? 450.h : 350.h,
+              height: 450.h,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5.w),
@@ -38,7 +36,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                   SizedBox(height: 10.h),
                   AnimatedContainer(
                     duration: Duration(milliseconds: animated_velocity),
-                    height: screen_controller.show_petfood_detail.value ? 320.h : 200.h,
+                    height: 320.h,
                     decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
                     child: InteractiveViewer(
                       child: SingleChildScrollView(
@@ -63,66 +61,58 @@ class PetfoodDetailContainer extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            Visibility(
-                              visible: screen_controller.show_petfood_detail.value,
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 30.h),
-                                  _rotation_feed_container(),
-                                  SizedBox(height: 30.h),
-                                  _rotation_days_container(),
-                                  SizedBox(height: 30.h),
-                                  InkWell(
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text('맨 위로', style: TextStyle(fontSize: 12.sp)),
-                                        Icon(
-                                          Icons.keyboard_arrow_up,
-                                          size: 20.w,
-                                        )
-                                      ],
-                                    ),
-                                    onTap: () {
-                                      screen_controller.scroll_up();
-                                    },
+                            Column(
+                              children: [
+                                SizedBox(height: 30.h),
+                                _rotation_feed_container(),
+                                SizedBox(height: 30.h),
+                                _rotation_days_container(),
+                                SizedBox(height: 30.h),
+                                InkWell(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text('맨 위로', style: TextStyle(fontSize: 12.sp)),
+                                      Icon(
+                                        Icons.keyboard_arrow_up,
+                                        size: 20.w,
+                                      )
+                                    ],
                                   ),
-                                  SizedBox(height: 30.h),
-                                ],
-                              ),
+                                  onTap: () {
+                                    screen_controller.scroll_up();
+                                  },
+                                ),
+                                SizedBox(height: 30.h),
+                              ],
                             ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  Visibility(
-                    visible: !screen_controller.show_petfood_detail.value,
-                    child: InkWell(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('자세히 보기', style: TextStyle(fontSize: 11.sp)),
-                          Icon(Icons.keyboard_arrow_down, size: 20.w),
-                        ],
-                      ),
-                      onTap: () {
-                        screen_controller.set_show_petfood_detail();
-                      },
-                    ),
-                  ),
+                  // InkWell(
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Text('자세히 보기', style: TextStyle(fontSize: 11.sp)),
+                  //       Icon(Icons.keyboard_arrow_down, size: 20.w),
+                  //     ],
+                  //   ),
+                  //   onTap: () {
+
+                  //   },
+                  // ),
                 ],
               ),
             ),
-            AnimatedPadding(
-              duration: Duration(milliseconds: animated_velocity),
-              padding: EdgeInsets.only(left: 3.w, top: screen_controller.show_petfood_detail.value ? 45.h : 0.h),
+            Padding(
+              padding: EdgeInsets.only(left: 3.w, top: 45.h),
               child: InkWell(
                 child: Icon(Icons.cancel, size: 30.w),
                 onTap: () {
                   screen_controller.set_petfood_detail_container();
-                  screen_controller.show_petfood_detail(false);
                 },
               ),
             ),
@@ -134,43 +124,40 @@ class PetfoodDetailContainer extends StatelessWidget {
 
   Obx _detail_info() {
     return Obx(
-      () => Visibility(
-        visible: screen_controller.show_petfood_detail.value,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Image.asset('assets/icons/petfood_border.png', width: 30.w),
-                SizedBox(width: 6.w),
-                Text('이런 게 좋아요!', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
-              ],
+      () => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Image.asset('assets/icons/petfood_border.png', width: 30.w),
+              SizedBox(width: 6.w),
+              Text('이런 게 좋아요!', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
+            ],
+          ),
+          SizedBox(height: 10.h),
+          for (var index = 0; index < screen_controller.petfood_detail_data['title'].length; index++) _contents_explain(index),
+          Row(
+            children: [
+              Image.asset('assets/icons/nutrients.png', width: 30.w),
+              SizedBox(width: 6.w),
+              Text('영양성분', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
+            ],
+          ),
+          SizedBox(height: 10.h),
+          Text('원재료', style: TextStyle(fontSize: 15.sp, color: main_color)),
+          SizedBox(height: 5.h),
+          Container(
+            width: 400.w,
+            child: Text(
+              screen_controller.petfood_detail_data['all_ingredient'],
+              style: TextStyle(fontSize: 11.sp),
             ),
-            SizedBox(height: 10.h),
-            for (var index = 0; index < screen_controller.petfood_detail_data['title'].length; index++) _contents_explain(index),
-            Row(
-              children: [
-                Image.asset('assets/icons/nutrients.png', width: 30.w),
-                SizedBox(width: 6.w),
-                Text('영양성분', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
-              ],
-            ),
-            SizedBox(height: 10.h),
-            Text('원재료', style: TextStyle(fontSize: 15.sp, color: main_color)),
-            SizedBox(height: 5.h),
-            Container(
-              width: 400.w,
-              child: Text(
-                screen_controller.petfood_detail_data['all_ingredient'],
-                style: TextStyle(fontSize: 11.sp),
-              ),
-            ),
-            SizedBox(height: 20.h),
-            Text('영양정보', style: TextStyle(fontSize: 15.sp, color: main_color)),
-            _nutrients_table(),
-            SizedBox(height: 50.h),
-          ],
-        ),
+          ),
+          SizedBox(height: 20.h),
+          Text('영양정보', style: TextStyle(fontSize: 15.sp, color: main_color)),
+          _nutrients_table(),
+          SizedBox(height: 50.h),
+        ],
       ),
     );
   }

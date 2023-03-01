@@ -114,14 +114,14 @@ class UserController extends GetxController {
 
   int health_ranking_index({curation, petfood_data}) {
     if (curation) {
-      return petfood_data['ranking_health'];
+      return petfood_data['health_ranking'];
     }
     return 3;
   }
 
   bool visible_ranking({curation, petfood_data}) {
     if (curation) {
-      if (petfood_data['ranking_health'] < 3) {
+      if (petfood_data['health_ranking'] < 3) {
         return true;
       }
     }
@@ -218,9 +218,9 @@ class UserController extends GetxController {
       for (var c_index = 0; c_index < curation_petfood.length; c_index++) {
         curation_petfood[c_index]['health_ranking'] = health_ranking(health_list: curation_petfood[c_index]['health']);
       }
-      set_curation_petfood_length();
       refresh();
       sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
+      set_curation_petfood_length();
     });
     set_curation_petfood_length();
   }

@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
           _next_button(),
           Positioned(
             left: 275.w,
-            top: 277.h,
+            top: 287.h,
             child: Row(
               children: [
                 for (var index = 0; index < petfood_list[user_controller.user_info['pet'].value].length ~/ row_petfood_length ~/ 2; index++) _page_index_form(index: index),
@@ -41,7 +41,7 @@ class MainScreen extends StatelessWidget {
   Widget _custom_carousel() {
     return Container(
       width: 600.w,
-      margin: EdgeInsets.only(top: 14.h),
+      margin: EdgeInsets.only(top: 20.h),
       child: CarouselSlider.builder(
         carouselController: _carousel_controller,
         options: CarouselOptions(
@@ -86,7 +86,7 @@ class MainScreen extends StatelessWidget {
   Positioned _next_button() {
     return Positioned(
       right: 10.w,
-      top: 130.h,
+      top: 140.h,
       child: InkWell(
         child: Container(
           width: 20.w,
@@ -106,7 +106,7 @@ class MainScreen extends StatelessWidget {
   Positioned _previous_button() {
     return Positioned(
       left: 10.w,
-      top: 130.h,
+      top: 140.h,
       child: InkWell(
         child: Container(
           width: 20.w,
