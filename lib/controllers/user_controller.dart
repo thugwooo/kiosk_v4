@@ -10,7 +10,7 @@ import '../data/curation.dart';
 
 class UserController extends GetxController {
   RxMap user_info = {
-    'member_id': '01098701720'.obs,
+    'member_id': '987720'.obs,
     'pet': 0.obs,
     'name': ''.obs,
     'breed': '선택'.obs,
@@ -26,6 +26,7 @@ class UserController extends GetxController {
     'health': ['', '', ''].obs,
     'weight': "".obs,
   }.obs;
+  RxString phone_number = ''.obs;
   RxBool agreement = false.obs;
   RxInt petfood_list_length = petfood_list[0].length.obs;
   var pet_list = [];
@@ -38,6 +39,32 @@ class UserController extends GetxController {
   var selected_petfood_list = [];
   RxInt selected_petfood_list_length = 0.obs;
   var scroll_controller = ScrollController().obs;
+
+  void add_number_phone_number(index) {
+    if (phone_number.value.length < 8) {
+      phone_number.value += index.toString();
+    }
+  }
+
+  void back_space_phone_number() {
+    phone_number.value = phone_number.value.substring(0, phone_number.value.length - 1);
+  }
+
+  String get_phone_number() {
+    if (phone_number.value.length > 3) {
+      return phone_number.value.substring(0, 4) + ' - ' + phone_number.value.substring(4, phone_number.value.length);
+    } else {
+      return phone_number.value;
+    }
+  }
+
+  bool phone_number_validator() {
+    if (phone_number.value.length == 8) {
+      return true;
+    }
+
+    return false;
+  }
 
   void set_petfood_list_length() {
     petfood_list_length(petfood_list[user_info['pet'].value].length);

@@ -340,17 +340,22 @@ class BasicForm extends StatelessWidget {
   }
 
   Widget _header() {
-    return Container(
-      margin: EdgeInsets.only(top: 15.h),
-      child: Row(
-        children: [
-          SizedBox(width: 20.w),
-          Image.asset(
-            'assets/icons/vertical_logo.png',
-            width: 126.w,
+    return Obx(
+      () => Container(
+        color: screen_controller.screen_index.value != ScreenState.curation_exist_user_screen.index ? Colors.white : background_blue_color_2,
+        child: Padding(
+          padding: EdgeInsets.only(top: 15.h),
+          child: Row(
+            children: [
+              SizedBox(width: 20.w),
+              Image.asset(
+                'assets/icons/vertical_logo.png',
+                width: 126.w,
+              ),
+              SizedBox(width: 15.w),
+            ],
           ),
-          SizedBox(width: 15.w),
-        ],
+        ),
       ),
     );
   }

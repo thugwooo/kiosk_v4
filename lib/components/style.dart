@@ -16,6 +16,7 @@ final main_color = Color.fromRGBO(0, 26, 94, 1);
 final mint_color = Color.fromRGBO(137, 241, 207, 1);
 final background_color = Color.fromRGBO(228, 239, 234, 1);
 final background_blue_color = Color.fromRGBO(179, 196, 226, 0.31);
+final background_blue_color_2 = Color.fromRGBO(215, 230, 249, 1);
 final grey_0 = Color.fromRGBO(248, 249, 250, 1);
 final grey_1 = Color.fromRGBO(241, 243, 245, 1);
 final grey_2 = Color.fromRGBO(233, 236, 239, 1);
