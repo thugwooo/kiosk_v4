@@ -80,3 +80,31 @@ import '../../data/category.dart';
 //     );
 //   }
 // }
+
+
+
+// exist user
+// if (value) {
+//                       screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+//                     } else {
+//                       Get.dialog(
+//                         AlertDialog(
+//                           title: Text('등록되지 않은 정보입니다.\n신규 등록 페이지로 이동하시겠습니까?'),
+//                           actions: [
+//                             TextButton(
+//                               child: Text('Yes'),
+//                               onPressed: () {
+//                                 screen_controller.set_screen_index(ScreenState.curation_new_user_screen.index);
+//                                 Get.back();
+//                               },
+//                             ),
+//                             TextButton(
+//                               child: Text('No'),
+//                               onPressed: () {
+//                                 Get.back();
+//                               },
+//                             ),
+//                           ],
+//                         ),
+//                       );
+//                     }

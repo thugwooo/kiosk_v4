@@ -23,12 +23,10 @@ class BasicForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    screen_controller.start_timer();
+    // screen_controller.start_timer();
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
-        print('onTap');
-        screen_controller.restart_timer();
       },
       onPanDown: (details) {
         print('onPanDown');
