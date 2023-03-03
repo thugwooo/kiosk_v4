@@ -193,7 +193,7 @@ class CurationInputScreen extends StatelessWidget {
           child: Center(child: Text(user_controller.user_info['health'][index] == '' ? '${index + 1}순위' : user_controller.user_info['health'][index])),
         ),
         onTap: () {
-          user_controller.remove_health_ranking(index: index);
+          user_controller.remove_health_ranking(index);
         },
       ),
     );
