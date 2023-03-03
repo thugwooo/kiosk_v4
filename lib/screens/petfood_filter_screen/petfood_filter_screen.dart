@@ -124,7 +124,7 @@ class PetfoodFilterScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(width: 10.w),
-              Text('사료 필터', style: TextStyle(fontSize: 13.sp)),
+              Text('카테고리', style: TextStyle(fontSize: 13.sp)),
               SizedBox(width: 5.w),
               Padding(
                 padding: EdgeInsets.only(top: 2.h),

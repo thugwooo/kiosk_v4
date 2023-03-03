@@ -16,23 +16,23 @@ class CurationExistUserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     user_controller.phone_number.value = '';
     return Container(
-      padding: EdgeInsets.only(top: 30.h, left: 50.w),
+      padding: EdgeInsets.only(top: 20.h, left: 50.w),
       color: background_blue_color_2,
       child: Row(
-        children: [_left_form(), SizedBox(width: 25.w), _right_form()],
+        children: [_left_form(), SizedBox(width: 15.w), _right_form()],
       ),
     );
   }
 
   Container _right_form() {
     return Container(
-      width: 260.w,
+      width: 240.w,
       child: Column(
         children: [
           Container(
-            width: 260.w,
+            width: 240.w,
             height: 85.h,
-            decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Colors.grey, width: 1.w))),
+            decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Colors.grey, width: 0.3.w))),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -65,7 +65,7 @@ class CurationExistUserScreen extends StatelessWidget {
           Table(
             border: TableBorder.symmetric(
               outside: BorderSide.none,
-              inside: BorderSide(width: 1.w, color: Colors.grey),
+              inside: BorderSide(width: 0.3.w, color: Colors.grey),
             ),
             children: [
               for (var col_index = 0; col_index < 3; col_index++)
@@ -99,29 +99,31 @@ class CurationExistUserScreen extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        user_controller.set_user_info(text: 'member_id', value: '010' + user_controller.phone_number.value);
-                        user_controller.user_exist().then((value) {
-                          if (value) {
-                            screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
-                          } else {
-                            Get.dialog(AlertDialog(
-                              title: Text('등록되지 않은 정보입니다. \n신규 등록 페이지로 이동하시겠습니까?'),
-                              actions: [
-                                TextButton(
-                                    child: Text('예'),
-                                    onPressed: () {
-                                      Get.back();
-                                      screen_controller.set_screen_index(ScreenState.curation_new_user_screen.index);
-                                    }),
-                                TextButton(
-                                    child: Text('아니오'),
-                                    onPressed: () {
-                                      Get.back();
-                                    }),
-                              ],
-                            ));
-                          }
-                        });
+                        if (user_controller.phone_number.value.length == 8) {
+                          user_controller.set_user_info(text: 'member_id', value: '010' + user_controller.phone_number.value);
+                          user_controller.user_exist().then((value) {
+                            if (value) {
+                              screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+                            } else {
+                              Get.dialog(AlertDialog(
+                                title: Text('등록되지 않은 정보입니다. \n신규 등록 페이지로 이동하시겠습니까?'),
+                                actions: [
+                                  TextButton(
+                                      child: Text('예'),
+                                      onPressed: () {
+                                        Get.back();
+                                        screen_controller.set_screen_index(ScreenState.curation_new_user_screen.index);
+                                      }),
+                                  TextButton(
+                                      child: Text('아니오'),
+                                      onPressed: () {
+                                        Get.back();
+                                      }),
+                                ],
+                              ));
+                            }
+                          });
+                        }
                       },
                     ),
                   ),
@@ -143,6 +145,7 @@ class CurationExistUserScreen extends StatelessWidget {
         Text('휴대폰 번호를 입력해 주세요.', style: TextStyle(fontSize: 19.sp, fontWeight: FontWeight.w500)),
         SizedBox(height: 5.h),
         Text('반려동물 정보를 불러올게요!', style: TextStyle(fontSize: 13.sp)),
+        SizedBox(height: 30.h),
         Image.asset(
           'assets/sub/curation_dogs.png',
           width: 250.w,

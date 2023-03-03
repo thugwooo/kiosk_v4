@@ -27,7 +27,6 @@ class PopularCategoryDisplayScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            SizedBox(height: 20.h),
             Container(width: 420.w, child: SortPetfoodContainer(petfood_list: petfood_list)),
             SizedBox(height: 10.h),
             Expanded(

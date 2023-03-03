@@ -368,7 +368,7 @@ class BasicForm extends StatelessWidget {
           height: 25.h,
           decoration: BoxDecoration(
             color: user_controller.is_selected_user_info(text: 'pet', index: index) ? main_color : Colors.white,
-            border: Border.all(color: Colors.grey),
+            border: Border.all(width: 0.25.w, color: Colors.grey),
             borderRadius:
                 index == 0 ? BorderRadius.only(topLeft: Radius.circular(5.w), bottomLeft: Radius.circular(5.w)) : BorderRadius.only(topRight: Radius.circular(5.w), bottomRight: Radius.circular(5.w)),
           ),
