@@ -75,7 +75,7 @@ class ScreenController extends GetxController {
               set_screen_index(index);
               bottom_navi_index(index);
               filter_controller.change_pet();
-              user_controller.add_new_pet_button('');
+              user_controller.add_new_pet_button({'member_id': ''});
             },
           ),
           TextButton(

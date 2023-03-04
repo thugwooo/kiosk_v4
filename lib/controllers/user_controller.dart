@@ -199,7 +199,7 @@ class UserController extends GetxController {
   }
 
   void set_whole_user_info(data) {
-    user_info['member_id'](data['member_id']);
+    user_info['member_id'](data['member_id']['member_id']);
     user_info['name'](data['name']);
     user_info['breed'](data['breed']);
     user_info['birth_year'](data['birth_year']);
