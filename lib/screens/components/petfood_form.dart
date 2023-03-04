@@ -23,7 +23,7 @@ class PetfoodForm extends StatelessWidget {
             width: width,
             height: height,
             decoration: BoxDecoration(
-              color: curation ? health_background_color[petfood_data['health_ranking']] : grey_0,
+              color: grey_0,
               borderRadius: BorderRadius.circular(5.w),
               boxShadow: [
                 BoxShadow(
@@ -53,7 +53,7 @@ class PetfoodForm extends StatelessWidget {
               child: Container(
                 width: 15.w,
                 height: 15.h,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: health_border_color[user_controller.health_ranking_index(curation: curation, petfood_data: petfood_data)]),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.w), color: Colors.white),
                 child: Center(child: Text('${user_controller.health_ranking_index(curation: curation, petfood_data: petfood_data) + 1}', style: TextStyle(color: Colors.white))),
               ),
             ),

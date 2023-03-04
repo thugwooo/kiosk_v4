@@ -19,7 +19,7 @@ class UserController extends GetxController {
     'birth_day': '일'.obs,
     'sex': 2.obs,
     'neutering': 2.obs,
-    'bcs': 3.obs,
+    'bcs': 1.obs,
     'show_alg': 2.obs,
     'alg': [].obs,
     'alg_sub': [].obs,
@@ -59,9 +59,9 @@ class UserController extends GetxController {
   }
 
   int health_ranking_index({curation, petfood_data}) {
-    if (curation) {
-      return petfood_data['health_ranking'];
-    }
+    // if (curation) {
+    //   return petfood_data['health_ranking'];
+    // }
     return 3;
   }
 
@@ -232,43 +232,79 @@ class UserController extends GetxController {
         }
       }
       for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-        curation_petfood[p_index]['used'] = false;
-        curation_petfood[p_index]['health_ranking'] = 3;
+        curation_petfood[p_index]['health_ranking'] = 0;
       }
-      // health_ranking
-      for (var h_index = 0; h_index < user_info['health'].length; h_index++) {
+      // set_health_ranking_version_1();
+      set_health_ranking_version_2();
+
+      refresh();
+      sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
+      set_curation_petfood_length();
+      for (var index = 0; index < curation_petfood.length; index++) {
+        print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
+      }
+    });
+    set_curation_petfood_length();
+  }
+
+  void set_health_ranking_version_1() {
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      curation_petfood[p_index]['used'] = false;
+      curation_petfood[p_index]['health_ranking'] = 3;
+    }
+    for (var h_index = 0; h_index < user_info['health'].length; h_index++) {
+      for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+        if (curation_petfood[p_index]['health_1'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
+          curation_petfood[p_index]['health_ranking'] = h_index;
+          curation_petfood[p_index]['used'] = true;
+        }
+      }
+      if (curation_petfood.where((value) => value['health_ranking'] == h_index).length == 0) {
+        print('11');
         for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-          if (curation_petfood[p_index]['health_1'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
+          if (curation_petfood[p_index]['health_2'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
             curation_petfood[p_index]['health_ranking'] = h_index;
             curation_petfood[p_index]['used'] = true;
           }
         }
-        if (curation_petfood.where((value) => value['health_ranking'] == h_index).length == 0) {
-          print('11');
-          for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-            if (curation_petfood[p_index]['health_2'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
-              curation_petfood[p_index]['health_ranking'] = h_index;
-              curation_petfood[p_index]['used'] = true;
-            }
+      }
+      if (curation_petfood.where((value) => value['health_ranking'] == h_index).length == 0) {
+        for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+          if (curation_petfood[p_index]['health_3'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
+            curation_petfood[p_index]['health_ranking'] = h_index;
+            curation_petfood[p_index]['used'] = true;
           }
         }
-        if (curation_petfood.where((value) => value['health_ranking'] == h_index).length == 0) {
-          for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-            if (curation_petfood[p_index]['health_3'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
-              curation_petfood[p_index]['health_ranking'] = h_index;
-              curation_petfood[p_index]['used'] = true;
+      }
+    }
+  }
+
+  void set_health_ranking_version_2() {
+    var coefficient = [
+      [6, 4, 2],
+      [5, 3, 1],
+      [2, 1, 0]
+    ];
+
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      curation_petfood[p_index]['health_ranking'] = 0;
+      // curation_petfood[p_index]['health_1_bool'] = false;
+      // curation_petfood[p_index]['health_2_bool'] = false;
+      // curation_petfood[p_index]['health_3_bool'] = false;
+    }
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      for (var h_index = 0; h_index < curation_data['health'].length; h_index++) {
+        for (var ch_index = 0; ch_index < 3; ch_index++) {
+          if (curation_data['health'][h_index] != '') {
+            if (curation_data['health'][h_index] == curation_petfood[p_index]['health_${ch_index + 1}']) {
+              curation_petfood[p_index]['health_ranking'] += (3 - h_index) * coefficient[h_index][ch_index];
+              // print(h_index.toString() + '     ' + ch_index.toString() + '   ' + curation_data['health'][h_index]);
+              // print(curation_petfood[p_index]['name'] + curation_petfood[p_index]['health_ranking'].toString());
             }
           }
         }
       }
-      for (var index = 0; index < curation_petfood.length; index++) {
-        if (curation_petfood[index]['health_ranking'] == 0) print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
-      }
-      refresh();
-      sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
-      set_curation_petfood_length();
-    });
-    set_curation_petfood_length();
+    }
   }
 
   void set_curation_petfood_length() {
@@ -363,10 +399,6 @@ class UserController extends GetxController {
     if (user_info['show_alg'].value == 2) {
       return_data['dialog_text'] = '알러지 여부를 선택해주세요';
       return_data['scroll'] = 320.h;
-    }
-    if (user_info['bcs'].value == 3) {
-      return_data['dialog_text'] = '체형을 선택해주세요';
-      return_data['scroll'] = 280.h;
     }
     if (user_info['weight'].value == '') {
       return_data['dialog_text'] = '몸무게를 채워주세요';
