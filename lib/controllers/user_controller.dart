@@ -230,18 +230,16 @@ class UserController extends GetxController {
           }
         }
       }
-      for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-        curation_petfood[p_index]['health_ranking'] = 0;
-      }
+
       set_health_ranking_version_1();
       // set_health_ranking_version_2();
 
       refresh();
       sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
       set_curation_petfood_length();
-      // for (var index = 0; index < curation_petfood.length; index++) {
-      //   print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
-      // }
+      for (var index = 0; index < curation_petfood.length; index++) {
+        print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
+      }
     });
     set_curation_petfood_length();
   }
@@ -251,17 +249,21 @@ class UserController extends GetxController {
       curation_petfood[p_index]['used'] = false;
       curation_petfood[p_index]['health_ranking'] = 3;
     }
-    for (var h_index = 0; h_index < user_info['health'].length; h_index++) {
+    for (var h_index = 0; h_index < curation_data['health'].length; h_index++) {
       for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-        if (curation_petfood[p_index]['health_1'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
+        // print('c ' + curation_petfood[p_index]['health_1'] + 'h ' + curation_data['health'][h_index]);
+        if (curation_petfood[p_index]['used']) continue;
+        if (curation_data['health'][h_index] == '') continue;
+        if (curation_petfood[p_index]['health_1'] == curation_data['health'][h_index]) {
           curation_petfood[p_index]['health_ranking'] = h_index;
           curation_petfood[p_index]['used'] = true;
         }
       }
       if (curation_petfood.where((value) => value['health_ranking'] == h_index).length == 0) {
-        print('11');
         for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-          if (curation_petfood[p_index]['health_2'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
+          if (curation_petfood[p_index]['used']) continue;
+          if (curation_data['health'][h_index] == '') continue;
+          if (curation_petfood[p_index]['health_2'] == curation_data['health'][h_index]) {
             curation_petfood[p_index]['health_ranking'] = h_index;
             curation_petfood[p_index]['used'] = true;
           }
@@ -269,7 +271,9 @@ class UserController extends GetxController {
       }
       if (curation_petfood.where((value) => value['health_ranking'] == h_index).length == 0) {
         for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-          if (curation_petfood[p_index]['health_3'] == user_info['health'][h_index] && !curation_petfood[p_index]['used']) {
+          if (curation_petfood[p_index]['used']) continue;
+          if (curation_data['health'][h_index] == '') continue;
+          if (curation_petfood[p_index]['health_3'] == curation_data['health'][h_index]) {
             curation_petfood[p_index]['health_ranking'] = h_index;
             curation_petfood[p_index]['used'] = true;
           }
