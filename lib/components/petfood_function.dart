@@ -42,7 +42,7 @@ void sort_petfood({sort_index, petfood_list}) {
 void sort_curation_petfood({sort_index, petfood_list}) {
   if (sort_index == SortState.sales.index) {
     // 루이스홈 추천
-    petfood_list.sort((a, b) => (b['health_ranking'] as int).compareTo(a['health_ranking'] as int));
+    petfood_list.sort((a, b) => (a['health_ranking'] as int).compareTo(b['health_ranking'] as int));
   } else if (sort_index == SortState.asc_price.index) {
     // 가격 내림차순
     petfood_list.sort((a, b) => (a['retail_price'] as int).compareTo(b['retail_price'] as int));

@@ -52,8 +52,8 @@ class CurationExistUserScreen extends StatelessWidget {
                       children: [
                         Text('010 - ', style: TextStyle(fontSize: 22.sp)),
                         Text(
-                          user_controller.user_info['member_id'].value == '' ? '1234 - 5678' : user_controller.get_phone_number(),
-                          style: TextStyle(fontSize: 22.sp, color: user_controller.user_info['member_id'].value == '' ? Colors.grey : Colors.black),
+                          user_controller.get_phone_number(),
+                          style: TextStyle(fontSize: 22.sp, color: user_controller.phone_number.value == '' ? Colors.grey : Colors.black),
                         ),
                       ],
                     ),

@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:kiosk_v4/components/style.dart';
-import 'package:kiosk_v4/controllers/screen_controller.dart';
-import 'package:kiosk_v4/controllers/user_controller.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:get/get.dart';
+// import 'package:kiosk_v4/components/style.dart';
+// import 'package:kiosk_v4/controllers/screen_controller.dart';
+// import 'package:kiosk_v4/controllers/user_controller.dart';
 
-import '../../data/category.dart';
+// import '../../data/category.dart';
 
 // class PopularCategoryScreen extends StatelessWidget {
 //   PopularCategoryScreen({super.key});

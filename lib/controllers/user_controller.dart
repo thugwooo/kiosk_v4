@@ -66,7 +66,7 @@ class UserController extends GetxController {
   }
 
   bool visible_ranking({curation, petfood_data}) {
-    if (curation) {
+    if (curation && petfood_data['health_ranking'] < 3) {
       return true;
     }
     return false;
@@ -76,7 +76,6 @@ class UserController extends GetxController {
     if (phone_number.value.length < 8) {
       phone_number.value += index.toString();
     }
-    print(phone_number);
   }
 
   void back_space_phone_number() {
@@ -84,11 +83,12 @@ class UserController extends GetxController {
   }
 
   String get_phone_number() {
+    if (phone_number.value == '') return '1234 - 5678';
     if (phone_number.value.length > 3) {
+      print(phone_number);
       return phone_number.value.substring(0, 4) + ' - ' + phone_number.value.substring(4, phone_number.value.length);
-    } else {
-      return phone_number.value;
     }
+    return phone_number.value;
   }
 
   bool phone_number_validator() {
@@ -233,8 +233,8 @@ class UserController extends GetxController {
       for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
         curation_petfood[p_index]['health_ranking'] = 0;
       }
-      // set_health_ranking_version_1();
-      set_health_ranking_version_2();
+      set_health_ranking_version_1();
+      // set_health_ranking_version_2();
 
       refresh();
       sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
