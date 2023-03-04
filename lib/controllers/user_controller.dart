@@ -58,18 +58,16 @@ class UserController extends GetxController {
     }
   }
 
-  int health_ranking_index({curation, petfood_data}) {
-    // if (curation) {
-    //   return petfood_data['health_ranking'];
-    // }
-    return 3;
+  dynamic health_ranking_index({curation, petfood_data}) {
+    if (curation) {
+      return petfood_data['health_ranking'];
+    }
+    return 0;
   }
 
   bool visible_ranking({curation, petfood_data}) {
     if (curation) {
-      if (petfood_data['health_ranking'] < 3) {
-        return true;
-      }
+      return true;
     }
     return false;
   }
@@ -78,6 +76,7 @@ class UserController extends GetxController {
     if (phone_number.value.length < 8) {
       phone_number.value += index.toString();
     }
+    print(phone_number);
   }
 
   void back_space_phone_number() {
@@ -200,7 +199,7 @@ class UserController extends GetxController {
   }
 
   void set_whole_user_info(data) {
-    user_info['member_id'](data['member_id']['member_id']);
+    user_info['member_id'](data['member_id']);
     user_info['name'](data['name']);
     user_info['breed'](data['breed']);
     user_info['birth_year'](data['birth_year']);
@@ -240,9 +239,9 @@ class UserController extends GetxController {
       refresh();
       sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
       set_curation_petfood_length();
-      for (var index = 0; index < curation_petfood.length; index++) {
-        print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
-      }
+      // for (var index = 0; index < curation_petfood.length; index++) {
+      //   print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
+      // }
     });
     set_curation_petfood_length();
   }
@@ -282,15 +281,12 @@ class UserController extends GetxController {
   void set_health_ranking_version_2() {
     var coefficient = [
       [6, 4, 2],
-      [5, 3, 1],
+      [3, 2, 1],
       [2, 1, 0]
     ];
 
     for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
       curation_petfood[p_index]['health_ranking'] = 0;
-      // curation_petfood[p_index]['health_1_bool'] = false;
-      // curation_petfood[p_index]['health_2_bool'] = false;
-      // curation_petfood[p_index]['health_3_bool'] = false;
     }
     for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
       for (var h_index = 0; h_index < curation_data['health'].length; h_index++) {

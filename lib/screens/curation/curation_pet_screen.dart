@@ -64,7 +64,7 @@ class CurationPetScreen extends StatelessWidget {
         ),
       ),
       onTap: () {
-        user_controller.add_new_pet_button(user_controller.pet_list[0]['member_id']);
+        user_controller.add_new_pet_button(user_controller.user_info['member_id'].value);
         screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
       },
     );

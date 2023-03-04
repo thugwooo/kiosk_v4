@@ -99,31 +99,32 @@ class CurationExistUserScreen extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        if (user_controller.phone_number.value.length == 8) {
-                          user_controller.set_user_info(text: 'member_id', value: '010' + user_controller.phone_number.value);
-                          user_controller.user_exist().then((value) {
-                            if (value) {
-                              screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
-                            } else {
-                              Get.dialog(AlertDialog(
-                                title: Text('등록되지 않은 정보입니다. \n신규 등록 페이지로 이동하시겠습니까?'),
-                                actions: [
-                                  TextButton(
-                                      child: Text('예'),
-                                      onPressed: () {
-                                        Get.back();
-                                        screen_controller.set_screen_index(ScreenState.curation_new_user_screen.index);
-                                      }),
-                                  TextButton(
-                                      child: Text('아니오'),
-                                      onPressed: () {
-                                        Get.back();
-                                      }),
-                                ],
-                              ));
-                            }
-                          });
+                        if (user_controller.phone_number.value.length != 8) {
+                          return;
                         }
+                        user_controller.set_user_info(text: 'member_id', value: '010' + user_controller.phone_number.value);
+                        user_controller.user_exist().then((value) {
+                          if (value) {
+                            screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+                          } else {
+                            Get.dialog(AlertDialog(
+                              title: Text('등록되지 않은 정보입니다. \n신규 등록 페이지로 이동하시겠습니까?'),
+                              actions: [
+                                TextButton(
+                                    child: Text('예'),
+                                    onPressed: () {
+                                      Get.back();
+                                      screen_controller.set_screen_index(ScreenState.curation_new_user_screen.index);
+                                    }),
+                                TextButton(
+                                    child: Text('아니오'),
+                                    onPressed: () {
+                                      Get.back();
+                                    }),
+                              ],
+                            ));
+                          }
+                        });
                       },
                     ),
                   ),
@@ -165,6 +166,7 @@ class CurationExistUserScreen extends StatelessWidget {
       ),
       onTap: () {
         user_controller.add_number_phone_number(index);
+        print(index);
       },
     );
   }
