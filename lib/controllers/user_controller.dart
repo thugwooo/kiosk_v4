@@ -245,7 +245,7 @@ class UserController extends GetxController {
   }
 
   void set_health_ranking_version_1() {
-    var max_index = [4, 4, 4];
+    var max_index = [5, 5, 5];
     for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
       curation_petfood[p_index]['used'] = false;
       curation_petfood[p_index]['health_ranking'] = 3;
