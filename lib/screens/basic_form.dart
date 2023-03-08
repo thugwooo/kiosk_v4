@@ -30,7 +30,6 @@ class BasicForm extends StatelessWidget {
       onPanDown: (details) {
         print('onPanDown');
         screen_controller.restart_timer();
-        screen_controller.set_keyboard_up(context.mediaQueryViewInsets.bottom > 0);
       },
       onScaleStart: (details) {
         print('ScaleStart');
