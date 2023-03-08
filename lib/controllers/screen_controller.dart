@@ -26,6 +26,7 @@ class ScreenController extends GetxController {
   RxInt pop_category_index = 0.obs;
   RxInt sort_index = 0.obs;
   int _count = 0;
+  RxBool keyboard_up = false.obs;
   late Timer _timer;
   void start_timer() {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
@@ -179,5 +180,10 @@ class ScreenController extends GetxController {
     }
     search_petfood = temp;
     set_search_petfood_length();
+  }
+
+  bool set_keyboard_up(value) {
+    print(value);
+    return keyboard_up(value);
   }
 }

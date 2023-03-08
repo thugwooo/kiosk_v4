@@ -1,6 +1,5 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/petfood_function.dart';
@@ -31,6 +30,7 @@ class BasicForm extends StatelessWidget {
       onPanDown: (details) {
         print('onPanDown');
         screen_controller.restart_timer();
+        screen_controller.set_keyboard_up(context.mediaQueryViewInsets.bottom > 0);
       },
       onScaleStart: (details) {
         print('ScaleStart');
@@ -40,16 +40,16 @@ class BasicForm extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Stack(
           children: [
-            Column(
-              children: [
-                _header(),
-                Obx(
-                  () => Expanded(
+            Obx(
+              () => Column(
+                children: [
+                  _header(),
+                  Expanded(
                     child: screen_list[screen_controller.screen_index.value],
                   ),
-                ),
-                _custom_bottom_navigation(),
-              ],
+                  Visibility(visible: MediaQuery.of(context).viewInsets.bottom < 15, child: _custom_bottom_navigation()),
+                ],
+              ),
             ),
             _speech_bubble(),
             _background(),

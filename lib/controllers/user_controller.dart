@@ -229,6 +229,9 @@ class UserController extends GetxController {
             curation_petfood[c_index]['short_name'] = petfood_list[user_info['pet'].value][m_index]['short_name'];
           }
         }
+        if (curation_petfood[c_index]['name'].contains('프로플랜 슈레드 소형견')) {
+          print(curation_petfood[c_index]);
+        }
       }
 
       set_health_ranking_version_1();
@@ -237,9 +240,9 @@ class UserController extends GetxController {
       refresh();
       sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
       set_curation_petfood_length();
-      for (var index = 0; index < curation_petfood.length; index++) {
-        print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
-      }
+      // for (var index = 0; index < curation_petfood.length; index++) {
+      //   print(curation_petfood[index]['name'] + curation_petfood[index]['health_ranking'].toString());
+      // }
     });
     set_curation_petfood_length();
   }
