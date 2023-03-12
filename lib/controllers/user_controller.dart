@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kiosk_v4/components/rest+api.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 
@@ -254,6 +255,7 @@ class UserController extends GetxController {
       curation_petfood[p_index]['health_ranking'] = 3;
     }
     for (var h_index = 0; h_index < curation_data['health'].length; h_index++) {
+      // TODO : 건강고려 사항마다 정렬 다시하기
       for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
         // print('c ' + curation_petfood[p_index]['health_1'] + 'h ' + curation_data['health'][h_index]);
         if (curation_petfood[p_index]['used']) continue;
@@ -442,5 +444,19 @@ class UserController extends GetxController {
 
   void scroll_up(position) {
     scroll_controller.value.animateTo(position, duration: Duration(milliseconds: 300), curve: Curves.ease);
+  }
+
+  void kakao_message() async {
+    var defaultText = TextTemplate(text: """
+        카카오톡 공유는 카카오톡을 실행하여
+        사용자가 선택한 채팅방으로 메시지를 전송합니다.
+    """, link: Link(webUrl: Uri.parse("https://developers.kakao.com"), mobileWebUrl: Uri.parse("https://developers.kakao.com")));
+
+    try {
+      await TalkApi.instance.sendDefaultMemo(defaultText);
+      print('나에게 보내기 성공');
+    } catch (error) {
+      print('나에게 보내기 실패 $error');
+    }
   }
 }

@@ -347,9 +347,14 @@ class BasicForm extends StatelessWidget {
           child: Row(
             children: [
               SizedBox(width: 20.w),
-              Image.asset(
-                'assets/icons/vertical_logo.png',
-                width: 126.w,
+              InkWell(
+                child: Image.asset(
+                  'assets/icons/vertical_logo.png',
+                  width: 126.w,
+                ),
+                onTap: () {
+                  user_controller.kakao_message();
+                },
               ),
               SizedBox(width: 15.w),
             ],
