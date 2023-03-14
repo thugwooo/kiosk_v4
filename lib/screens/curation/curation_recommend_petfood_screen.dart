@@ -88,6 +88,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   controller: slider_controller.scroll.value,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _sort_container(),
                       SizedBox(height: 15.h),
@@ -100,7 +101,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                             for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
                               PetfoodForm(
                                 petfood_data: user_controller.curation_petfood[index],
-                                width: 93.w,
+                                width: 95.w,
                                 height: 128.h,
                                 img_size: 65.w,
                                 top_space: 10.h,
