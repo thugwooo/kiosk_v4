@@ -48,8 +48,8 @@ class PetfoodForm extends StatelessWidget {
           Visibility(
             visible: user_controller.visible_ranking(curation: curation, petfood_data: petfood_data),
             child: Positioned(
-              left: 10.w,
-              top: 10.h,
+              left: 5.w,
+              top: 5.h,
               child: Container(
                 width: 15.w,
                 height: 15.h,

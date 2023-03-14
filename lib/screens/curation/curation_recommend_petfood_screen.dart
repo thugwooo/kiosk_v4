@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
+import 'package:kiosk_v4/controllers/slider_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 import 'package:kiosk_v4/screens/components/petfood_form.dart';
 
@@ -15,41 +16,44 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
   CurationRecommendPetfoodScreen({super.key});
   var user_controller = Get.put(UserController());
   var screen_controller = Get.put(ScreenController());
+  var slider_controller = Get.put(SliderController());
   @override
   Widget build(BuildContext context) {
     user_controller.get_curation_petfood();
     return Stack(
       children: [
         Obx(
-          () => SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 10.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '[${user_controller.curation_data['name']}를 위한 맞춤형 사료]',
-                        style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+          () => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 10.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '[${user_controller.curation_data['name']}를 위한 맞춤형 사료]',
+                      style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      width: 65.w,
+                      height: 25.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                        ],
                       ),
-                      Container(
-                        width: 65.w,
-                        height: 25.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
-                          ],
-                        ),
-                        child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
-                      ),
-                    ],
-                  ),
+                      child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                    ),
+                  ],
                 ),
-                Container(width: 600.w, height: 1.h, color: main_color),
-                Padding(
+              ),
+              Container(width: 600.w, height: 1.h, color: main_color),
+              AnimatedContainer(
+                duration: Duration(milliseconds: 150),
+                height: slider_controller.show_pet_info.value ? 48.h : 0.h,
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 5.h),
                   child: Row(
                     children: [
@@ -66,34 +70,51 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  width: 600.w,
-                  height: 42.h,
-                  decoration: BoxDecoration(color: Color.fromRGBO(228, 228, 228, 1)),
-                ),
-                _sort_container(),
-                SizedBox(height: 15.h),
-                Container(
+              ),
+              Container(
+                width: 600.w,
+                height: 42.h,
+                decoration: BoxDecoration(color: Color.fromRGBO(228, 228, 228, 1)),
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 80.w),
-                  child: Wrap(
-                    spacing: 20.w,
-                    runSpacing: 10.h,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [for (var h_index = 0; h_index < user_controller.curation_data['health'].length; h_index++) _healthcare_container(h_index)],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
+              Expanded(
+                child: SingleChildScrollView(
+                  controller: slider_controller.scroll.value,
+                  child: Column(
                     children: [
-                      for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
-                        PetfoodForm(
-                          petfood_data: user_controller.curation_petfood[index],
-                          width: 93.w,
-                          height: 128.h,
-                          img_size: 65.w,
-                          top_space: 10.h,
-                          bottom_space: 5.h,
-                          curation: true,
+                      _sort_container(),
+                      SizedBox(height: 15.h),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 80.w),
+                        child: Wrap(
+                          spacing: 20.w,
+                          runSpacing: 10.h,
+                          children: [
+                            for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
+                              PetfoodForm(
+                                petfood_data: user_controller.curation_petfood[index],
+                                width: 93.w,
+                                height: 128.h,
+                                img_size: 65.w,
+                                top_space: 10.h,
+                                bottom_space: 5.h,
+                                curation: true,
+                              ),
+                          ],
                         ),
+                      ),
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Positioned(
@@ -115,6 +136,17 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
               }),
         ),
       ],
+    );
+  }
+
+  Container _healthcare_container(int h_index) {
+    return Container(
+      width: 88.w,
+      height: 22.h,
+      decoration: BoxDecoration(color: health_background_color[h_index], border: Border.all(width: 1.w, color: health_border_color[h_index]), borderRadius: BorderRadius.circular(5.w)),
+      child: Center(
+        child: Text('${user_controller.curation_data['health'][h_index]}', style: TextStyle(fontSize: 12.sp)),
+      ),
     );
   }
 
@@ -143,22 +175,22 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         _sort_button(index: 0),
-        SizedBox(width: 4.w),
+        SizedBox(width: 10.w),
         Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
-        SizedBox(width: 4.w),
+        SizedBox(width: 10.w),
         _sort_button(index: 1),
-        SizedBox(width: 4.w),
+        SizedBox(width: 10.w),
         Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
-        SizedBox(width: 4.w),
+        SizedBox(width: 10.w),
         _sort_button(index: 2),
-        SizedBox(width: 4.w),
-        Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
-        SizedBox(width: 4.w),
-        _sort_button(index: 3),
-        SizedBox(width: 4.w),
-        Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
-        SizedBox(width: 4.w),
-        _sort_button(index: 4),
+        SizedBox(width: 10.w),
+        // Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
+        // SizedBox(width: 4.w),
+        // _sort_button(index: 3),
+        // SizedBox(width: 4.w),
+        // Container(width: 1.w, height: 8.h, color: Color.fromRGBO(152, 152, 152, 1)),
+        // SizedBox(width: 4.w),
+        // _sort_button(index: 4),
       ],
     );
   }

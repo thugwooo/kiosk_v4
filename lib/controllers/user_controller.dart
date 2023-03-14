@@ -238,7 +238,6 @@ class UserController extends GetxController {
       set_health_ranking_version_1();
 
       // set_health_ranking_version_2();
-      print(curation_data);
 
       refresh();
       sort_curation_petfood(sort_index: 0, petfood_list: user_controller.curation_petfood);
