@@ -340,24 +340,27 @@ class BasicForm extends StatelessWidget {
 
   Widget _header() {
     return Obx(
-      () => Container(
-        color: screen_controller.screen_index.value != ScreenState.curation_exist_user_screen.index ? Colors.white : background_blue_color_2,
-        child: Padding(
-          padding: EdgeInsets.only(top: 15.h),
-          child: Row(
-            children: [
-              SizedBox(width: 20.w),
-              InkWell(
-                child: Image.asset(
-                  'assets/icons/vertical_logo.png',
-                  width: 126.w,
+      () => Visibility(
+        visible: screen_controller.screen_index.value != ScreenState.curation_recommend_petfood_screen.index,
+        child: Container(
+          color: screen_controller.screen_index.value != ScreenState.curation_exist_user_screen.index ? Colors.white : background_blue_color_2,
+          child: Padding(
+            padding: EdgeInsets.only(top: 15.h),
+            child: Row(
+              children: [
+                SizedBox(width: 20.w),
+                InkWell(
+                  child: Image.asset(
+                    'assets/icons/vertical_logo.png',
+                    width: 126.w,
+                  ),
+                  onTap: () {
+                    user_controller.kakao_message();
+                  },
                 ),
-                onTap: () {
-                  user_controller.kakao_message();
-                },
-              ),
-              SizedBox(width: 15.w),
-            ],
+                SizedBox(width: 15.w),
+              ],
+            ),
           ),
         ),
       ),

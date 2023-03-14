@@ -11,6 +11,7 @@ import '../screens/main_screen/main_screen.dart';
 import '../screens/petfood_filter_screen/petfood_filter_screen.dart';
 import '../screens/popular_categories_screen/popular_category_display_screen.dart';
 import '../screens/popular_categories_screen/popular_category_screen.dart';
+import '../screens/test_screen.dart';
 
 final speech_bubble = [ScreenState.main_screen.index, ScreenState.popular_category_screen.index];
 
@@ -43,5 +44,5 @@ List<Widget> screen_list = [
   CurationPetScreen(),
   CurationRecordPetfoodScreen(),
   CurationRecommendPetfoodScreen(),
-  // TestScreen(),
+  TestScreen(),
 ];

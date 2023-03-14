@@ -12,10 +12,10 @@ class ScreenController extends GetxController {
   var filter_controller = Get.put(FilterController());
   var scroll_controller = ScrollController().obs;
   var user_controller = Get.put(UserController());
-  RxInt screen_index = ScreenState.main_screen.index.obs;
-  RxInt bottom_navi_index = ScreenState.main_screen.index.obs;
-  // RxInt screen_index = ScreenState.curation_pet_screen.index.obs;
-  // RxInt bottom_navi_index = ScreenState.curation_main_screen.index.obs;
+  // RxInt screen_index = ScreenState.main_screen.index.obs;
+  // RxInt bottom_navi_index = ScreenState.main_screen.index.obs;
+  RxInt screen_index = ScreenState.curation_pet_screen.index.obs;
+  RxInt bottom_navi_index = ScreenState.curation_main_screen.index.obs;
   RxBool grey_background = false.obs;
   RxBool petfood_detail_container = false.obs;
   RxMap petfood_detail_data = {}.obs;

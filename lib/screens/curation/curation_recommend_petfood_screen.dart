@@ -20,82 +20,79 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
     user_controller.get_curation_petfood();
     return Stack(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40.w),
-          child: Obx(
-            () => SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 15.h),
-                  Text(
-                    '[ ${user_controller.curation_data["name"]}를 위한 맞춤형 사료 ]',
-                    style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 5.h),
-                  Row(
+        Obx(
+          () => SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 10.h),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        width: 400.w,
-                        child: Text(
-                          user_controller.explain_text(),
-                          style: TextStyle(fontSize: 10.sp),
-                        ),
+                      Text(
+                        '[${user_controller.curation_data['name']}를 위한 맞춤형 사료]',
+                        style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                       ),
-                      InkWell(
-                        child: Container(
-                          width: 60.w,
-                          height: 20.h,
-                          decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black, width: 0.5.w)),
-                          child: Center(child: Text('수정하기', style: TextStyle(fontSize: 10.sp))),
+                      Container(
+                        width: 65.w,
+                        height: 25.h,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                          ],
                         ),
-                        onTap: () {
-                          user_controller.modify_button();
-                          screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
-                        },
+                        child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
                       ),
                     ],
                   ),
-                  SizedBox(height: 15.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
-                    width: 600.w,
-                    color: grey_color,
-                    child: Column(
-                      children: [
-                        _pet_info_row(title: '연령', curation_info: user_controller.curation_data['life_stage']),
-                        SizedBox(height: 5.h),
-                        _pet_info_row(title: '제외된 단백질', curation_info: list_to_str(user_controller.curation_data['algs'])),
-                        SizedBox(height: 5.h),
-                        _pet_info_row(title: '건강 고려사항', curation_info: list_to_str(user_controller.curation_data['health'])),
-                      ],
-                    ),
+                ),
+                Container(width: 600.w, height: 1.h, color: main_color),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 5.h),
+                  child: Row(
+                    children: [
+                      _pet_header_info_container(width: 80.w, title: '연령', contents: '${user_controller.curation_data['life_stage']} (${user_controller.curation_data['age']}세)'),
+                      Container(width: 1.w, height: 35.h, color: Colors.black),
+                      SizedBox(width: 15.w),
+                      _pet_header_info_container(width: 80.w, title: '몸무게', contents: '${user_controller.curation_data['weight']}kg'),
+                      Container(width: 1.w, height: 35.h, color: Colors.black),
+                      SizedBox(width: 15.w),
+                      _pet_header_info_container(width: 115.w, title: '견종', contents: '${user_controller.curation_data['size']}견 (${user_controller.curation_data['breed']})'),
+                      Container(width: 1.w, height: 35.h, color: Colors.black),
+                      SizedBox(width: 15.w),
+                      _pet_header_info_container(width: 115.w, title: '알러지', contents: '${list_to_str(user_controller.curation_data['algs'])}'),
+                    ],
                   ),
-                  SizedBox(height: 15.h),
-                  _sort_container(),
-                  SizedBox(height: 15.h),
-                  Container(
-                    padding: EdgeInsets.only(left: 5.w, top: 5.h),
-                    child: Wrap(
-                      spacing: 20.w,
-                      runSpacing: 10.h,
-                      children: [
-                        for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
-                          PetfoodForm(
-                            petfood_data: user_controller.curation_petfood[index],
-                            width: 112.w,
-                            height: 140.h,
-                            img_size: 80.w,
-                            top_space: 10.h,
-                            bottom_space: 5.h,
-                            curation: true,
-                          ),
-                      ],
-                    ),
+                ),
+                Container(
+                  width: 600.w,
+                  height: 42.h,
+                  decoration: BoxDecoration(color: Color.fromRGBO(228, 228, 228, 1)),
+                ),
+                _sort_container(),
+                SizedBox(height: 15.h),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 80.w),
+                  child: Wrap(
+                    spacing: 20.w,
+                    runSpacing: 10.h,
+                    children: [
+                      for (var index = 0; index < user_controller.curation_petfood_length.value; index++)
+                        PetfoodForm(
+                          petfood_data: user_controller.curation_petfood[index],
+                          width: 93.w,
+                          height: 128.h,
+                          img_size: 65.w,
+                          top_space: 10.h,
+                          bottom_space: 5.h,
+                          curation: true,
+                        ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -118,6 +115,26 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
               }),
         ),
       ],
+    );
+  }
+
+  Container _pet_header_info_container({width, title, contents}) {
+    return Container(
+      width: width,
+      height: 35.h,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '${title}',
+            style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
+          ),
+          Text(
+            '${contents}',
+            style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+          ),
+        ],
+      ),
     );
   }
 
