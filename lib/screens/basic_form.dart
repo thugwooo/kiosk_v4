@@ -355,7 +355,7 @@ class BasicForm extends StatelessWidget {
                     width: 126.w,
                   ),
                   onTap: () {
-                    user_controller.kakao_message();
+                    // user_controller.send_kakao().then((value) => {print(value)});
                   },
                 ),
                 SizedBox(width: 15.w),

@@ -1,12 +1,13 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kiosk_v4/components/rest+api.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 
 import '../components/basic_function.dart';
 import '../components/petfood_function.dart';
+import '../components/secret.dart';
 import '../data/curation.dart';
 
 class UserController extends GetxController {
@@ -247,9 +248,14 @@ class UserController extends GetxController {
   }
 
   void set_health_ranking_version_3() {
+    var health_ranking_1_list = [];
+    var health_ranking_2_list = [];
+    var health_ranking_3_list = [];
+    var health_ranking_4_list = [];
     for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
       curation_petfood[p_index]['used'] = false;
       curation_petfood[p_index]['health_ranking'] = 3;
+      curation_petfood[p_index]['health_ranking_point'] = 3.0;
     }
     for (var r_index = 1; r_index < 4; r_index++) {
       for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
@@ -257,15 +263,85 @@ class UserController extends GetxController {
           if (curation_petfood[p_index]['health_${r_index}'] == '') continue;
           if (curation_petfood[p_index]['used']) continue;
           if (curation_data['health'][h_index] == '') continue;
-          if (r_index > 1 && curation_petfood.where((value) => value['health_ranking'] == h_index).length >= 5) continue;
+          if (r_index > 1 && curation_petfood.where((value) => value['health_ranking'] == h_index).length >= 3) continue;
 
           if (curation_data['health'][h_index] == curation_petfood[p_index]['health_${r_index}']) {
             curation_petfood[p_index]['health_ranking'] = h_index;
+            curation_petfood[p_index]['health_ranking_point'] = h_index.toDouble();
             curation_petfood[p_index]['used'] = true;
           }
         }
       }
     }
+    // health_ranking_point
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      if (curation_petfood[p_index]['life_stage'].length == 1) {
+        if (curation_petfood[p_index]['life_stage'].contains(curation_data['life_stage'])) {
+          curation_petfood[p_index]['health_ranking_point'] -= 0.5;
+        }
+      }
+      if (curation_petfood[p_index]['size'].length < 5) {
+        if (curation_petfood[p_index]['size'].contains(curation_data['size'])) {
+          curation_petfood[p_index]['health_ranking_point'] -= 0.1;
+        }
+      }
+    }
+    curation_petfood.sort((a, b) => (a['health_ranking_point'] as double).compareTo(b['health_ranking_point'] as double));
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      if (curation_petfood[p_index]['health_ranking'] == 0)
+        health_ranking_1_list.add(curation_petfood[p_index]);
+      else if (curation_petfood[p_index]['health_ranking'] == 1)
+        health_ranking_2_list.add(curation_petfood[p_index]);
+      else if (curation_petfood[p_index]['health_ranking'] == 2)
+        health_ranking_3_list.add(curation_petfood[p_index]);
+      else
+        health_ranking_4_list.add(curation_petfood[p_index]);
+    }
+    health_ranking_1_list.sort(((a, b) {
+      return health_sub_sorting(a, b, 0);
+    }));
+    // for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+    //   print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
+    // }
+    for (var r1_index = 0; r1_index < health_ranking_1_list.length; r1_index++) {
+      print('${health_ranking_1_list[r1_index]['name']},  ${health_ranking_1_list[r1_index]['health_ranking_point']}, ${health_ranking_1_list[r1_index]['protein_dm']}');
+    }
+    print(health_ranking_1_list[0]['protein_dm'].runtimeType);
+    // for (var r2_index = 0; r2_index < health_ranking_2_list.length; r2_index++) {
+    //   print('${health_ranking_2_list[r2_index]['name']} , ${health_ranking_2_list[r2_index]['health_ranking']}');
+    // }
+    // for (var r3_index = 0; r3_index < health_ranking_3_list.length; r3_index++) {
+    //   print('${health_ranking_3_list[r3_index]['name']} , ${health_ranking_3_list[r3_index]['health_ranking']}');
+    // }
+    // for (var r4_index = 0; r4_index < health_ranking_4_list.length; r4_index++) {
+    //   print('${health_ranking_4_list[r4_index]['name']} , ${health_ranking_4_list[r4_index]['health_ranking']}');
+    // }
+    if (curation_petfood.where((value) => value['health_ranking'] == 0).length >= 5) {}
+  }
+
+  int health_sub_sorting(a, b, index) {
+    int ranking_comp = a['health_ranking_point'].compareTo(b['health_ranking_point']);
+    if (ranking_comp == 0) {
+      if (curation_data['health'][index] == '뼈/관절') {
+        return -a['protein_dm'].compareTo(b['protein_dm']);
+      }
+      if (curation_data['health'][index] == '피부/피모') {
+        return -a['omega3'].compareTo(b['omega3']);
+      }
+      if (curation_data['health'][index] == '저알러지') {
+        // TODO : 저알러지
+      }
+      if (curation_data['health'][index] == '항산화') {
+        //TODO : 항상화 비타민E
+      }
+      if (curation_data['health'][index] == '소화기') {
+        return a['fat_dm'].compareTo(b['fat_dm']);
+      }
+      if (curation_data['health'][index] == '다이어트') {
+        // TODO : 다이어트
+      }
+    }
+    return ranking_comp;
   }
 
   void set_health_ranking_version_1() {
@@ -466,17 +542,18 @@ class UserController extends GetxController {
     scroll_controller.value.animateTo(position, duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-  void kakao_message() async {
-    var defaultText = TextTemplate(text: """
-        카카오톡 공유는 카카오톡을 실행하여
-        사용자가 선택한 채팅방으로 메시지를 전송합니다.
-    """, link: Link(webUrl: Uri.parse("https://developers.kakao.com"), mobileWebUrl: Uri.parse("https://developers.kakao.com")));
-
-    try {
-      await TalkApi.instance.sendDefaultMemo(defaultText);
-      print('나에게 보내기 성공');
-    } catch (error) {
-      print('나에게 보내기 실패 $error');
-    }
+  Future send_kakao() async {
+    var options = Options(headers: {'X-secret-Key': secretkey});
+    var data = {
+      "senderKey": senderkey,
+      "recipientList": [
+        {
+          "recipientNo": "01098701720",
+          "content": "test",
+        },
+      ],
+    };
+    final response = await dio.post(nhn_url + 'friendtalk/v2.2/appkeys/${appkey}/messages', data: data, options: options);
+    return response.data;
   }
 }
