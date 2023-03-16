@@ -297,26 +297,42 @@ class UserController extends GetxController {
       else
         health_ranking_4_list.add(curation_petfood[p_index]);
     }
-    health_ranking_1_list.sort(((a, b) {
-      return health_sub_sorting(a, b, 0);
-    }));
-    // for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-    //   print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
-    // }
-    for (var r1_index = 0; r1_index < health_ranking_1_list.length; r1_index++) {
-      print('${health_ranking_1_list[r1_index]['name']},  ${health_ranking_1_list[r1_index]['health_ranking_point']}, ${health_ranking_1_list[r1_index]['protein_dm']}');
+
+    health_ranking_1_list.sort(((a, b) => health_sub_sorting(a, b, 0)));
+    health_ranking_2_list.sort(((a, b) => health_sub_sorting(a, b, 1)));
+    health_ranking_3_list.sort(((a, b) => health_sub_sorting(a, b, 2)));
+
+    if (health_ranking_1_list.length > 5) {
+      for (var p_index = 5; p_index < health_ranking_1_list.length; p_index++) {
+        health_ranking_1_list[p_index]['health_ranking'] = 3;
+        health_ranking_1_list[p_index]['health_ranking_point'] += 3;
+        health_ranking_4_list.add(health_ranking_1_list[p_index]);
+      }
+      health_ranking_1_list.removeRange(5, health_ranking_1_list.length);
     }
-    print(health_ranking_1_list[0]['protein_dm'].runtimeType);
-    // for (var r2_index = 0; r2_index < health_ranking_2_list.length; r2_index++) {
-    //   print('${health_ranking_2_list[r2_index]['name']} , ${health_ranking_2_list[r2_index]['health_ranking']}');
-    // }
-    // for (var r3_index = 0; r3_index < health_ranking_3_list.length; r3_index++) {
-    //   print('${health_ranking_3_list[r3_index]['name']} , ${health_ranking_3_list[r3_index]['health_ranking']}');
-    // }
-    // for (var r4_index = 0; r4_index < health_ranking_4_list.length; r4_index++) {
-    //   print('${health_ranking_4_list[r4_index]['name']} , ${health_ranking_4_list[r4_index]['health_ranking']}');
-    // }
-    if (curation_petfood.where((value) => value['health_ranking'] == 0).length >= 5) {}
+
+    if (health_ranking_2_list.length > 5) {
+      for (var p_index = 5; p_index < health_ranking_2_list.length; p_index++) {
+        health_ranking_2_list[p_index]['health_ranking'] = 3;
+        health_ranking_2_list[p_index]['health_ranking_point'] += 2;
+        health_ranking_4_list.add(health_ranking_2_list[p_index]);
+      }
+      health_ranking_2_list.removeRange(5, health_ranking_2_list.length);
+    }
+
+    if (health_ranking_3_list.length > 5) {
+      for (var p_index = 5; p_index < health_ranking_3_list.length; p_index++) {
+        health_ranking_3_list[p_index]['health_ranking'] = 3;
+        health_ranking_3_list[p_index]['health_ranking_point'] += 1;
+        health_ranking_4_list.add(health_ranking_3_list[p_index]);
+      }
+      health_ranking_3_list.removeRange(5, health_ranking_3_list.length);
+    }
+
+    curation_petfood.sort((a, b) => (a['health_ranking_point'] as double).compareTo(b['health_ranking_point'] as double));
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
+    }
   }
 
   int health_sub_sorting(a, b, index) {
@@ -332,7 +348,7 @@ class UserController extends GetxController {
         // TODO : 저알러지
       }
       if (curation_data['health'][index] == '항산화') {
-        //TODO : 항상화 비타민E
+        return -a['vita_E'].compareTo(b['vita_E']);
       }
       if (curation_data['health'][index] == '소화기') {
         return a['fat_dm'].compareTo(b['fat_dm']);
