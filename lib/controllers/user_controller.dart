@@ -329,6 +329,10 @@ class UserController extends GetxController {
       health_ranking_3_list.removeRange(5, health_ranking_3_list.length);
     }
 
+    for (var p_index = 0; p_index < health_ranking_1_list.length; p_index++) health_ranking_1_list[p_index]['health_ranking_point'] += 0.01 * p_index;
+    for (var p_index = 0; p_index < health_ranking_2_list.length; p_index++) health_ranking_2_list[p_index]['health_ranking_point'] += 0.01 * p_index;
+    for (var p_index = 0; p_index < health_ranking_3_list.length; p_index++) health_ranking_3_list[p_index]['health_ranking_point'] += 0.01 * p_index;
+
     curation_petfood.sort((a, b) => (a['health_ranking_point'] as double).compareTo(b['health_ranking_point'] as double));
     for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
       print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
@@ -339,7 +343,11 @@ class UserController extends GetxController {
     int ranking_comp = a['health_ranking_point'].compareTo(b['health_ranking_point']);
     if (ranking_comp == 0) {
       if (curation_data['health'][index] == '뼈/관절') {
-        return -a['protein_dm'].compareTo(b['protein_dm']);
+        int protein_dm = -a['protein_dm'].compareTo(b['protein_dm']);
+        if (protein_dm == 0) {
+          return a['fat_dm'].compareTo(b['fat_dm']);
+        }
+        return protein_dm;
       }
       if (curation_data['health'][index] == '피부/피모') {
         return -a['omega3'].compareTo(b['omega3']);
@@ -354,7 +362,7 @@ class UserController extends GetxController {
         return a['fat_dm'].compareTo(b['fat_dm']);
       }
       if (curation_data['health'][index] == '다이어트') {
-        // TODO : 다이어트
+        return a['fat_dm'].compareTo(b['fat_dm']);
       }
     }
     return ranking_comp;
