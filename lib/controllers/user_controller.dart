@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/rest+api.dart';
+import 'package:kiosk_v4/data/contants.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 
 import '../components/basic_function.dart';
@@ -41,6 +42,7 @@ class UserController extends GetxController {
   var selected_petfood_list = [];
   RxInt selected_petfood_list_length = 0.obs;
   var scroll_controller = ScrollController().obs;
+  RxBool loading = false.obs;
 
   void remove_health_ranking(index) {
     user_info['health'][index] = '';
@@ -221,6 +223,7 @@ class UserController extends GetxController {
   }
 
   void get_curation_petfood() {
+    loading(false);
     post_data(url: 'curation-kiosk/', data: pet_list[selected_pet_index.value]).then((response) {
       curation_data(response['curation_data']);
       curation_data['algs'] = str_to_list([...curation_data['alg'], ...curation_data['alg_sub']]);
@@ -302,31 +305,31 @@ class UserController extends GetxController {
     health_ranking_2_list.sort(((a, b) => health_sub_sorting(a, b, 1)));
     health_ranking_3_list.sort(((a, b) => health_sub_sorting(a, b, 2)));
 
-    if (health_ranking_1_list.length > 5) {
-      for (var p_index = 5; p_index < health_ranking_1_list.length; p_index++) {
+    if (health_ranking_1_list.length > SHOW_CURATION_PETFOOD_NUMBER) {
+      for (var p_index = SHOW_CURATION_PETFOOD_NUMBER; p_index < health_ranking_1_list.length; p_index++) {
         health_ranking_1_list[p_index]['health_ranking'] = 3;
         health_ranking_1_list[p_index]['health_ranking_point'] += 3;
         health_ranking_4_list.add(health_ranking_1_list[p_index]);
       }
-      health_ranking_1_list.removeRange(5, health_ranking_1_list.length);
+      health_ranking_1_list.removeRange(SHOW_CURATION_PETFOOD_NUMBER, health_ranking_1_list.length);
     }
 
-    if (health_ranking_2_list.length > 5) {
-      for (var p_index = 5; p_index < health_ranking_2_list.length; p_index++) {
+    if (health_ranking_2_list.length > SHOW_CURATION_PETFOOD_NUMBER) {
+      for (var p_index = SHOW_CURATION_PETFOOD_NUMBER; p_index < health_ranking_2_list.length; p_index++) {
         health_ranking_2_list[p_index]['health_ranking'] = 3;
         health_ranking_2_list[p_index]['health_ranking_point'] += 2;
         health_ranking_4_list.add(health_ranking_2_list[p_index]);
       }
-      health_ranking_2_list.removeRange(5, health_ranking_2_list.length);
+      health_ranking_2_list.removeRange(SHOW_CURATION_PETFOOD_NUMBER, health_ranking_2_list.length);
     }
 
-    if (health_ranking_3_list.length > 5) {
-      for (var p_index = 5; p_index < health_ranking_3_list.length; p_index++) {
+    if (health_ranking_3_list.length > SHOW_CURATION_PETFOOD_NUMBER) {
+      for (var p_index = SHOW_CURATION_PETFOOD_NUMBER; p_index < health_ranking_3_list.length; p_index++) {
         health_ranking_3_list[p_index]['health_ranking'] = 3;
         health_ranking_3_list[p_index]['health_ranking_point'] += 1;
         health_ranking_4_list.add(health_ranking_3_list[p_index]);
       }
-      health_ranking_3_list.removeRange(5, health_ranking_3_list.length);
+      health_ranking_3_list.removeRange(SHOW_CURATION_PETFOOD_NUMBER, health_ranking_3_list.length);
     }
 
     for (var p_index = 0; p_index < health_ranking_1_list.length; p_index++) health_ranking_1_list[p_index]['health_ranking_point'] += 0.01 * p_index;
@@ -337,6 +340,7 @@ class UserController extends GetxController {
     for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
       print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
     }
+    loading(true);
   }
 
   int health_sub_sorting(a, b, index) {
