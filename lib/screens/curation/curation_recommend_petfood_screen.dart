@@ -20,6 +20,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     user_controller.get_curation_petfood();
+    screen_controller.set_sort_index(0);
     return Obx(
       () => Stack(
         children: [

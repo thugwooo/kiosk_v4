@@ -164,7 +164,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                           ingredient: screen_controller.petfood_detail_data['all_ingredient'][index])
                       ? TextSpan(
                           text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}',
-                          style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.red),
+                          style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.bold, color: health_border_color[screen_controller.petfood_detail_data['health_ranking']]),
                           children: [TextSpan(text: comma(index), style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400))])
                       : TextSpan(text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}' + comma(index), style: TextStyle(fontSize: 11.sp))
               ]),
