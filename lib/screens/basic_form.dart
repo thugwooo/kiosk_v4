@@ -356,6 +356,7 @@ class BasicForm extends StatelessWidget {
                   ),
                   onTap: () {
                     // user_controller.send_kakao().then((value) => {print(value)});
+                    screen_controller.screen_index(ScreenState.test_screen.index);
                   },
                 ),
                 SizedBox(width: 15.w),

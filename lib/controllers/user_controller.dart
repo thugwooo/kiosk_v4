@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/rest+api.dart';
-import 'package:kiosk_v4/data/contants.dart';
+import 'package:kiosk_v4/data/constants.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 
 import '../components/basic_function.dart';
@@ -337,9 +337,9 @@ class UserController extends GetxController {
     for (var p_index = 0; p_index < health_ranking_3_list.length; p_index++) health_ranking_3_list[p_index]['health_ranking_point'] += 0.01 * p_index;
 
     curation_petfood.sort((a, b) => (a['health_ranking_point'] as double).compareTo(b['health_ranking_point'] as double));
-    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-      print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
-    }
+    // for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+    //   print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
+    // }
     loading(true);
   }
 
@@ -372,70 +372,23 @@ class UserController extends GetxController {
     return ranking_comp;
   }
 
-  void set_health_ranking_version_1() {
-    var max_index = [5, 5, 5];
-    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-      curation_petfood[p_index]['used'] = false;
-      curation_petfood[p_index]['health_ranking'] = 3;
-    }
-    for (var h_index = 0; h_index < curation_data['health'].length; h_index++) {
-      // TODO : 건강고려 사항마다 정렬 다시하기
-      for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-        // print('c ' + curation_petfood[p_index]['health_1'] + 'h ' + curation_data['health'][h_index]);
-        if (curation_petfood[p_index]['used']) continue;
-        if (curation_data['health'][h_index] == '') continue;
-        if (curation_petfood.where((value) => value['health_ranking'] == h_index).length >= max_index[h_index]) break;
-        if (curation_petfood[p_index]['health_1'] == curation_data['health'][h_index]) {
-          curation_petfood[p_index]['health_ranking'] = h_index;
-          curation_petfood[p_index]['used'] = true;
-        }
-      }
-
-      for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-        if (curation_petfood[p_index]['used']) continue;
-        if (curation_data['health'][h_index] == '') continue;
-        if (curation_petfood.where((value) => value['health_ranking'] == h_index).length >= max_index[h_index]) break;
-        if (curation_petfood[p_index]['health_2'] == curation_data['health'][h_index]) {
-          curation_petfood[p_index]['health_ranking'] = h_index;
-          curation_petfood[p_index]['used'] = true;
-        }
-      }
-
-      for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-        if (curation_petfood[p_index]['used']) continue;
-        if (curation_data['health'][h_index] == '') continue;
-        if (curation_petfood.where((value) => value['health_ranking'] == h_index).length >= max_index[h_index]) break;
-        if (curation_petfood[p_index]['health_3'] == curation_data['health'][h_index]) {
-          curation_petfood[p_index]['health_ranking'] = h_index;
-          curation_petfood[p_index]['used'] = true;
-        }
-      }
-    }
+  bool is_ingredient_text_bold({curation, health_care, ingredient}) {
+    var cat_health = ['피부/피모', '뼈/관절', '소화기', '다이어트', '저알러지', '항산화'];
+    if (!curation) return false;
+    if (health_care == '피부/피모') return health_care_bold_check(care_list: skin_care, ingredient: ingredient);
+    if (health_care == '뼈/관절') return health_care_bold_check(care_list: bone_care, ingredient: ingredient);
+    if (health_care == '소화기') return health_care_bold_check(care_list: digest_care, ingredient: ingredient);
+    if (health_care == '다이어트') return health_care_bold_check(care_list: diet_care, ingredient: ingredient);
+    if (health_care == '저알러지') return health_care_bold_check(care_list: alg_care, ingredient: ingredient);
+    if (health_care == '항산화') return health_care_bold_check(care_list: antioxidant_care, ingredient: ingredient);
+    return false;
   }
 
-  void set_health_ranking_version_2() {
-    var coefficient = [
-      [6, 4, 2],
-      [3, 2, 1],
-      [2, 1, 0]
-    ];
-
-    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-      curation_petfood[p_index]['health_ranking'] = 0;
+  bool health_care_bold_check({care_list, ingredient}) {
+    for (var c_index = 0; c_index < care_list.length; c_index++) {
+      if (ingredient.contains(care_list[c_index])) return true;
     }
-    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
-      for (var h_index = 0; h_index < curation_data['health'].length; h_index++) {
-        for (var ch_index = 0; ch_index < 3; ch_index++) {
-          if (curation_data['health'][h_index] != '') {
-            if (curation_data['health'][h_index] == curation_petfood[p_index]['health_${ch_index + 1}']) {
-              curation_petfood[p_index]['health_ranking'] += (3 - h_index) * coefficient[h_index][ch_index];
-              // print(h_index.toString() + '     ' + ch_index.toString() + '   ' + curation_data['health'][h_index]);
-              // print(curation_petfood[p_index]['name'] + curation_petfood[p_index]['health_ranking'].toString());
-            }
-          }
-        }
-      }
-    }
+    return false;
   }
 
   void set_curation_petfood_length() {

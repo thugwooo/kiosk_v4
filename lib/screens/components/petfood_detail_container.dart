@@ -7,6 +7,7 @@ import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/components/style.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
 import 'package:kiosk_v4/data/detail_petfood.dart';
+import 'package:kiosk_v4/data/screen.dart';
 
 class PetfoodDetailContainer extends StatelessWidget {
   PetfoodDetailContainer({super.key});
@@ -148,9 +149,19 @@ class PetfoodDetailContainer extends StatelessWidget {
           SizedBox(height: 5.h),
           Container(
             width: 400.w,
-            child: Text(
-              screen_controller.petfood_detail_data['all_ingredient'],
-              style: TextStyle(fontSize: 11.sp),
+            child: Text.rich(
+              TextSpan(children: [
+                for (var index = 0; index < screen_controller.petfood_detail_data['all_ingredient'].length; index++)
+                  user_controller.is_ingredient_text_bold(
+                          curation: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index,
+                          health_care: user_controller.curation_data['health'][screen_controller.petfood_detail_data['health_ranking']],
+                          ingredient: screen_controller.petfood_detail_data['all_ingredient'][index])
+                      ? TextSpan(
+                          text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}',
+                          style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.red),
+                          children: [TextSpan(text: comma(index), style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400))])
+                      : TextSpan(text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}' + comma(index), style: TextStyle(fontSize: 11.sp))
+              ]),
             ),
           ),
           SizedBox(height: 20.h),
@@ -160,6 +171,10 @@ class PetfoodDetailContainer extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String comma(index) {
+    return index != screen_controller.petfood_detail_data['all_ingredient'].length - 1 ? ', ' : '';
   }
 
   Column _rotation_days_container() {
