@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -337,10 +339,48 @@ class UserController extends GetxController {
     for (var p_index = 0; p_index < health_ranking_3_list.length; p_index++) health_ranking_3_list[p_index]['health_ranking_point'] += 0.01 * p_index;
 
     curation_petfood.sort((a, b) => (a['health_ranking_point'] as double).compareTo(b['health_ranking_point'] as double));
+
+    // 하루 권장량
+    cal_day_calorie_recommended_amount();
+    for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
+      curation_petfood[p_index]['day_g'] = cal_day_g_recommended_amount(c_petfood: curation_petfood[p_index]).floor();
+      curation_petfood[p_index]['day_price'] = cal_day_price_recommended_amount(c_petfood: curation_petfood[p_index]).floor();
+    }
     // for (var p_index = 0; p_index < curation_petfood.length; p_index++) {
     //   print('${curation_petfood[p_index]['name']}, ${curation_petfood[p_index]['health_ranking_point']}');
     // }
     loading(true);
+  }
+
+  void cal_day_calorie_recommended_amount() {
+    var per = 70 * pow(double.parse(curation_data['weight']), 0.75);
+    var der;
+    if (curation_data['pet'] == '0') {
+      if (curation_data['month'] < 6) {
+        der = per * 3;
+      } else if (curation_data['month'] < 13) {
+        der = per * 2;
+      } else {
+        if (curation_data['neutering'] == '0') {
+          der = per * 1.6;
+        } else {
+          der = per * 1.8;
+        }
+      }
+    }
+    curation_data['der'] = der.floor();
+  }
+
+  double cal_day_g_recommended_amount({c_petfood}) {
+    return curation_data['day_g'] = curation_data['der'] / c_petfood['kcal'] * 100;
+  }
+
+  double cal_day_price_recommended_amount({c_petfood}) {
+    var weight = double.parse(c_petfood['weight'].replaceAll('kg', '')) * 1000;
+    var constant = weight / c_petfood['day_g'];
+    var day_price = c_petfood['retail_price'] / constant;
+
+    return day_price;
   }
 
   int health_sub_sorting(a, b, index) {

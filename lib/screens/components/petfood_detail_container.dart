@@ -54,6 +54,12 @@ class PetfoodDetailContainer extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index)
+                                    Text(
+                                      '${user_controller.curation_data['name']}의 하루 권장 칼로리 : ${user_controller.curation_data['der']}kcal / 하루 권장 급여량 : ${screen_controller.petfood_detail_data['day_g']}g / 하루 가격 : ${screen_controller.petfood_detail_data['day_price']}원',
+                                      style: TextStyle(fontSize: 11.sp),
+                                    ),
+                                  SizedBox(height: 20.h),
                                   _main_info_1(),
                                   SizedBox(height: 15.h),
                                   _main_info2(),
