@@ -55,7 +55,7 @@ class FilterController extends GetxController {
     set_filtered_petfood_length();
   }
 
-  dynamic filtering_brand_category(List<Map<String, Object>> current_petfood, category_index) {
+  dynamic filtering_brand_category(dynamic current_petfood, category_index) {
     List<Map<String, Object>> temp_list = [];
     int count = selected_filter_category_list[user_controller.user_info['pet'].value][category_index].where((value) => value == true).length;
     if (count != 0) {

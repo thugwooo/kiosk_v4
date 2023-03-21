@@ -30,16 +30,15 @@ class PetfoodDetailContainer extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index)
+                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index && screen_controller.petfood_detail_data['health_ranking'] < 3)
                     Column(
                       children: [
                         SizedBox(height: 20.h),
                         Container(
                           width: 600.w,
-                          height: 22.h,
+                          height: 25.h,
                           decoration: BoxDecoration(
-                            border: Border.all(width: 1.5.w, color: health_border_color[screen_controller.petfood_detail_data['health_ranking']]),
-                            borderRadius: BorderRadius.circular(5.w),
+                            border: Border.symmetric(vertical: BorderSide(width: 1.5.w, color: health_border_color[screen_controller.petfood_detail_data['health_ranking']])),
                             color: health_background_color[screen_controller.petfood_detail_data['health_ranking']],
                           ),
                           child: Padding(
@@ -105,7 +104,7 @@ class PetfoodDetailContainer extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(left: 20.w, top: 25.h),
+                padding: EdgeInsets.only(left: 20.w, top: 25.h, right: 20.w),
                 width: 440.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.w),
@@ -160,13 +159,6 @@ class PetfoodDetailContainer extends StatelessWidget {
       () => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Image.asset('assets/icons/petfood_border.png', width: 30.w),
-              SizedBox(width: 6.w),
-              Text('이런 게 좋아요!', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
-            ],
-          ),
           SizedBox(height: 10.h),
           for (var index = 0; index < screen_controller.petfood_detail_data['title'].length; index++) _contents_explain(index),
           Row(
@@ -181,7 +173,7 @@ class PetfoodDetailContainer extends StatelessWidget {
           SizedBox(height: 5.h),
           Container(
             width: 400.w,
-            child: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index
+            child: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index && screen_controller.petfood_detail_data['health_ranking'] < 3
                 ? Text.rich(
                     TextSpan(children: [
                       for (var index = 0; index < screen_controller.petfood_detail_data['all_ingredient'].length; index++)
@@ -397,19 +389,6 @@ class PetfoodDetailContainer extends StatelessWidget {
   Row _main_info2() {
     return Row(
       children: [
-        Container(
-          width: 90.w,
-          height: 50.h,
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.w)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.circle, size: 35.w),
-              SizedBox(width: 10.w),
-              Text(screen_controller.petfood_detail_data['kibble'].toString() + 'mm', style: TextStyle(fontSize: 11.sp)),
-            ],
-          ),
-        ),
         SizedBox(width: 20.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -417,7 +396,7 @@ class PetfoodDetailContainer extends StatelessWidget {
             Text('(%)', style: TextStyle(fontSize: 8.sp)),
             SizedBox(height: 2.h),
             Container(
-              width: 285.w,
+              width: 360.w,
               child: Table(
                 children: [
                   TableRow(
@@ -465,31 +444,13 @@ class PetfoodDetailContainer extends StatelessWidget {
     );
   }
 
-  Row _main_info_1() {
+  Widget _main_info_1() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          height: 68.h,
-          decoration: test_line,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              for (var hash_index = 0; hash_index < screen_controller.petfood_detail_data['hash'].length; hash_index++)
-                Container(
-                  width: 90.w,
-                  child: Text('#  ' + screen_controller.petfood_detail_data['hash'][hash_index], style: TextStyle(fontSize: 11.sp, color: main_color)),
-                ),
-            ],
-          ),
-        ),
-        SizedBox(width: 20.w),
         _main_info_container(title: '권장연령', info: screen_controller.set_life_stage_text()),
-        SizedBox(width: 5.w),
         _main_info_container(title: '권장사이즈', info: user_controller.user_info['pet'].value == 0 ? screen_controller.set_size_text() : '무관'),
-        SizedBox(width: 5.w),
         _main_info_container(title: '사료형태', info: list_to_str(screen_controller.petfood_detail_data['shape'])),
-        SizedBox(width: 5.w),
         _main_info_container(title: '주 단백질원', info: screen_controller.set_main_ingredient()),
       ],
     );
@@ -497,15 +458,16 @@ class PetfoodDetailContainer extends StatelessWidget {
 
   Container _main_info_container({title, info}) {
     return Container(
-      width: 68.w,
+      width: 75.w,
       height: 70.h,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.w), color: Colors.white),
       child: Column(
         children: [
           SizedBox(height: 5.h),
-          Image.asset('assets/icons/check.png', width: 10.w),
-          SizedBox(height: 4.h),
+          Image.asset('assets/icons/check.png', width: 10.w, color: main_color),
+          SizedBox(height: 6.h),
           Text('${title}', style: TextStyle(fontSize: 11.sp, color: Color.fromRGBO(128, 128, 128, 1))),
+          SizedBox(height: 4.h),
           Text('${info}', style: TextStyle(fontSize: 12.sp), overflow: TextOverflow.ellipsis)
         ],
       ),
@@ -543,7 +505,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                     ],
                   ),
                   Text('${screen_controller.petfood_detail_data['weight']} | ${price.format(screen_controller.petfood_detail_data['retail_price'])}원', style: TextStyle(fontSize: 12.sp)),
-                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index)
+                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index && screen_controller.petfood_detail_data['health_ranking'] < 3)
                     Text(
                       '(${user_controller.curation_data['name']} 급여량 기준 한달 가격 : ${price.format(screen_controller.petfood_detail_data['day_price'] * 30)}원)',
                       style: TextStyle(fontSize: 11.sp, color: Colors.grey),

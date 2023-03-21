@@ -156,7 +156,10 @@ class ScreenController extends GetxController {
   }
 
   String set_size_text() {
-    return petfood_detail_data['size'].length == 5 ? '무관' : list_to_str(petfood_detail_data['size']);
+    if (petfood_detail_data['size'].length == 5) return '무관';
+    if (petfood_detail_data['size'].length == 3) return petfood_detail_data['size'][0] + ' ~ ' + petfood_detail_data['size'][2];
+
+    return list_to_str(petfood_detail_data['size']);
   }
 
   String set_main_ingredient() {
