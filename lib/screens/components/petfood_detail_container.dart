@@ -23,94 +23,59 @@ class PetfoodDetailContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 10.h),
               width: 500.w,
-              height: 450.h,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5.w),
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 10.h),
-                  _header_info(),
-                  SizedBox(height: 10.h),
-                  AnimatedContainer(
-                    duration: Duration(milliseconds: animated_velocity),
-                    height: 320.h,
-                    decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
-                    child: InteractiveViewer(
-                      child: SingleChildScrollView(
-                        controller: screen_controller.scroll_controller.value,
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 20.w, top: 25.h),
-                              width: 440.w,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.w),
-                                color: background_blue_color,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index)
-                                    Text(
-                                      '${user_controller.curation_data['name']}의 하루 권장 칼로리 : ${user_controller.curation_data['der']}kcal / 하루 권장 급여량 : ${screen_controller.petfood_detail_data['day_g']}g / 하루 가격 : ${screen_controller.petfood_detail_data['day_price']}원',
-                                      style: TextStyle(fontSize: 11.sp),
-                                    ),
-                                  SizedBox(height: 20.h),
-                                  _main_info_1(),
-                                  SizedBox(height: 15.h),
-                                  _main_info2(),
-                                  SizedBox(height: 30.h),
-                                  _detail_info(),
-                                ],
-                              ),
-                            ),
-                            Column(
+                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index)
+                    Column(
+                      children: [
+                        SizedBox(height: 20.h),
+                        Container(
+                          width: 600.w,
+                          height: 22.h,
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 1.5.w, color: health_border_color[screen_controller.petfood_detail_data['health_ranking']]),
+                            borderRadius: BorderRadius.circular(5.w),
+                            color: health_background_color[screen_controller.petfood_detail_data['health_ranking']],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 30.w),
+                            child: Row(
                               children: [
-                                SizedBox(height: 30.h),
-                                _rotation_feed_container(),
-                                SizedBox(height: 30.h),
-                                _rotation_days_container(),
-                                SizedBox(height: 30.h),
-                                InkWell(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text('맨 위로', style: TextStyle(fontSize: 12.sp)),
-                                      Icon(
-                                        Icons.keyboard_arrow_up,
-                                        size: 20.w,
-                                      )
-                                    ],
+                                Container(
+                                  width: 80.w,
+                                  child: Text(
+                                    user_controller.curation_data['health'][screen_controller.petfood_detail_data['health_ranking']],
+                                    style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                                   ),
-                                  onTap: () {
-                                    screen_controller.scroll_up();
-                                  },
                                 ),
-                                SizedBox(height: 30.h),
+                                Text(
+                                  user_controller.health_info_text(health_ranking: screen_controller.petfood_detail_data['health_ranking']),
+                                  style: TextStyle(fontSize: 12.sp),
+                                )
                               ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
+                    ),
+                  Container(
+                    padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 10.h),
+                    width: 500.w,
+                    height: 450.h,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10.h),
+                        _header_info(),
+                        SizedBox(height: 10.h),
+                        _detail_info_form(),
+                      ],
                     ),
                   ),
-                  // InkWell(
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-                  //       Text('자세히 보기', style: TextStyle(fontSize: 11.sp)),
-                  //       Icon(Icons.keyboard_arrow_down, size: 20.w),
-                  //     ],
-                  //   ),
-                  //   onTap: () {
-
-                  //   },
-                  // ),
                 ],
               ),
             ),
@@ -124,6 +89,67 @@ class PetfoodDetailContainer extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  AnimatedContainer _detail_info_form() {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: animated_velocity),
+      height: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index ? 290.h : 320.h,
+      decoration: BoxDecoration(border: Border(top: BorderSide(color: background_blue_color, width: 1.w))),
+      child: InteractiveViewer(
+        child: SingleChildScrollView(
+          controller: screen_controller.scroll_controller.value,
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 20.w, top: 25.h),
+                width: 440.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.w),
+                  color: background_blue_color,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _main_info_1(),
+                    SizedBox(height: 15.h),
+                    _main_info2(),
+                    SizedBox(height: 30.h),
+                    _detail_info(),
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                  SizedBox(height: 30.h),
+                  _rotation_feed_container(),
+                  SizedBox(height: 30.h),
+                  _rotation_days_container(),
+                  SizedBox(height: 30.h),
+                  InkWell(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('맨 위로', style: TextStyle(fontSize: 12.sp)),
+                        Icon(
+                          Icons.keyboard_arrow_up,
+                          size: 20.w,
+                        )
+                      ],
+                    ),
+                    onTap: () {
+                      screen_controller.scroll_up();
+                    },
+                  ),
+                  SizedBox(height: 30.h),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -155,20 +181,22 @@ class PetfoodDetailContainer extends StatelessWidget {
           SizedBox(height: 5.h),
           Container(
             width: 400.w,
-            child: Text.rich(
-              TextSpan(children: [
-                for (var index = 0; index < screen_controller.petfood_detail_data['all_ingredient'].length; index++)
-                  user_controller.is_ingredient_text_bold(
-                          curation: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index,
-                          health_care: user_controller.curation_data['health'][screen_controller.petfood_detail_data['health_ranking']],
-                          ingredient: screen_controller.petfood_detail_data['all_ingredient'][index])
-                      ? TextSpan(
-                          text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}',
-                          style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.bold, color: health_border_color[screen_controller.petfood_detail_data['health_ranking']]),
-                          children: [TextSpan(text: comma(index), style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400))])
-                      : TextSpan(text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}' + comma(index), style: TextStyle(fontSize: 11.sp))
-              ]),
-            ),
+            child: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index
+                ? Text.rich(
+                    TextSpan(children: [
+                      for (var index = 0; index < screen_controller.petfood_detail_data['all_ingredient'].length; index++)
+                        user_controller.is_ingredient_text_bold(
+                                curation: screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index,
+                                health_care: user_controller.curation_data['health'][screen_controller.petfood_detail_data['health_ranking']],
+                                ingredient: screen_controller.petfood_detail_data['all_ingredient'][index])
+                            ? TextSpan(
+                                text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}',
+                                style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.bold, color: health_border_color[screen_controller.petfood_detail_data['health_ranking']]),
+                                children: [TextSpan(text: comma(index), style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400))])
+                            : TextSpan(text: '${screen_controller.petfood_detail_data['all_ingredient'][index]}' + comma(index), style: TextStyle(fontSize: 11.sp))
+                    ]),
+                  )
+                : Text(list_to_str(screen_controller.petfood_detail_data['all_ingredient'])),
           ),
           SizedBox(height: 20.h),
           Text('영양정보', style: TextStyle(fontSize: 15.sp, color: main_color)),
@@ -515,6 +543,11 @@ class PetfoodDetailContainer extends StatelessWidget {
                     ],
                   ),
                   Text('${screen_controller.petfood_detail_data['weight']} | ${price.format(screen_controller.petfood_detail_data['retail_price'])}원', style: TextStyle(fontSize: 12.sp)),
+                  if (screen_controller.screen_index.value == ScreenState.curation_recommend_petfood_screen.index)
+                    Text(
+                      '(${user_controller.curation_data['name']} 급여량 기준 한달 가격 : ${price.format(screen_controller.petfood_detail_data['day_price'] * 30)}원)',
+                      style: TextStyle(fontSize: 11.sp, color: Colors.grey),
+                    ),
                 ],
               ),
             ),

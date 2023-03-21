@@ -469,6 +469,17 @@ class UserController extends GetxController {
     return ranking_comp;
   }
 
+  String health_info_text({health_ranking}) {
+    for (var h_index = 0; h_index < healthcare[0].length; h_index++) {
+      print('${curation_data['health'][health_ranking]} ${healthcare[0][h_index]}');
+      if (curation_data['health'][health_ranking] == healthcare[0][h_index]) {
+        print('asdf');
+        return health_info_text_list[h_index];
+      }
+    }
+    return '';
+  }
+
   bool is_ingredient_text_bold({curation, health_care, ingredient}) {
     var cat_health = ['피부/피모', '뼈/관절', '소화기', '다이어트', '저알러지', '항산화'];
     if (!curation) return false;
