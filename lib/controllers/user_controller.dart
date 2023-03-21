@@ -306,6 +306,62 @@ class UserController extends GetxController {
     health_ranking_1_list.sort(((a, b) => health_sub_sorting(a, b, 0)));
     health_ranking_2_list.sort(((a, b) => health_sub_sorting(a, b, 1)));
     health_ranking_3_list.sort(((a, b) => health_sub_sorting(a, b, 2)));
+    var orijen_count = 0;
+    var now_count = 0;
+    for (var p_index = 0; p_index < health_ranking_1_list.length; p_index++) {
+      if (health_ranking_1_list[p_index]['brand'] == '오리젠') {
+        if (orijen_count > 0) {
+          health_ranking_1_list[p_index]['health_ranking'] = 3;
+          health_ranking_1_list[p_index]['health_ranking_point'] += 3;
+        }
+        orijen_count++;
+      }
+      if (health_ranking_1_list[p_index]['brand'] == '나우') {
+        if (now_count > 0) {
+          health_ranking_1_list[p_index]['health_ranking'] = 3;
+          health_ranking_1_list[p_index]['health_ranking_point'] += 3;
+        }
+        now_count++;
+      }
+    }
+
+    orijen_count = 0;
+    now_count = 0;
+    for (var p_index = 0; p_index < health_ranking_2_list.length; p_index++) {
+      if (health_ranking_2_list[p_index]['brand'] == '오리젠') {
+        if (orijen_count > 0) {
+          health_ranking_2_list[p_index]['health_ranking'] = 3;
+          health_ranking_2_list[p_index]['health_ranking_point'] += 3;
+        }
+        orijen_count++;
+      }
+      if (health_ranking_2_list[p_index]['brand'] == '나우') {
+        if (now_count > 0) {
+          health_ranking_2_list[p_index]['health_ranking'] = 3;
+          health_ranking_2_list[p_index]['health_ranking_point'] += 3;
+        }
+        now_count++;
+      }
+    }
+
+    orijen_count = 0;
+    now_count = 0;
+    for (var p_index = 0; p_index < health_ranking_3_list.length; p_index++) {
+      if (health_ranking_3_list[p_index]['brand'] == '오리젠') {
+        if (orijen_count > 0) {
+          health_ranking_3_list[p_index]['health_ranking'] = 3;
+          health_ranking_3_list[p_index]['health_ranking_point'] += 3;
+        }
+        orijen_count++;
+      }
+      if (health_ranking_3_list[p_index]['brand'] == '나우') {
+        if (now_count > 0) {
+          health_ranking_3_list[p_index]['health_ranking'] = 3;
+          health_ranking_3_list[p_index]['health_ranking_point'] += 3;
+        }
+        now_count++;
+      }
+    }
 
     if (health_ranking_1_list.length > SHOW_CURATION_PETFOOD_NUMBER) {
       for (var p_index = SHOW_CURATION_PETFOOD_NUMBER; p_index < health_ranking_1_list.length; p_index++) {
@@ -397,6 +453,7 @@ class UserController extends GetxController {
         return -a['omega3'].compareTo(b['omega3']);
       }
       if (curation_data['health'][index] == '저알러지') {
+        return a['alg'].length.compareTo(b['alg'].length);
         // TODO : 저알러지
       }
       if (curation_data['health'][index] == '항산화') {
@@ -406,7 +463,7 @@ class UserController extends GetxController {
         return a['fat_dm'].compareTo(b['fat_dm']);
       }
       if (curation_data['health'][index] == '다이어트') {
-        return a['fat_dm'].compareTo(b['fat_dm']);
+        return a['kcal'].compareTo(b['kcal']);
       }
     }
     return ranking_comp;
