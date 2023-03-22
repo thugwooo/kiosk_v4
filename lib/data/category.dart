@@ -23,8 +23,8 @@ final cat_life_stage = ['키튼', '어덜트', '시니어'];
 final dog_size = ['초소형', '소형', '중형', '대형', '초대형'];
 final cat_size = ['무관'];
 
-final dog_petfood_feature = ['고단백', '그레인프리', '글루텐프리', '저알러지', '다이어트', 'NO 옥수수', 'NO 밀', 'NO GMO', '곤충사료'];
-final cat_petfood_feature = ['고단백', '그레인프리', '글루텐프리', '저알러지', '다이어트', 'NO 옥수수', 'NO 밀', 'NO GMO', '곤충사료'];
+final dog_petfood_feature = ['고단백', '그레인프리', '글루텐프리', '저알러지', '다이어트', 'NO 옥수수', 'NO 밀', '곤충사료'];
+final cat_petfood_feature = ['고단백', '그레인프리', '글루텐프리', '저알러지', '다이어트', 'NO 옥수수', 'NO 밀', '곤충사료'];
 
 final dog_main_ingredient = ['소', '닭', '칠면조', '오리', '양', '멧돼지', '연어', '사슴', '토끼', '생선'];
 final cat_main_ingredient = ['소', '닭', '칠면조', '오리', '양', '멧돼지', '연어', '사슴', '토끼', '생선'];

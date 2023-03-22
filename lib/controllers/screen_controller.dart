@@ -163,9 +163,9 @@ class ScreenController extends GetxController {
   }
 
   String set_main_ingredient() {
-    return petfood_detail_data['main_ingredient'].length > 2
-        ? petfood_detail_data['main_ingredient'][0] + ', ' + petfood_detail_data['main_ingredient'][1]
-        : list_to_str(petfood_detail_data['main_ingredient']);
+    if (petfood_detail_data['main_ingredient'].length > 2) return petfood_detail_data['main_ingredient'][0] + ', ' + petfood_detail_data['main_ingredient'][1];
+    if (petfood_detail_data['main_ingredient'][1] == '생선') return petfood_detail_data['main_ingredient'][0];
+    return list_to_str(petfood_detail_data['main_ingredient']);
   }
 
   void set_search_petfood() {
