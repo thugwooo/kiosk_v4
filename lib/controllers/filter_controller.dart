@@ -50,7 +50,7 @@ class FilterController extends GetxController {
 
   void filtering_petfood(food_list) {
     filtered_petfood_list = filtering_brand_category(food_list[user_controller.user_info['pet'].value], 0);
-    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 1, 'health');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 1, 'health_1');
     filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 2, 'main_ingredient');
     set_filtered_petfood_length();
   }
