@@ -420,7 +420,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                           child: Center(
                             child: Text(
                               "${screen_controller.petfood_detail_data[nutrients_text[nutrients_index] + '_dm']}",
-                              style: TextStyle(color: main_color, fontSize: 10.sp),
+                              style: screen_controller.is_dm_bold(dm_name: nutrients_text[nutrients_index]),
                             ),
                           ),
                         ),
@@ -428,7 +428,7 @@ class PetfoodDetailContainer extends StatelessWidget {
                         color: Colors.white,
                         height: 25.h,
                         child: Center(
-                          child: Text((screen_controller.petfood_detail_data['kcal'] * 10).toInt().toString(), style: TextStyle(color: main_color, fontSize: 10.sp)),
+                          child: Text((screen_controller.petfood_detail_data['kcal'] * 10).toInt().toString(), style: screen_controller.is_dm_bold(dm_name: 'kcal')),
                         ),
                       ),
                     ],

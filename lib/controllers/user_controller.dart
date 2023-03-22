@@ -91,7 +91,6 @@ class UserController extends GetxController {
   String get_phone_number() {
     if (phone_number.value == '') return '1234 - 5678';
     if (phone_number.value.length > 3) {
-      print(phone_number);
       return phone_number.value.substring(0, 4) + ' - ' + phone_number.value.substring(4, phone_number.value.length);
     }
     return phone_number.value;
@@ -501,9 +500,7 @@ class UserController extends GetxController {
 
   String health_info_text({health_ranking}) {
     for (var h_index = 0; h_index < healthcare[0].length; h_index++) {
-      print('${curation_data['health'][health_ranking]} ${healthcare[0][h_index]}');
       if (curation_data['health'][health_ranking] == healthcare[0][h_index]) {
-        print('asdf');
         return health_info_text_list[h_index];
       }
     }

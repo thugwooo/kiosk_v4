@@ -1,12 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/basic_function.dart';
 import 'package:kiosk_v4/controllers/filter_controller.dart';
 import 'package:kiosk_v4/controllers/user_controller.dart';
 import 'package:kiosk_v4/data/petfood.dart';
 import 'package:kiosk_v4/data/screen.dart';
+
+import '../components/style.dart';
 
 class ScreenController extends GetxController {
   var filter_controller = Get.put(FilterController());
@@ -164,7 +167,7 @@ class ScreenController extends GetxController {
 
   String set_main_ingredient() {
     if (petfood_detail_data['main_ingredient'].length > 2) return petfood_detail_data['main_ingredient'][0] + ', ' + petfood_detail_data['main_ingredient'][1];
-    if (petfood_detail_data['main_ingredient'][1] == '생선') return petfood_detail_data['main_ingredient'][0];
+    if (petfood_detail_data['main_ingredient'] == 2) if (petfood_detail_data['main_ingredient'][1] == '생선') return petfood_detail_data['main_ingredient'][0];
     return list_to_str(petfood_detail_data['main_ingredient']);
   }
 
@@ -182,5 +185,20 @@ class ScreenController extends GetxController {
     }
     search_petfood = temp;
     set_search_petfood_length();
+  }
+
+  TextStyle is_dm_bold({dm_name}) {
+    print(dm_name);
+    if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '뼈/관절') {
+      if (dm_name == 'protein') return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 10.sp, fontWeight: FontWeight.bold);
+    }
+    if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '소화기') {
+      if (dm_name == 'fat' || dm_name == 'fiber') return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 10.sp, fontWeight: FontWeight.bold);
+    }
+    if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '다이어트') {
+      if (dm_name == 'fat' || dm_name == 'kcal') return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 10.sp, fontWeight: FontWeight.bold);
+    }
+
+    return TextStyle(color: main_color, fontSize: 10.sp);
   }
 }
