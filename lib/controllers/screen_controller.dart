@@ -150,7 +150,7 @@ class ScreenController extends GetxController {
     if (petfood_detail_data['life_stage'].length == 3) {
       return_text = '무관';
     } else {
-      return_text = list_to_str(petfood_detail_data['life_stage']).replaceAll(', ', '\n');
+      return_text = list_to_str(petfood_detail_data['life_stage']);
     }
     return return_text;
   }

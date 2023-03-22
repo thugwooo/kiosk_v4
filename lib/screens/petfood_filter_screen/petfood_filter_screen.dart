@@ -169,14 +169,8 @@ class PetfoodFilterScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    big_category_list[category_index],
-                    style: TextStyle(fontSize: 11.sp),
-                  ),
-                  Icon(
-                    Icons.keyboard_arrow_down_outlined,
-                    size: 15.w,
-                  ),
+                  Text(big_category_list[category_index], style: TextStyle(fontSize: 11.sp)),
+                  Icon(Icons.keyboard_arrow_down_outlined, size: 15.w),
                 ],
               ),
               onTap: () {
@@ -198,9 +192,7 @@ class PetfoodFilterScreen extends StatelessWidget {
                         children: [
                           Text(
                             filter_category_list[user_controller.user_info['pet'].value][category_index][index],
-                            style: TextStyle(
-                              fontSize: 9.sp,
-                            ),
+                            style: TextStyle(fontSize: 9.sp),
                           ),
                           Icon(
                             filter_controller.selected_filter_category_list[user_controller.user_info['pet'].value][category_index][index].value

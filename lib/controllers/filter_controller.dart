@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/petfood_function.dart';
 import 'package:kiosk_v4/data/category.dart';
+
 import 'package:kiosk_v4/data/petfood.dart';
 
 class FilterController extends GetxController {
@@ -12,14 +13,10 @@ class FilterController extends GetxController {
   RxList show_all_filter_category = List.generate(big_category_list.length, (index) => false.obs).obs;
   RxList selected_filter_category_list = [
     [
-      List.generate(filter_category_list[0][0].length, (index) => false.obs),
-      List.generate(filter_category_list[0][1].length, (index) => false.obs),
-      List.generate(filter_category_list[0][2].length, (index) => false.obs),
+      for (var index = 0; index < filter_category_list[0].length; index++) List.generate(filter_category_list[0][index].length, (index) => false.obs),
     ],
     [
-      List.generate(filter_category_list[1][0].length, (index) => false.obs),
-      List.generate(filter_category_list[1][1].length, (index) => false.obs),
-      List.generate(filter_category_list[1][2].length, (index) => false.obs),
+      for (var index = 0; index < filter_category_list[1].length; index++) List.generate(filter_category_list[1][index].length, (index) => false.obs),
     ]
   ].obs;
 
@@ -50,8 +47,12 @@ class FilterController extends GetxController {
 
   void filtering_petfood(food_list) {
     filtered_petfood_list = filtering_brand_category(food_list[user_controller.user_info['pet'].value], 0);
-    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 1, 'health_1');
-    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 2, 'main_ingredient');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 1, 'life_stage');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 2, 'size');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 3, 'health_1');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 4, 'feature');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 5, 'main_ingredient');
+    filtered_petfood_list = filtering_multi_select_category(filtered_petfood_list, 6, 'kibble_value');
     set_filtered_petfood_length();
   }
 
@@ -137,14 +138,10 @@ class FilterController extends GetxController {
     // }
     selected_filter_category_list = [
       [
-        List.generate(filter_category_list[0][0].length, (index) => false.obs),
-        List.generate(filter_category_list[0][1].length, (index) => false.obs),
-        List.generate(filter_category_list[0][2].length, (index) => false.obs),
+        for (var index = 0; index < filter_category_list[0].length; index++) List.generate(filter_category_list[0][index].length, (index) => false.obs),
       ],
       [
-        List.generate(filter_category_list[1][0].length, (index) => false.obs),
-        List.generate(filter_category_list[1][1].length, (index) => false.obs),
-        List.generate(filter_category_list[1][2].length, (index) => false.obs),
+        for (var index = 0; index < filter_category_list[1].length; index++) List.generate(filter_category_list[1][index].length, (index) => false.obs),
       ]
     ].obs;
     refresh();

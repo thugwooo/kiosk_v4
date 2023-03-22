@@ -13,6 +13,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '항산화',
       'health_3': '피부/피모',
+      'feature': ['고단백 중지방', '그레인프리'],
       'pop_category': ['퍼피', '고단백 중지방', '그레인프리'],
       'main_ingredient': ['닭', '칠면조', '계란'],
       'all_ingredient': [
@@ -99,6 +100,7 @@ final petfood_list = [
         '생선',
         '콩'
       ],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2kg',
       'protein': 38.0,
@@ -139,6 +141,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['높은어류함유량(고단백)', '그레인프리', '글루텐프리', '치킨프리', '옥수수프리', '밀 프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '높은어류함유량(고단백)', '그레인프리', '글루텐프리', '치킨프리', '옥수수프리', '밀 프리'],
       'main_ingredient': ['정어리', '고등어', '민대구', '가자미', '볼락'],
       'all_ingredient': [
@@ -218,6 +221,7 @@ final petfood_list = [
         '생선',
         '콩'
       ],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 38.0,
@@ -258,6 +262,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '항산화',
       'health_3': '',
+      'feature': ['높은육류함유량(고단백)', '그레인프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '높은육류함유량(고단백)', '그레인프리'],
       'main_ingredient': ['닭', '칠면조', '계란'],
       'all_ingredient': [
@@ -346,6 +351,7 @@ final petfood_list = [
         '생선',
         '콩'
       ],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 38.0,
@@ -386,6 +392,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '항산화',
       'health_3': '',
+      'feature': ['높은육류함유량(고단백)', '그레인프리', '글루텐프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '높은육류함유량(고단백)', '그레인프리', '글루텐프리'],
       'main_ingredient': ['칠면조', '닭', '메추리'],
       'all_ingredient': [
@@ -475,6 +482,7 @@ final petfood_list = [
         '생선',
         '콩'
       ],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1.8kg',
       'protein': 38.0,
@@ -515,6 +523,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '다이어트',
       'health_3': '항산화',
+      'feature': ['높은육류함유량(고단백)', '그레인프리', '글루텐프리'],
       'pop_category': ['시니어', '높은육류함유량(고단백)', '그레인프리', '글루텐프리'],
       'main_ingredient': ['닭', '계란', '칠면조'],
       'all_ingredient': [
@@ -600,6 +609,7 @@ final petfood_list = [
         '생선',
         '콩'
       ],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2kg',
       'protein': 38.0,
@@ -640,6 +650,7 @@ final petfood_list = [
       'health_1': '다이어트',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['높은육류함유량(고단백)', '그레인프리', '글루텐프리', '다이어트'],
       'pop_category': ['퍼피', '어덜트', '시니어', '높은육류함유량(고단백)', '그레인프리', '글루텐프리', '다이어트'],
       'main_ingredient': ['닭', '칠면조'],
       'all_ingredient': [
@@ -735,6 +746,7 @@ final petfood_list = [
         '생선',
         '콩'
       ],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 42.0,
@@ -775,6 +787,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': ['단일단백질', '그레인프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질', '그레인프리'],
       'main_ingredient': ['오리'],
       'all_ingredient': [
@@ -813,6 +826,7 @@ final petfood_list = [
         '엔테로코커스 패슘 유산균 NCIMB10415:600ㅌ10^6 CFU'
       ],
       'alg': ['오리', '완두콩', '렌틸콩', '배', '버터넛스쿼시', '호박', '해조류', '소금', '크랜베리', '블루베리', '치커리', '우엉', '로즈힙', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 31.0,
@@ -853,6 +867,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': ['단일단백질', '그레인프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질', '그레인프리'],
       'main_ingredient': ['돼지'],
       'all_ingredient': [
@@ -891,6 +906,7 @@ final petfood_list = [
         '엔테로코커스 패슘 유산균 NCIBM10415: 600X10^6 CFU'
       ],
       'alg': ['돼지', '완두콩', '렌틸콩', '버터넛스쿼시', '병아리콩', '해조류', '크랜베리', '블루베리', '치커리', '강황', '우엉', '라벤더', '마시멜로', '로즈힙', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 31.0,
@@ -931,6 +947,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '항산화',
       'health_3': '',
+      'feature': ['높은 육류 함량(고단백)'],
       'pop_category': ['퍼피', '높은 육류 함량(고단백)'],
       'main_ingredient': ['닭', '칠면조'],
       'all_ingredient': [
@@ -978,6 +995,7 @@ final petfood_list = [
         '엔테로코커스패슘 유산균 NCIMB10415:600X10^6CFU'
       ],
       'alg': ['닭', '칠면조', '렌틸콩', '완두콩', '계란', '가자미', '청어', '알팔파', '잠두', '해조류', '호박', '버터넛스쿼시', '파스닙', '케일', '순무', '당근', '사과', '배', '크랜베리', '블루베리', '치커리', '강황', '우엉', '로즈힙', '생선', '콩'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '2kg',
       'protein': 33.0,
@@ -1019,10 +1037,12 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '소화기',
       'health_3': '',
+      'feature': ['저알레르기', '곤충사료'],
       'pop_category': ['어덜트', '저알레르기', '곤충사료'],
       'main_ingredient': ['식용곤충'],
       'all_ingredient': ['꽃벵이', '고소애', '동애등에', '송어', '황태', '홍게분', '청도반시', '새송이', '시래기', '미강', '찹쌀', '천연미네랄', '락토바실러스', '프락토올리고당', '식용곤충오일', '해바라기유', '비타민C', '초유'],
       'alg': ['식용곤충', '송어', '황태', '홍게', '감', '새송이', '미강', '찹쌀', '초유', '생선', '곡물'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '1.5kg',
       'protein': 25.0,
@@ -1063,6 +1083,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '저알러지',
+      'feature': ['단일단백질', '그레인프리', '글루텐프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '단일단백질', '그레인프리', '글루텐프리'],
       'main_ingredient': ['연어', '감자'],
       'all_ingredient': [
@@ -1111,6 +1132,7 @@ final petfood_list = [
         '녹차 추출물'
       ],
       'alg': ['연어', '완두콩', '감자', '토마토', '아마', '치커리', '녹차'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2kg',
       'protein': 29.0,
@@ -1151,6 +1173,7 @@ final petfood_list = [
       'health_1': '다이어트',
       'health_2': '소화기',
       'health_3': '피부/피모',
+      'feature': ['다이어트'],
       'pop_category': ['퍼피', '어덜트', '시니어', '다이어트'],
       'main_ingredient': ['칠면조', '닭', '연어'],
       'all_ingredient': [
@@ -1216,6 +1239,7 @@ final petfood_list = [
         '스피어민트 추출물'
       ],
       'alg': ['칠면조', '닭', '연어', '귀리', '쌀', '보리', '현미', '토마토', '아마', '당근', '시금치', '고구마', '블루베리', '사과', '치커리', '로즈마리', '녹차', '곡물'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1.8kg',
       'protein': 28.0,
@@ -1256,6 +1280,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': ['그레인프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['칠면조', '닭', '연어'],
       'all_ingredient': [
@@ -1305,6 +1330,7 @@ final petfood_list = [
         '스피어민트 추출물'
       ],
       'alg': ['칠면조', '닭', '완두콩', '렌틸콩', '병아리콩', '연어', '토마토', '감자', '아마', '당근', '시금치', '고구마', '블루베리', '사과', '치커리', '돼지', '로즈마리', '녹차', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1.8kg',
       'protein': 32.0,
@@ -1345,6 +1371,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '항산화',
       'health_3': '피부/피모',
+      'feature': ['NO밀·콩·옥수수'],
       'pop_category': ['시니어', 'NO밀·콩·옥수수'],
       'main_ingredient': ['칠면조', '닭'],
       'all_ingredient': [
@@ -1385,7 +1412,8 @@ final petfood_list = [
         '스피아민트추출물'
       ],
       'alg': ['칠면조', '닭', '현미', '완두콩', '쌀', '귀리', '토마토', '당근', '시금치', '사과', '고구마', '블루베리', '치커리', '유카', '로즈마리', '녹차', '콩', '곡물'],
-      'kibble': -1,
+      'kibble_value': '무',
+      'kibble': 10,
       'weight': '1.8kg',
       'protein': 25.0,
       'protein_dm': 27.78,
@@ -1425,6 +1453,7 @@ final petfood_list = [
       'health_1': '다이어트',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': ['그레인프리', '다이어트', '생식코팅'],
       'pop_category': ['어덜트', '시니어', '그레인프리', '다이어트', '생식코팅'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -1460,6 +1489,7 @@ final petfood_list = [
         '로즈메리 추출물'
       ],
       'alg': ['닭', '완두콩', '타피오카', '청어', '토마토', '알팔파', '칠면조', '호박', '소금', '당근', '사과', '크랜베리', '블루베리', '로즈마리', '생선', '콩'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '1.8kg',
       'protein': 35.0,
@@ -1500,6 +1530,7 @@ final petfood_list = [
       'health_1': '다이어트',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': ['그레인프리', '글루텐프리', '생식코팅', '높은육류함유량(고단백)', '다이어트'],
       'pop_category': ['시니어', '그레인프리', '글루텐프리', '생식코팅', '높은육류함유량(고단백)', '다이어트'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -1537,6 +1568,7 @@ final petfood_list = [
         '로즈메리 추출물'
       ],
       'alg': ['닭', '타피오카', '병아리콩', '완두콩', '연어', '계란', '토마토', '호박', '당근', '사과', '크랜베리', '강황', '소금', '해조류', '블루베리', '로즈마리', '콩'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '1.8kg',
       'protein': 36.0,
@@ -1577,6 +1609,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리', '생식 코팅'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '글루텐프리', '생식 코팅'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -1625,7 +1658,8 @@ final petfood_list = [
         '로즈메리 추출물'
       ],
       'alg': ['닭', '완두콩', '타피오카', '청어', '토마토', '호박', '소금', '당근', '사과', '크랜베리', '해조류', '블루베리', '로즈마리', '생선', '콩'],
-      'kibble': -1,
+      'kibble_value': '무',
+      'kibble': 10,
       'weight': '1.8kg',
       'protein': 37.0,
       'protein_dm': 40.66,
@@ -1665,6 +1699,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '',
       'health_3': '',
+      'feature': ['그레인프리', '높은육류함유량(고단백)', '생식 코팅'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '높은육류함유량(고단백)', '생식 코팅'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -1706,7 +1741,8 @@ final petfood_list = [
         '로즈메리 추출물'
       ],
       'alg': ['닭', '타피오카', '아마', '토마토', '우유', '소금', '호박', '로즈마리'],
-      'kibble': -1,
+      'kibble_value': '무',
+      'kibble': 10,
       'weight': '1.8kg',
       'protein': 47.0,
       'protein_dm': 52.22,
@@ -1746,6 +1782,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '항산화',
       'health_3': '',
+      'feature': ['NO 옥수수·밀·대두', '생식코팅'],
       'pop_category': ['어덜트', 'NO 옥수수·밀·대두', '생식코팅'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -1785,6 +1822,7 @@ final petfood_list = [
         '로즈메리 추출물'
       ],
       'alg': ['닭', '현미', '귀리', '보리', '칠면조', '아마', '청어', '소금', '당근', '사과', '블루베리', '크랜베리', '효모', '호박', '로즈마리', '곡물', '생선'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2kg',
       'protein': 25.0,
@@ -1825,6 +1863,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '항산화',
+      'feature': ['NO 옥수수·밀·대두', '생식코팅'],
       'pop_category': ['어덜트', 'NO 옥수수·밀·대두', '생식코팅'],
       'main_ingredient': ['연어'],
       'all_ingredient': [
@@ -1860,6 +1899,7 @@ final petfood_list = [
         '로즈마리 추출물  '
       ],
       'alg': ['연어', '현미', '귀리', '보리', '완두콩', '청어', '알팔파', '아마', '소금', '당근', '고구마', '사과', '블루베리', '크랜베리', '대구', '로즈마리', '생선', '곡물'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2kg',
       'protein': 25.0,
@@ -1900,6 +1940,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리', '저알레르기'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '글루텐프리', '저알레르기'],
       'main_ingredient': ['토끼'],
       'all_ingredient': [
@@ -1935,6 +1976,7 @@ final petfood_list = [
         '로즈메리 추출물'
       ],
       'alg': ['토끼', '연어', '청어', '병아리콩', '타피오카', '대구', '가자미', '우럭', '토마토', '완두콩', '당근', '사과', '크랜베리', '소금', '호박', '로즈마리', '생선', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '1.8kg',
       'protein': 36.5,
@@ -1975,6 +2017,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리'],
       'pop_category': ['어덜트', '시니어', '그레인프리', '글루텐프리'],
       'main_ingredient': ['송어'],
       'all_ingredient': [
@@ -2043,6 +2086,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['송어', '계란', '완두콩', '감자', '아마', '연어', '청어', '사과', '토마토', '알팔파', '당근', '호박', '고구마', '바나나', '블루베리', '크랜베리', '블랙베리', '석류', '파파야', '렌틸콩', '브로콜리', '치커리', '로즈마리', '생선', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '1.36kg',
       'protein': 24.0,
@@ -2084,6 +2128,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '다이어트',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리', 'NO 옥수수', 'NO 밀', '다이어트'],
       'pop_category': ['어덜트', '시니어', '그레인프리', '글루텐프리', 'NO 옥수수', 'NO 밀', '다이어트'],
       'main_ingredient': ['칠면조'],
       'all_ingredient': [
@@ -2153,6 +2198,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['칠면조', '감자', '완두콩', '아마', '사과', '연어', '오리', '알팔파', '토마토', '당근', '호박', '고구마', '바나나', '블루베리', '크랜베리', '블랙베리', '석류', '파파야', '렌틸콩', '브로콜리', '치즈', '치커리', '유카', '로즈마리', '콩', '유제품'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '1.36kg',
       'protein': 26.0,
@@ -2194,6 +2240,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리'],
       'pop_category': ['어덜트. 시니어', '그레인프리', '글루텐프리'],
       'main_ingredient': ['송어'],
       'all_ingredient': [
@@ -2266,6 +2313,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['송어', '감자', '완두콩', '아마', '연어', '청어', '사과', '토마토', '알팔파', '당근', '호박', '고구마', '바나나', '블루베리', '크랜베리', '블랙베리', '석류', '파파야', '렌틸콩', '브로콜리', '치커리', '파슬리', '페퍼민트', '녹차', '유카', '로즈마리'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1.36kg',
       'protein': 26.0,
@@ -2308,6 +2356,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '다이어트',
       'health_3': '피부/피모',
+      'feature': ['그레인프리', '글루텐프리'],
       'pop_category': ['시니어', '그레인프리', '글루텐프리'],
       'main_ingredient': ['칠면조'],
       'all_ingredient': [
@@ -2412,6 +2461,7 @@ final petfood_list = [
         '로즈마리',
         '콩'
       ],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1.36kg',
       'protein': 24.0,
@@ -2452,6 +2502,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '피부/피모',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리', 'NO 옥수수', 'NO 밀'],
       'pop_category': ['어덜트', '그레인프리', '글루텐프리', 'NO 옥수수', 'NO 밀'],
       'main_ingredient': ['칠면조'],
       'all_ingredient': [
@@ -2555,6 +2606,7 @@ final petfood_list = [
         '로즈마리',
         '콩'
       ],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1.36kg',
       'protein': 27.0,
@@ -2597,6 +2649,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '피부/피모',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리'],
       'pop_category': ['퍼피', '그레인프리', '글루텐프리'],
       'main_ingredient': ['칠면조'],
       'all_ingredient': [
@@ -2667,6 +2720,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['칠면조', '계란', '완두콩', '감자', '연어', '오리', '아마', '사과', '알팔파', '토마토', '당근', '호박', '고구마', '바나나', '블루베리', '크랜베리', '블랙베리', '석류', '파파야', '렌틸콩', '브로콜리', '치커리', '로즈마리', '콩'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '1.36kg',
       'protein': 28.0,
@@ -2708,6 +2762,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '소화기',
       'health_3': '',
+      'feature': ['그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'main_ingredient': ['오리'],
       'all_ingredient': [
@@ -2755,6 +2810,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['오리', '렌틸콩', '타피오카', '완두콩', '병아리콩', '치커리', '로즈마리', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '1.36kg',
       'protein': 24.0,
@@ -2795,6 +2851,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '소화기',
       'health_3': '',
+      'feature': ['그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'main_ingredient': ['칠면조'],
       'all_ingredient': [
@@ -2840,6 +2897,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['칠면조', '타피오카', '완두콩', '렌틸콩', '병아리콩', '치커리', '로즈마리', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '1.36kg',
       'protein': 25.0,
@@ -2882,6 +2940,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '피부/피모',
       'health_3': '',
+      'feature': ['그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인·글루텐프리', 'NO 감자', '단일단백질'],
       'main_ingredient': ['연어'],
       'all_ingredient': [
@@ -2928,6 +2987,7 @@ final petfood_list = [
         '건조 로즈마리 '
       ],
       'alg': ['연어', '타피오카', '완두콩', '렌틸콩', '병아리콩', '치커리', '로즈마리', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '1.36kg',
       'protein': 24.0,
@@ -2968,6 +3028,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '피부/피모',
       'health_3': '',
+      'feature': ['그레인프리', '글루텐프리', 'NO 감자', '단일단백질'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '글루텐프리', 'NO 감자', '단일단백질'],
       'main_ingredient': ['연어'],
       'all_ingredient': [
@@ -3014,6 +3075,7 @@ final petfood_list = [
         '건조 로즈마리'
       ],
       'alg': ['연어', '타피오카', '완두콩', '렌틸콩', '병아리콩', '치커리', '로즈마리', '콩'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '1.36kg',
       'protein': 24.0,
@@ -3054,6 +3116,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'main_ingredient': ['양'],
       'all_ingredient': [
@@ -3084,6 +3147,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['양', '초록입홍합', '치커리', '해조류', '소금', '효모', '파슬리'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1kg',
       'protein': 36.0,
@@ -3125,6 +3189,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -3152,6 +3217,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['닭', '초록입홍합', '치커리', '해조류', '소금', '효모', '파슬리'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1kg',
       'protein': 38.0,
@@ -3193,6 +3259,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'main_ingredient': ['양'],
       'all_ingredient': [
@@ -3224,6 +3291,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['양', '초록입홍합', '치커리', '해조류', '소금', '효모', '파슬리'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1kg',
       'protein': 38.0,
@@ -3265,6 +3333,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'main_ingredient': ['소'],
       'all_ingredient': [
@@ -3295,6 +3364,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['소', '초록입홍합', '치커리', '해조류', '소금', '효모', '파슬리'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1kg',
       'protein': 38.0,
@@ -3336,6 +3406,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '단일단백질', 'NO 옥수수 NO 밀 NO'],
       'main_ingredient': ['사슴'],
       'all_ingredient': [
@@ -3367,6 +3438,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['사슴', '초록입홍합', '치커리', '해조류', '소금', '효모', '파슬리'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '1kg',
       'protein': 45.0,
@@ -3408,6 +3480,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '뼈/관절',
       'health_3': '저알러지',
+      'feature': ['단일단백질', '그레인프리', 'NO GMO·부산물'],
       'pop_category': ['어덜트', '시니어', '단일단백질', '그레인프리', 'NO GMO·부산물'],
       'main_ingredient': ['청어'],
       'all_ingredient': [
@@ -3447,6 +3520,7 @@ final petfood_list = [
         '혼합토코페롤(천연)  '
       ],
       'alg': ['청어', '고구마', '계란', '완두콩', '당근', '알팔파', '치커리', '이스트', '오렌지', '석류', '사과', '시금치', '차전자피', '블루베리', '소금', '맥주효모', '강황', '로즈마리', '생선', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2.5kg',
       'protein': 34.0,
@@ -3487,6 +3561,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '뼈/관절',
       'health_3': '저알러지',
+      'feature': ['단일단백질', '그레인프리', 'NO GMO·부산물'],
       'pop_category': ['어덜트', '시니어', '단일단백질', '그레인프리', 'NO GMO·부산물'],
       'main_ingredient': ['대구'],
       'all_ingredient': [
@@ -3535,6 +3610,7 @@ final petfood_list = [
         '혼합토코페롤(천연)'
       ],
       'alg': ['대구', '완두콩', '단호박', '당근', '알팔파', '치커리', '이스트', '오렌지', '시금치', '사과', '석류', '차전자피', '블루베리', '소금', '맥주효모', '초록입홍합', '녹차', '로즈마리', '생선', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2.5kg',
       'protein': 30.0,
@@ -3575,6 +3651,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '저알러지',
       'health_3': '항산화',
+      'feature': ['단일단백질', '그레인프리', 'NO GMO·부산물'],
       'pop_category': ['어덜트', '시니어', '단일단백질', '그레인프리', 'NO GMO·부산물'],
       'main_ingredient': ['멧돼지'],
       'all_ingredient': [
@@ -3630,6 +3707,7 @@ final petfood_list = [
         '로즈마리 추출물 항산화제: 천연 토코페롤 추출물'
       ],
       'alg': ['멧돼지', '완두콩', '단호박', '당근', '알팔파', '치커리', '이스트', '오렌지', '시금치', '사과', '석류', '차전자피', '블루베리', '소금', '맥주효모', '초록입홍합', '녹차', '로즈마리', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2.5kg',
       'protein': 30.0,
@@ -3670,6 +3748,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '저알러지',
       'health_3': '항산화',
+      'feature': ['그레인프리', 'NO GMO·부산물'],
       'pop_category': ['어덜트', '시니어', '그레인프리', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -3727,6 +3806,7 @@ final petfood_list = [
         '혼합토코페롤(천연)'
       ],
       'alg': ['닭', '청어', '완두콩', '단호박', '당근', '알팔파', '치커리', '이스트', '오렌지', '시금치', '사과', '석류', '차전자피', '블루베리', '소금', '맥주효모', '초록입홍합', '녹차', '로즈마리', '생선', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2.5kg',
       'protein': 30.0,
@@ -3767,6 +3847,7 @@ final petfood_list = [
       'health_1': '항산화',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['NO GMO·부산물'],
       'pop_category': ['어덜트', '시니어', 'NO GMO·부산물'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -3822,6 +3903,7 @@ final petfood_list = [
         '천연 토코페롤 추출물 '
       ],
       'alg': ['닭', '스펠트', '귀리', '청어', '완두콩', '당근', '알팔파', '이스트', '사과', '시금치', '차전자피', '오렌지', '블루베리', '맥주효모', '강황', '알로에베라', '그린티', '로즈마리', '생선', '콩', '곡물'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2.5kg',
       'protein': 35.0,
@@ -3858,6 +3940,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '항산화',
       'health_3': '소화기',
+      'feature': ['글루텐프리', 'NO밀·옥수수·콩·GMO'],
       'pop_category': ['퍼피', '글루텐프리', 'NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['칠면조', '연어'],
       'all_ingredient': [
@@ -3898,6 +3981,7 @@ final petfood_list = [
         '셀레늄'
       ],
       'alg': ['칠면조', '연어', '감자', '완두콩', '비트', '고구마', '당근', '사과', '캐롭', '치커리', '효모', '로즈마리', '콩'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '2kg',
       'protein': 30.0,
@@ -3938,6 +4022,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '피부/피모',
       'health_3': '소화기',
+      'feature': ['글루텐프리', 'NO밀·옥수수·콩·GMO'],
       'pop_category': ['어덜트', '글루텐프리', 'NO밀·옥수수·콩·GMO'],
       'main_ingredient': ['연어'],
       'all_ingredient': [
@@ -3978,6 +4063,7 @@ final petfood_list = [
         '셀레늄'
       ],
       'alg': ['연어', '청어', '완두콩', '감자', '비트', '시금치', '당근', '사과', '캐롭', '유카', '치커리', '효모', '로즈마리', '생선', '콩'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '2kg',
       'protein': 28.0,
@@ -4018,6 +4104,7 @@ final petfood_list = [
       'health_1': '뼈/관절',
       'health_2': '다이어트',
       'health_3': '소화기',
+      'feature': ['글루텐프리', 'NO밀·옥수수·콩·GMO', '다이어트'],
       'pop_category': ['시니어', '글루텐프리', 'NO밀·옥수수·콩·GMO', '다이어트'],
       'main_ingredient': ['오리'],
       'all_ingredient': [
@@ -4061,6 +4148,7 @@ final petfood_list = [
         '셀레늄'
       ],
       'alg': ['오리', '닭', '칠면조', '완두콩', '비트', '버섯', '크랜베리', '망고', '사과', '유카', '치커리', '효모', '로즈마리', '콩'],
+      'kibble_value': '초소(~8mm)',
       'kibble': 1,
       'weight': '2kg',
       'protein': 24.0,
@@ -4101,6 +4189,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '항산화',
+      'feature': ['그레인프리'],
       'pop_category': ['퍼피', '그레인프리'],
       'main_ingredient': ['연어', '고구마'],
       'all_ingredient': [
@@ -4152,6 +4241,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['연어', '생선', '고구마', '완두콩', '감자', '토마토', '치커리', '블루베리', '라즈베리', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2.27kg',
       'protein': 27.0,
@@ -4192,6 +4282,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '항산화',
       'health_3': '',
+      'feature': ['그레인프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['오리', '닭', '고구마'],
       'all_ingredient': [
@@ -4246,6 +4337,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['오리', '닭', '고구마', '완두콩', '감자', '계란', '생선', '메추리', '토마토', '치커리', '블루베리', '라즈베리', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2.27kg',
       'protein': 32.0,
@@ -4286,6 +4378,7 @@ final petfood_list = [
       'health_1': '저알러지',
       'health_2': '소화기',
       'health_3': '항산화',
+      'feature': ['그레인프리', '글루텐프리', '단일단백질'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리', '글루텐프리', '단일단백질'],
       'main_ingredient': ['칠면조'],
       'all_ingredient': [
@@ -4329,6 +4422,7 @@ final petfood_list = [
         '엽산'
       ],
       'alg': ['칠면조', '렌틸콩', '토마토', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '3.63kg',
       'protein': 30.0,
@@ -4369,6 +4463,7 @@ final petfood_list = [
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '항산화',
+      'feature': ['그레인프리'],
       'pop_category': ['퍼피', '어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['연어'],
       'all_ingredient': [
@@ -4418,6 +4513,7 @@ final petfood_list = [
         '엽산 '
       ],
       'alg': ['연어', '생선', '고구마', '감자', '완두콩', '병아리콩', '치커리', '토마토', '블루베리', '라즈베리', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 25.0,
@@ -4459,6 +4555,7 @@ final petfood_list = [
       'health_1': '다이어트',
       'health_2': '뼈/관절',
       'health_3': '소화기',
+      'feature': ['다이어트', '그레인프리'],
       'pop_category': ['시니어', '다이어트', '그레인프리'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -4492,6 +4589,7 @@ final petfood_list = [
         '라벤더'
       ],
       'alg': ['닭', '고구마', '완두콩', '타피오카', '효모', '렌틸콩', '유카', '오렌지', '초록입홍합', '카모마일', '당근', '크랜베리', '로즈마리', '시금치', '토마토', '라벤더', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 19.5,
@@ -4532,6 +4630,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['단일단백질', '그레인프리'],
       'pop_category': ['어덜트', '시니어', '단일단백질', '그레인프리'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -4563,6 +4662,7 @@ final petfood_list = [
         '라벤더'
       ],
       'alg': ['닭', '고구마', '타피오카', '완두콩', '효모', '초록입홍합', '해조류', '렌틸콩', '시금치', '토마토', '당근', '카모마일', '라벤더', '크랜베리', '로즈마리', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2kg',
       'protein': 20.0,
@@ -4604,6 +4704,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '',
+      'feature': ['단일단백질', '그레인프리'],
       'pop_category': ['어덜트', '시니어', '단일단백질', '그레인프리'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -4635,6 +4736,7 @@ final petfood_list = [
         '라벤더'
       ],
       'alg': ['닭', '고구마', '타피오카', '완두콩', '효모', '초록입홍합', '해조류', '렌틸콩', '시금치', '토마토', '당근', '카모마일', '라벤더', '크랜베리', '로즈마리', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 20.0,
@@ -4676,6 +4778,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '피부/피모',
+      'feature': ['그레인프리'],
       'pop_category': ['어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '연어'],
       'all_ingredient': [
@@ -4706,6 +4809,7 @@ final petfood_list = [
         '라벤더'
       ],
       'alg': ['닭', '고구마', '연어', '타피오카', '완두콩', '효모', '렌틸콩', '오렌지', '해조류', '초록입홍합', '카모마일', '당근', '토마토', '크랜베리', '시금치', '로즈마리', '라벤더', '콩'],
+      'kibble_value': '소(8~10mm)',
       'kibble': 2,
       'weight': '2kg',
       'protein': 20.0,
@@ -4747,6 +4851,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '피부/피모',
+      'feature': ['그레인프리'],
       'pop_category': ['어덜트', '시니어', '그레인프리'],
       'main_ingredient': ['닭', '연어'],
       'all_ingredient': [
@@ -4777,6 +4882,7 @@ final petfood_list = [
         '라벤더'
       ],
       'alg': ['닭', '고구마', '연어', '타피오카', '완두콩', '효모', '렌틸콩', '오렌지', '해초', '초록입홍합', '카모마일', '당근', '토마토', '크랜베리', '시금치', '로즈마리', '라벤더', '콩'],
+      'kibble_value': '대(12mm~)',
       'kibble': 4,
       'weight': '2kg',
       'protein': 20.0,
@@ -4818,6 +4924,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': [''],
       'pop_category': ['퍼피', ''],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -4866,6 +4973,7 @@ final petfood_list = [
         '마늘오일'
       ],
       'alg': ['닭'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2.72kg',
       'protein': 28.0,
@@ -4906,6 +5014,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': [''],
       'pop_category': ['어덜트', ''],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -4955,6 +5064,7 @@ final petfood_list = [
         '마늘오일'
       ],
       'alg': ['닭'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2.72kg',
       'protein': 29.0,
@@ -4995,6 +5105,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': [''],
       'pop_category': ['시니어', ''],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -5049,6 +5160,7 @@ final petfood_list = [
         '마늘오일'
       ],
       'alg': ['닭'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2.72kg',
       'protein': 29.0,
@@ -5089,6 +5201,7 @@ final petfood_list = [
       'health_1': '소화기',
       'health_2': '뼈/관절',
       'health_3': '항산화',
+      'feature': [''],
       'pop_category': ['퍼피', ''],
       'main_ingredient': ['닭'],
       'all_ingredient': [
@@ -5134,6 +5247,7 @@ final petfood_list = [
         '마늘오일'
       ],
       'alg': ['닭'],
+      'kibble_value': '중(10~12mm)',
       'kibble': 3,
       'weight': '2.72kg',
       'protein': 34.0,
