@@ -11,8 +11,8 @@ var breed = [dog_breed, cat_breed];
 var birth_year = List.generate(24, (index) => (index + 2000).toString());
 var birth_month = List.generate(12, (index) => (index + 1).toString());
 var birth_day = List.generate(31, (index) => (index + 1).toString());
-var dog_alg = ['소', '닭', '칠면조', '오리', '양', '돼지', '연어', '생선', '계란', '유제품', '옥수수', '곡물', '콩'];
-var cat_alg = ['소', '닭', '칠면조', '오리', '양', '돼지', '연어', '생선', '계란', '유제품', '옥수수', '곡물', '콩'];
+var dog_alg = ['소', '닭', '칠면조', '오리', '양', '돼지', '연어', '생선', '계란', '유제품', '옥수수', '곡물', '콩', '대두'];
+var cat_alg = ['소', '닭', '칠면조', '오리', '양', '돼지', '연어', '생선', '계란', '유제품', '옥수수', '곡물', '콩', '대두'];
 var alg_sub_list = [
   'β - 락 토 글 로 불 린',
   '가자미',

@@ -372,7 +372,7 @@ class PetfoodDetailContainer extends StatelessWidget {
               SizedBox(height: 8.h),
               Text(
                 screen_controller.petfood_detail_data['title'][index],
-                style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold, color: main_color),
+                style: screen_controller.title_color(title: screen_controller.petfood_detail_data['title'][index]),
               ),
               SizedBox(height: 3.h),
               Container(
