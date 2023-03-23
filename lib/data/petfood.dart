@@ -2,7 +2,7 @@ final petfood_list = [
   [
     {
       'pet': '강아지',
-      'name': '[오리젠] 퍼피',
+      'name': '퍼피',
       'short_name': '퍼피',
       'eng_name': 'orijen puppy',
       'location': 'A1',
@@ -130,7 +130,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[오리젠] 6피쉬 독',
+      'name': '6피쉬 독',
       'short_name': '6피쉬',
       'eng_name': 'orijen 6fish',
       'location': 'A2',
@@ -251,7 +251,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[오리젠] 오리지날 독',
+      'name': '오리지날 독',
       'short_name': '오리지날 독',
       'eng_name': 'orijen original dog',
       'location': 'A3',
@@ -381,7 +381,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[오리젠] 스몰브리드',
+      'name': '스몰브리드',
       'short_name': '스몰브리드 독',
       'eng_name': 'orijen small breed',
       'location': 'A4',
@@ -512,7 +512,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[오리젠] 시니어 독',
+      'name': '시니어 독',
       'short_name': '시니어 독',
       'eng_name': 'orijen senior dog',
       'location': 'A5',
@@ -639,7 +639,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[오리젠] 피트&트림 독',
+      'name': '피트&트림 독',
       'short_name': '피트&트림 독',
       'eng_name': 'orijen fit&trim',
       'location': 'A6',
@@ -776,7 +776,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[아카나] 싱글즈 프리런 덕',
+      'name': '싱글즈 프리런 덕',
       'short_name': '싱글즈 프리런 덕',
       'eng_name': 'acana singles free run duck',
       'location': 'A7',
@@ -856,7 +856,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[아카나] 싱글즈 요크셔 포크',
+      'name': '싱글즈 요크셔 포크',
       'short_name': '싱글즈 요크셔 포크',
       'eng_name': 'acana yorkshire pork',
       'location': 'A8',
@@ -936,7 +936,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[아카나] 퍼피 스몰브리드',
+      'name': '퍼피 스몰브리드',
       'short_name': '퍼피 스몰브리드',
       'eng_name': 'acana puppy small breed',
       'location': 'A9',
@@ -1026,7 +1026,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[시그널케어] 사랑하개',
+      'name': '사랑하개',
       'short_name': '사랑하개',
       'eng_name': 'signalcare saranghagae',
       'location': 'A10',
@@ -1072,7 +1072,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[웰니스] 심플 스몰브리드 살몬&포테이토',
+      'name': '심플 스몰브리드 살몬&포테이토',
       'short_name': '심플 살몬&포테이토',
       'eng_name': 'wellness simple salmon&potato',
       'location': 'A11',
@@ -1162,7 +1162,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[웰니스] 컴플리트헬스 스몰브리드 헬시웨이트',
+      'name': '컴플리트헬스 스몰브리드 헬시웨이트',
       'short_name': '헬시웨이트',
       'eng_name': 'wellness healthy weight',
       'location': 'A12',
@@ -1269,7 +1269,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[웰니스] 컴플리트헬스 그레인프리 스몰브리드',
+      'name': '컴플리트헬스 그레인프리 스몰브리드',
       'short_name': '그레인프리 스몰브리드',
       'eng_name': 'wellness grainfree small breed',
       'location': 'A13',
@@ -1360,7 +1360,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[웰니스] 컴플리트헬스 스몰브리드 시니어',
+      'name': '컴플리트헬스 스몰브리드 시니어',
       'short_name': '스몰브리드 시니어',
       'eng_name': 'wellness small breed senior',
       'location': 'A14',
@@ -1442,7 +1442,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트] RBK 헬시웨이트 독',
+      'name': 'RBK 헬시웨이트 독',
       'short_name': 'RBK 헬시웨이트 독',
       'eng_name': 'instinct rbk healthy weight dog',
       'location': 'A15',
@@ -1519,7 +1519,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트]  RBK 시니어 독',
+      'name': 'RBK 시니어 독',
       'short_name': 'RBK 시니어 독',
       'eng_name': 'instinct rbk senior dog',
       'location': 'A16',
@@ -1598,7 +1598,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트]  RBK 치킨 독',
+      'name': 'RBK 치킨 독',
       'short_name': 'RBK 치킨 독',
       'eng_name': 'instinct rbk chicken dog',
       'location': 'A18',
@@ -1688,7 +1688,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트] 얼티밋 프로틴 독',
+      'name': '얼티밋 프로틴 독',
       'short_name': '얼티밋 프로틴 독',
       'eng_name': 'instinct ultimate protein dog',
       'location': 'A19',
@@ -1771,19 +1771,19 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트] BE 내추럴 독',
+      'name': 'BE 내추럴 독',
       'short_name': 'BE 내추럴 독',
       'eng_name': 'instinct be natural dog',
       'location': 'A20',
       'shape': '건식',
       'brand': '인스팅트',
-      'life_stage': ['어덜트'],
+      'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health_1': '소화기',
       'health_2': '항산화',
       'health_3': '',
       'feature': ['NO 옥수수', 'NO 밀'],
-      'pop_category': ['어덜트', 'NO 옥수수', 'NO 밀'],
+      'pop_category': ['어덜트', '시니어', 'NO 옥수수', 'NO 밀'],
       'main_ingredient': ['닭'],
       'all_ingredient': [
         '닭고기',
@@ -1852,19 +1852,19 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트] BE 내추럴 연어',
+      'name': 'BE 내추럴 연어',
       'short_name': 'BE 내추럴 연어',
       'eng_name': 'instinct be natural salmon dog',
       'location': 'A21',
       'shape': '건식',
       'brand': '인스팅트',
-      'life_stage': ['어덜트'],
+      'life_stage': ['어덜트', '시니어'],
       'size': ['초소형', '소형', '중형', '대형', '초대형'],
       'health_1': '피부/피모',
       'health_2': '소화기',
       'health_3': '항산화',
       'feature': ['NO 옥수수', 'NO 밀'],
-      'pop_category': ['어덜트', 'NO 옥수수', 'NO 밀'],
+      'pop_category': ['어덜트', '시니어', 'NO 옥수수', 'NO 밀'],
       'main_ingredient': ['연어'],
       'all_ingredient': [
         '연어',
@@ -1929,7 +1929,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[인스팅트] 오리지날 토끼고기',
+      'name': '오리지날 토끼고기',
       'short_name': '오리지날 토끼',
       'eng_name': 'instinct rabbit',
       'location': 'A22',
@@ -2006,7 +2006,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[나우] 프레쉬(그레인프리) 올브리드 어덜트 피쉬',
+      'name': '프레쉬(그레인프리) 올브리드 어덜트 피쉬',
       'short_name': '올브리드 어덜트 피쉬',
       'eng_name': 'now all breed adult fish',
       'location': 'A23',
@@ -2117,7 +2117,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[나우] 프레쉬(그레인프리) 올브리드 어덜트',
+      'name': '프레쉬(그레인프리) 올브리드 어덜트',
       'short_name': '올브리드 어덜트',
       'eng_name': 'now all breed adult',
       'location': 'A24',
@@ -2229,7 +2229,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[나우] 프레쉬(그레인프리) 스몰브리드 어덜트 피쉬',
+      'name': '프레쉬(그레인프리) 스몰브리드 어덜트 피쉬',
       'short_name': '스몰브리드 어덜트 피쉬',
       'eng_name': 'now small breed adult fish',
       'location': 'A25',
@@ -2343,7 +2343,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[나우] 프레쉬(그레인프리) 스몰브리드 시니어',
+      'name': '프레쉬(그레인프리) 스몰브리드 시니어',
       'short_name': '스몰브리드 시니어',
       'eng_name': 'now small breed senior',
       'location': 'A26',
@@ -2489,7 +2489,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[나우] 프레쉬(그레인프리) 스몰브리드 어덜트',
+      'name': '프레쉬(그레인프리) 스몰브리드 어덜트',
       'short_name': '스몰브리드 어덜트',
       'eng_name': 'now small breed adult',
       'location': 'A27',
@@ -2626,9 +2626,7 @@ final petfood_list = [
       'content': [
         '프로바이오틱스 유산균과 위장 활동을 돕는 호박이 포함되어 있어 반려견의 편안한 소화를 돕습니다.\r',
         '피부/피모 건강에 도움을 주는 코코넛과 오메가 오일이 함유되어 있습니다. 또한 곡물,글루텐,착색제 또한 배제하여 평소 식이 알러지가 심한 반려견에게 적합한 사료입니다.\r',
-        '머즐이 짧고 구강구조가 작은 소형견을 위해 잘 부서지는 클로버 모양의 키블로 만들어져 있습니다. 일반적인 모양의 키블섭취가 어려운 소형견에게 적합한 사료입니다.\r',
-        '\r',
-        ''
+        '머즐이 짧고 구강구조가 작은 소형견을 위해 잘 부서지는 클로버 모양의 키블로 만들어져 있습니다. 일반적인 모양의 키블섭취가 어려운 소형견에게 적합한 사료입니다.'
       ],
       'kiosk': '1',
       'omega3': 1.0,
@@ -2636,7 +2634,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[나우] 프레쉬(그레인프리) 스몰브리드 퍼피',
+      'name': '프레쉬(그레인프리) 스몰브리드 퍼피',
       'short_name': '스몰브리드 퍼피',
       'eng_name': 'now small breed puppy',
       'location': 'A28',
@@ -2749,7 +2747,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[GO!] LID 오리 레시피',
+      'name': 'LID 오리 레시피',
       'short_name': 'LID 오리',
       'eng_name': 'go lid duck',
       'location': 'A29',
@@ -2838,7 +2836,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[GO!] LID 칠면조 레시피',
+      'name': 'LID 칠면조 레시피',
       'short_name': 'LID 칠면조',
       'eng_name': 'go lid turkey',
       'location': 'A30',
@@ -2927,7 +2925,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[GO!] LID 연어 레시피',
+      'name': 'LID 연어 레시피',
       'short_name': 'LID 연어',
       'eng_name': 'go lid salmon',
       'location': 'A31',
@@ -3015,7 +3013,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[GO!] LID 연어 레시피 스몰브리드',
+      'name': 'LID 연어 레시피 스몰브리드',
       'short_name': 'LID 연어 스몰브리드',
       'eng_name': 'go lid salmon small breed',
       'location': 'A32',
@@ -3103,7 +3101,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[지위픽] 에어드라이 트라이프&양고기',
+      'name': '에어드라이 트라이프&양고기',
       'short_name': '에어드라이 트라이프&양',
       'eng_name': 'ziwipeak airdry tripe&lamb',
       'location': 'B1',
@@ -3175,7 +3173,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[지위픽] 에어드라이 닭고기 독',
+      'name': '에어드라이 닭고기 독',
       'short_name': '에어드라이 닭',
       'eng_name': 'ziwipeak airdry chicken',
       'location': 'B2',
@@ -3244,7 +3242,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[지위픽] 에어드라이 양고기 독',
+      'name': '에어드라이 양고기 독',
       'short_name': '에어드라이 양',
       'eng_name': 'ziwipeak airdry lamb',
       'location': 'B3',
@@ -3317,7 +3315,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[지위픽] 에어드라이 소고기 독',
+      'name': '에어드라이 소고기 독',
       'short_name': '에어드라이 소',
       'eng_name': 'ziwipeak airdry beef',
       'location': 'B4',
@@ -3389,7 +3387,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[지위픽] 에어드라이 사슴고기 독',
+      'name': '에어드라이 사슴고기 독',
       'short_name': '에어드라이 사슴',
       'eng_name': 'ziwipeak airdry venison',
       'location': 'B5',
@@ -3462,7 +3460,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[파미나] N&D 독 그레인프리 청어&오렌지 미니',
+      'name': 'N&D 독 그레인프리 청어&오렌지 미니',
       'short_name': '그레인프리 청어',
       'eng_name': 'farmina grainfree herring',
       'location': 'B6',
@@ -3543,7 +3541,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[파미나] N&D 독 그레인프리 펌프킨 대구&오렌지 미니',
+      'name': 'N&D 독 그레인프리 펌프킨 대구&오렌지 미니',
       'short_name': '그레인프리 대구',
       'eng_name': 'farmina grainfree cod',
       'location': 'B9',
@@ -3633,7 +3631,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[파미나] N&D 독 그레인프리 펌프킨 멧돼지&사과 미니',
+      'name': 'N&D 독 그레인프리 펌프킨 멧돼지&사과 미니',
       'short_name': '그레인프리 멧돼지',
       'eng_name': 'farmina grainfree wildboar',
       'location': 'B8',
@@ -3730,7 +3728,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[파미나] N&D 독 그레인프리 펌프킨 닭고기&석류 미니',
+      'name': 'N&D 독 그레인프리 펌프킨 닭고기&석류 미니',
       'short_name': '그레인프리 닭',
       'eng_name': 'farmina grainfree chicken',
       'location': 'B7',
@@ -3829,7 +3827,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[파미나] N&D 독 로우그레인 닭고기&석류 미니',
+      'name': 'N&D 독 로우그레인 닭고기&석류 미니',
       'short_name': '로우그레인 닭',
       'eng_name': 'farmina rowgrain chicken',
       'location': 'B10',
@@ -3922,7 +3920,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[디바크] 센스 터키 앤 살몬 퍼피',
+      'name': '센스 터키 앤 살몬 퍼피',
       'short_name': '터키 앤 살몬 퍼피',
       'eng_name': 'dibaq turkey&salmon puppy',
       'location': 'B11',
@@ -4004,7 +4002,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[디바크] 센스 살몬 어덜트',
+      'name': '센스 살몬 어덜트',
       'short_name': '살몬 어덜트',
       'eng_name': 'dibaq salmon adult',
       'location': 'B12',
@@ -4086,7 +4084,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[디바크] 센스 덕 앤 터키 시니어',
+      'name': '센스 덕 앤 터키 시니어',
       'short_name': '덕 앤 터키 시니어',
       'eng_name': 'dibaq duck&turkey senior',
       'location': 'B13',
@@ -4171,7 +4169,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[토우] 훈제연어&고구마 퍼피',
+      'name': '훈제연어&고구마 퍼피',
       'short_name': '훈제연어&고구마 퍼피',
       'eng_name': 'tow salmon&sweetpotato puppy',
       'location': 'B22',
@@ -4264,7 +4262,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[토우] 구운오리&고구마 독',
+      'name': '구운오리&고구마 독',
       'short_name': '구운오리&고구마 독',
       'eng_name': 'tow fowl&sweetpotato dog',
       'location': 'B20',
@@ -4360,7 +4358,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[토우] 프레이 칠면조 독',
+      'name': '프레이 칠면조 독',
       'short_name': '프레이 칠면조 독',
       'eng_name': 'tow prey turkey dog',
       'location': '',
@@ -4445,7 +4443,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[토우] 훈제연어&고구마 독',
+      'name': '훈제연어&고구마 독',
       'short_name': '훈제연어&고구마 독',
       'eng_name': 'tow salmon&sweetpotato dog',
       'location': 'B21',
@@ -4537,7 +4535,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[맥아담스] 방목치킨 시니어&라이트',
+      'name': '방목치킨 시니어&라이트',
       'short_name': '방목치킨 시니어&라이트',
       'eng_name': 'mcadams chicken senior&light',
       'location': 'B23',
@@ -4612,7 +4610,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[맥아담스] 방목치킨 소형견용',
+      'name': '방목치킨 소형견용',
       'short_name': '방목치킨 소형',
       'eng_name': 'mcadams chicken small breed',
       'location': 'B24',
@@ -4686,7 +4684,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[맥아담스] 방목치킨 중형견용',
+      'name': '방목치킨 중형견용',
       'short_name': '방목치킨 중형',
       'eng_name': 'mcadams chicken medium breed',
       'location': 'B25',
@@ -4760,7 +4758,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[맥아담스] 방목치킨&연어 소형견용',
+      'name': '방목치킨&연어 소형견용',
       'short_name': '방목치킨&연어 소형',
       'eng_name': 'mcadams chicken&salmon small breed',
       'location': 'B26',
@@ -4833,7 +4831,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[맥아담스] 방목치킨&연어 중형견용',
+      'name': '방목치킨&연어 중형견용',
       'short_name': '방목치킨&연어 중형',
       'eng_name': 'mcadams chicken&salmon medium breed',
       'location': 'B27',
@@ -4906,7 +4904,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[퓨리나] 프로플랜 슈레드 강아지',
+      'name': '프로플랜 슈레드 강아지',
       'short_name': '프로플랜 퍼피',
       'eng_name': 'purina proplan puppy',
       'location': 'B28',
@@ -4996,7 +4994,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[퓨리나] 프로플랜 슈레드 소형견',
+      'name': '프로플랜 슈레드 소형견',
       'short_name': '프로를랜 소형',
       'eng_name': 'purina proplan small breed',
       'location': 'B29',
@@ -5087,7 +5085,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[퓨리나] 프로플랜 슈레드 노령견',
+      'name': '프로플랜 슈레드 노령견',
       'short_name': '프로플랜 노령',
       'eng_name': 'purina proplan senior',
       'location': 'B30',
@@ -5183,7 +5181,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[퓨리나] 프로플랜 토이 퍼피',
+      'name': '프로플랜 토이 퍼피',
       'short_name': '프로플랜 토이 퍼피',
       'eng_name': 'purina proplan toy puppy',
       'location': 'B31',
@@ -5270,7 +5268,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[몬지] 모노프로틴 올 브리드 어덜트 송어',
+      'name': '모노프로틴 올 브리드 어덜트 송어',
       'short_name': '모노프로틴 올 브리드 어덜트 송어',
       'eng_name': 'Monge Mono Protein All breed Trout',
       'location': '',
@@ -5341,8 +5339,7 @@ final petfood_list = [
       'content': [
         "알러지 예방에 도움이 되는 '송어' 단일 단백질 주식입니다. 부산물을 배제하고 최소한의 탄수화물을 사용하여 소화 흡수율은 높이고 알러지 확률은 낮췄습니다.\r",
         '콘드로이틴과 글루코사민은 연골 조직의 형성과 건강을 유지하면서 관절 및 근골격계의 발달과 유지에 기여하는 성분입니다. 뼈 건강과 관절 질환 예방에 효과적인 사료입니다.\r',
-        '천연 프리바이오틱스 X.O.S가 함유되어 있어 장내 유익한 미생물의 성장과 활동을 자극하면서 유해한 미생물을 억제하여 장내 환경을 개선시켜 소화기 건강에 도움을 줍니다.\r',
-        ''
+        '천연 프리바이오틱스 X.O.S가 함유되어 있어 장내 유익한 미생물의 성장과 활동을 자극하면서 유해한 미생물을 억제하여 장내 환경을 개선시켜 소화기 건강에 도움을 줍니다.'
       ],
       'kiosk': '1',
       'omega3': 0.5,
@@ -5350,7 +5347,7 @@ final petfood_list = [
     },
     {
       'pet': '강아지',
-      'name': '[몬지] 내추럴 슈퍼프리미엄 라이트 어덜트 연어',
+      'name': '내추럴 슈퍼프리미엄 라이트 어덜트 연어',
       'short_name': '슈퍼프리미엄 라이트 어덜트 연어',
       'eng_name': 'Monge Natural Superpremium Light Adult Salmon',
       'location': '',
