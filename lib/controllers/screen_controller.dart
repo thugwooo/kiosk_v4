@@ -41,10 +41,6 @@ class ScreenController extends GetxController {
     });
   }
 
-  void cancel_timer() {
-    _timer.cancel();
-  }
-
   void restart_timer() {
     _count = 0;
   }
