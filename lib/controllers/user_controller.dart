@@ -660,12 +660,39 @@ class UserController extends GetxController {
 
   Future send_kakao() async {
     var options = Options(headers: {'X-secret-Key': secretkey});
+    var send_petfood = curation_petfood.where((element) => [0, 1, 2].contains(element['health_ranking'])).toList();
+    var message = """[루이스홈 견생사료 찾기 결과 안내]
+이름 : ${curation_data['name']}
+나이 : ${curation_data['age']}
+중성화 여부 : ${curation_data['sex'] == '0' ? 'O' : 'X'}
+알러지 : ${list_to_str(curation_data['algs'])}
+건강고민 : ${list_to_str(curation_data['health'])}
+
+${curation_data['name']}의 설문 데이터를 분석하여
+루이스홈이 고른 사료들입니다.\n""";
+
+    for (var p_index = 0; p_index < send_petfood.length; p_index++) {
+      message += '${send_petfood[p_index]['health_ranking'] + 1}. ${send_petfood[p_index]['short_name']}\n';
+    }
+    message += """[견생사료 찾기 결과 보기]
+버튼을 클릭 하시면 더 자세한
+내용을 확인하실 수 있습니다.""";
+    print(message);
     var data = {
       "senderKey": senderkey,
       "recipientList": [
         {
           "recipientNo": "01098701720",
-          "content": "test",
+          "content": message,
+          "buttons": [
+            {
+              "ordering": 1,
+              "type": "WL",
+              "name": "버튼 이름",
+              "linkPc": "https://louis-home.com/",
+              "linkMo": "https://m.louis-home.com/",
+            },
+          ],
         },
       ],
     };

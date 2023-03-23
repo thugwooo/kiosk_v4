@@ -27,7 +27,7 @@ class CurationInputScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 20.h),
-              Text('내 반려 동물의 기본정보를 알려주세요.', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
+              Text('내 반려동물의 기본정보를 알려주세요.', style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
               SizedBox(height: 20.h),
               _custom_textfield(title: '이름', text: 'name', is_number: false),
               SizedBox(height: 15.h),
@@ -222,6 +222,7 @@ class CurationInputScreen extends StatelessWidget {
                               _multi_select_button(index: alg_index, text: 'alg', list: alg, width: 37.w, height: 20.h),
                           ],
                         ),
+                        SizedBox(height: 5.h),
                         _alg_sub_form(),
                       ],
                     ),

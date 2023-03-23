@@ -199,7 +199,6 @@ class ScreenController extends GetxController {
   }
 
   TextStyle title_color({title}) {
-    print(title);
     if (screen_index.value != ScreenState.curation_recommend_petfood_screen.index) return TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold, color: main_color);
     if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '뼈/관절') {
       if (title.contains('뼈') || title.contains('관절')) return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 13.sp, fontWeight: FontWeight.bold);
@@ -207,11 +206,11 @@ class ScreenController extends GetxController {
     if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '피부/피모') {
       if (title.contains('피부') || title.contains('피모')) return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 13.sp, fontWeight: FontWeight.bold);
     }
-    if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '알러지') {
+    if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '저알러지') {
       if (title.contains('알러지')) return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 13.sp, fontWeight: FontWeight.bold);
     }
     if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '소화기') {
-      if (title.contains('소화기')) return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 13.sp, fontWeight: FontWeight.bold);
+      if (title.contains('소화')) return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 13.sp, fontWeight: FontWeight.bold);
     }
     if (user_controller.curation_data['health'][petfood_detail_data['health_ranking']] == '다이어트') {
       if (title.contains('다이어트')) return TextStyle(color: health_border_color[petfood_detail_data['health_ranking']], fontSize: 13.sp, fontWeight: FontWeight.bold);
