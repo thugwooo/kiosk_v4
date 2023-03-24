@@ -229,6 +229,7 @@ class UserController extends GetxController {
       curation_data(response['curation_data']);
       curation_data['algs'] = str_to_list([...curation_data['alg'], ...curation_data['alg_sub']]);
       curation_petfood = response['dsc_price'];
+      print(curation_data);
       for (var c_index = 0; c_index < curation_petfood.length; c_index++) {
         for (var m_index = 0; m_index < petfood_list[user_info['pet'].value].length; m_index++) {
           if (curation_petfood[c_index]['name'] == petfood_list[user_info['pet'].value][m_index]['name']) {
@@ -663,8 +664,8 @@ class UserController extends GetxController {
     var send_petfood = curation_petfood.where((element) => [0, 1, 2].contains(element['health_ranking'])).toList();
     var message = """[루이스홈 견생사료 찾기 결과 안내]
 이름 : ${curation_data['name']}
-나이 : ${curation_data['age']}
-중성화 여부 : ${curation_data['sex'] == '0' ? 'O' : 'X'}
+나이 : ${curation_data['month'] ~/ 12}
+중성화 여부 : ${curation_data['sex'].toString() == '0' ? 'O' : 'X'}
 알러지 : ${list_to_str(curation_data['algs'])}
 건강고민 : ${list_to_str(curation_data['health'])}
 
@@ -672,18 +673,20 @@ ${curation_data['name']}의 설문 데이터를 분석하여
 루이스홈이 고른 사료들입니다.\n""";
 
     for (var p_index = 0; p_index < send_petfood.length; p_index++) {
-      message += '${send_petfood[p_index]['health_ranking'] + 1}. ${send_petfood[p_index]['short_name']}\n';
+      message += '${send_petfood[p_index]['health_ranking'] + 1}. [${send_petfood[p_index]['brand']}] ${send_petfood[p_index]['short_name']}\n';
     }
     message += """[견생사료 찾기 결과 보기]
 버튼을 클릭 하시면 더 자세한
 내용을 확인하실 수 있습니다.""";
-    print(message);
+    print(message.length);
     var data = {
       "senderKey": senderkey,
       "recipientList": [
         {
-          "recipientNo": "01098701720",
+          "recipientNo": user_info['member_id'].value,
           "content": message,
+          "imageSeq": 66915,
+          "imageLink": friend_talk_image,
           "buttons": [
             {
               "ordering": 1,
@@ -699,4 +702,9 @@ ${curation_data['name']}의 설문 데이터를 분석하여
     final response = await dio.post(nhn_url + 'friendtalk/v2.2/appkeys/${appkey}/messages', data: data, options: options);
     return response.data;
   }
+
+  // Future<dynamic> post_image() async {
+  //   var options = Options(headers: {'X-secret-Key': secretkey, "Content-Type": "multipart/form-data"});
+  //   final response = await dio.post(nhn_url + 'friendtalk/v2.2/appkeys/${appkey}/images', data: {'image', File('assets/images/kakao_kiosk_image.jpeg')}, options: options);
+  // }
 }

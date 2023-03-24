@@ -38,17 +38,43 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                         '[${user_controller.curation_data['name']}를 위한 맞춤형 사료]',
                         style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                       ),
-                      Container(
-                        width: 65.w,
-                        height: 25.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
-                          ],
+                      if (!screen_controller.is_new_user.value)
+                        InkWell(
+                          child: Container(
+                            width: 65.w,
+                            height: 25.h,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                              ],
+                            ),
+                            child: Center(child: Text('카톡보내기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                          ),
+                          onTap: () {
+                            screen_controller.set_kakako_container();
+                          },
                         ),
-                        child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
-                      ),
+                      if (screen_controller.is_new_user.value)
+                        InkWell(
+                          child: Container(
+                            width: 65.w,
+                            height: 25.h,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                              ],
+                            ),
+                            child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                          ),
+                          onTap: () {
+                            user_controller.set_user_info(text: 'member_id', value: '');
+                            user_controller.phone_number.value = '';
+                            // user_controller.send_kakao().then((value) => {print(value)});
+                            screen_controller.set_save_container();
+                          },
+                        ),
                     ],
                   ),
                 ),
@@ -60,7 +86,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 5.h),
                     child: Row(
                       children: [
-                        _pet_header_info_container(width: 80.w, title: '연령', contents: '${user_controller.curation_data['life_stage']} (${user_controller.curation_data['age']}세)'),
+                        _pet_header_info_container(width: 80.w, title: '연령', contents: '${user_controller.curation_data['life_stage']} (${user_controller.curation_data['month'] ~/ 12}세)'),
                         Container(width: 1.w, height: 35.h, color: Colors.black),
                         SizedBox(width: 15.w),
                         _pet_header_info_container(width: 80.w, title: '몸무게', contents: '${user_controller.curation_data['weight']}kg'),
@@ -120,23 +146,26 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                 ),
               ],
             ),
-          Positioned(
-            left: 5.w,
-            bottom: 5.h,
-            child: InkWell(
-                child: Container(
-                  width: 30.w,
-                  height: 30.h,
-                  decoration: BoxDecoration(color: main_color, borderRadius: BorderRadius.circular(30.w)),
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 20.w,
-                    color: Colors.white,
+          Visibility(
+            visible: !screen_controller.is_new_user.value,
+            child: Positioned(
+              left: 5.w,
+              bottom: 5.h,
+              child: InkWell(
+                  child: Container(
+                    width: 30.w,
+                    height: 30.h,
+                    decoration: BoxDecoration(color: main_color, borderRadius: BorderRadius.circular(30.w)),
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 20.w,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                onTap: () {
-                  screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
-                }),
+                  onTap: () {
+                    screen_controller.set_screen_index(ScreenState.curation_pet_screen.index);
+                  }),
+            ),
           ),
         ],
       ),

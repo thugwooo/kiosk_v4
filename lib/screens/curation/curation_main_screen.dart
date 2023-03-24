@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
+import 'package:kiosk_v4/controllers/user_controller.dart';
+import 'package:kiosk_v4/data/screen.dart';
 
 import '../../data/curation.dart';
 
 class CurationMainScreen extends StatelessWidget {
   CurationMainScreen({super.key});
   var screen_controller = Get.put(ScreenController());
+  var user_controller = Get.put(UserController());
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,7 +51,16 @@ class CurationMainScreen extends StatelessWidget {
         ),
       ),
       onTap: () {
-        screen_controller.set_screen_index(index + 5);
+        if (index == 0) {
+          print('asdf $index ${ScreenState.curation_input_screen.index}');
+          screen_controller.is_new_user.value = true;
+          user_controller.add_new_pet_button({'member_id': ''});
+          screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
+        } else {
+          screen_controller.is_new_user.value = false;
+          screen_controller.set_screen_index(ScreenState.curation_exist_user_screen.index);
+        }
+
         // TODO: 신규회원일때 초기화
       },
     );

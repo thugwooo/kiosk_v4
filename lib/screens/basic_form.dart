@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kiosk_v4/components/petfood_function.dart';
+import 'package:kiosk_v4/components/rest+api.dart';
 import 'package:kiosk_v4/components/style.dart';
 import 'package:kiosk_v4/controllers/filter_controller.dart';
 import 'package:kiosk_v4/controllers/screen_controller.dart';
@@ -53,6 +54,8 @@ class BasicForm extends StatelessWidget {
             _speech_bubble(),
             _background(),
             _search_container(),
+            _save_container(),
+            _kakao_container(),
             Obx(
               () => Visibility(
                 visible: screen_controller.petfood_detail_container.value,
@@ -60,6 +63,281 @@ class BasicForm extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _save_container() {
+    return Obx(
+      () => Visibility(
+        visible: screen_controller.save_container.value,
+        child: Positioned(
+          left: 20.w,
+          top: 47.h,
+          child: Container(
+              width: 560.w,
+              height: 350.h,
+              decoration: BoxDecoration(color: background_blue_color_2),
+              child: Row(
+                children: [_left_form(), SizedBox(width: 20.w), _right_form()],
+              )),
+        ),
+      ),
+    );
+  }
+
+  Container _right_form() {
+    return Container(
+      width: 240.w,
+      child: Column(
+        children: [
+          SizedBox(height: 40.h),
+          Container(
+            width: 240.w,
+            height: 80.h,
+            decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Colors.grey, width: 0.3.w))),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10.w, top: 10.h),
+                  child: Text(
+                    '휴대폰 번호 입력',
+                    style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(height: 10.h),
+                Obx(
+                  () => Padding(
+                    padding: EdgeInsets.only(left: 40.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('010 - ', style: TextStyle(fontSize: 22.sp)),
+                        Text(
+                          user_controller.get_phone_number(),
+                          style: TextStyle(fontSize: 22.sp, color: user_controller.phone_number.value == '' ? Colors.grey : Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Table(
+            border: TableBorder.symmetric(
+              outside: BorderSide.none,
+              inside: BorderSide(width: 0.3.w, color: Colors.grey),
+            ),
+            children: [
+              for (var col_index = 0; col_index < 3; col_index++)
+                TableRow(children: [
+                  for (var row_index = 1; row_index < 4; row_index++) _single_touchpad(col_index * 3 + row_index),
+                ]),
+              TableRow(
+                children: [
+                  InkWell(
+                    child: Container(
+                      color: Colors.white,
+                      height: 50.h,
+                      child: Center(
+                          child: Icon(
+                        Icons.backspace,
+                        size: 22.w,
+                      )),
+                    ),
+                    onTap: () {
+                      user_controller.back_space_phone_number();
+                    },
+                  ),
+                  _single_touchpad(0),
+                  Obx(
+                    () => InkWell(
+                      child: Container(
+                        decoration: BoxDecoration(color: user_controller.phone_number_validator() ? main_color : grey_2),
+                        height: 50.h,
+                        child: Center(
+                          child: Text('확 인', style: TextStyle(fontSize: 17.sp, color: user_controller.phone_number_validator() ? Colors.white : Colors.grey)),
+                        ),
+                      ),
+                      onTap: () {
+                        print('asdf');
+                        if (user_controller.phone_number.value.length != 8) return;
+                        if (!user_controller.agreement.value) {
+                          Get.defaultDialog(
+                            title: '에러',
+                            middleText: '개인정보 활용 동의를 체크하지 않았습니다.',
+                            actions: [
+                              TextButton(
+                                child: Text('확인'),
+                                onPressed: () {
+                                  Get.back();
+                                },
+                              )
+                            ],
+                          );
+                        } else {
+                          user_controller.set_user_info(text: 'member_id', value: '010' + user_controller.phone_number.value);
+                          post_data(url: 'pet-save/', data: {
+                            'member_id': user_controller.user_info['member_id'].value,
+                            'pet': user_controller.user_info['pet'].value,
+                            'name': user_controller.user_info['name'].value,
+                            'breed': user_controller.user_info['breed'].value,
+                            'birth_year': user_controller.user_info['birth_year'].value,
+                            'birth_month': user_controller.user_info['birth_month'].value,
+                            'birth_day': user_controller.user_info['birth_day'].value,
+                            'sex': user_controller.user_info['sex'].value,
+                            'neutering': user_controller.user_info['neutering'].value,
+                            'weight': user_controller.user_info['weight'].value,
+                            'bcs': user_controller.user_info['bcs'].value,
+                            'alg': user_controller.user_info['alg'].value,
+                            'alg_sub': user_controller.user_info['alg_sub'].value,
+                            'health': user_controller.user_info['health'].value,
+                          }).then((value) => {
+                                if (value)
+                                  {
+                                    Get.defaultDialog(
+                                      title: '저장',
+                                      middleText: '아이 정보를 저장하였습니다.',
+                                      actions: [
+                                        TextButton(
+                                          child: Text('확인'),
+                                          onPressed: () {
+                                            Get.back();
+                                            screen_controller.set_save_container();
+                                            screen_controller.set_kakako_container();
+                                          },
+                                        )
+                                      ],
+                                    )
+                                  }
+                              });
+                        }
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _left_form() {
+    return Container(
+      padding: EdgeInsets.only(left: 40.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 50.h),
+          Text('휴대폰 번호 입력으로', style: TextStyle(fontSize: 19.sp)),
+          Text('아이 정보를 저장할 수 있어요', style: TextStyle(fontSize: 19.sp, fontWeight: FontWeight.w500)),
+          SizedBox(height: 5.h),
+          InkWell(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.check_circle,
+                  size: 20.w,
+                  color: user_controller.agreement.value ? main_color : Colors.grey,
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  '반려동물 정보 저장 및 데이터 활용에 동의합니다.',
+                  style: TextStyle(fontSize: 8.sp, color: Color.fromRGBO(128, 128, 128, 1)),
+                ),
+              ],
+            ),
+            onTap: () {
+              user_controller.set_agreement();
+            },
+          ),
+          SizedBox(height: 30.h),
+          Image.asset(
+            'assets/sub/curation_dogs.png',
+            width: 250.w,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _single_touchpad(index) {
+    return InkWell(
+      child: Container(
+        color: Colors.white,
+        height: 50.h,
+        child: Center(
+          child: Text('${index}', style: TextStyle(fontSize: 22.sp)),
+        ),
+      ),
+      onTap: () {
+        user_controller.add_number_phone_number(index);
+        print(index);
+      },
+    );
+  }
+
+  Widget _kakao_container() {
+    return Obx(
+      () => Visibility(
+        visible: screen_controller.kakao_container.value,
+        child: Positioned(
+          left: 50.w,
+          top: 50.h,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 500.w,
+                height: 300.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5.w),
+                ),
+                child: Column(children: [
+                  Text(
+                    '카카오톡으로 정보를 받아보시려면 \n아래의 qr코드를 이용해 루이스홈을 친구추가 하신 후 전송 버튼을 누르시면 됩니다.',
+                    style: TextStyle(fontSize: 12.sp),
+                  ),
+                  SizedBox(height: 20.h),
+                  Image.asset('assets/qr/qrcode_350.png', width: 100.w),
+                  SizedBox(height: 20.h),
+                  InkWell(
+                    child: Container(
+                      width: 65.w,
+                      height: 25.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                        ],
+                      ),
+                      child: Center(child: Text('카톡보내기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                    ),
+                    onTap: () {
+                      user_controller.send_kakao().then((value) => print(value));
+                    },
+                  ),
+                ]),
+              ),
+              SizedBox(width: 3.w),
+              InkWell(
+                child: Icon(
+                  Icons.cancel,
+                  size: 30.w,
+                ),
+                onTap: () {
+                  screen_controller.set_kakako_container();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -198,6 +476,12 @@ class BasicForm extends StatelessWidget {
               }
               if (screen_controller.search_container.value) {
                 screen_controller.set_search_container();
+              }
+              if (screen_controller.kakao_container.value) {
+                screen_controller.set_kakako_container();
+              }
+              if (screen_controller.save_container.value) {
+                screen_controller.set_save_container();
               }
             },
           ),
@@ -355,12 +639,10 @@ class BasicForm extends StatelessWidget {
                     width: 126.w,
                   ),
                   onTap: () {
-                    // user_controller.send_kakao().then((value) => {print(value)});
                     // screen_controller.screen_index(ScreenState.test_screen.index);
                   },
                 ),
                 SizedBox(width: 15.w),
-                Image.asset('assets/images/kakao_kiosk_image.jepg'),
               ],
             ),
           ),

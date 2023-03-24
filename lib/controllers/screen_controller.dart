@@ -24,10 +24,13 @@ class ScreenController extends GetxController {
   RxMap petfood_detail_data = {}.obs;
   RxBool search_container = false.obs;
   RxString search_text = ''.obs;
+  RxBool kakao_container = false.obs;
+  RxBool save_container = false.obs;
   var search_petfood = [];
   RxInt search_petfood_length = 0.obs;
   RxInt pop_category_index = 0.obs;
   RxInt sort_index = 0.obs;
+  RxBool is_new_user = false.obs;
   int _count = 0;
   late Timer _timer;
   void start_timer() {
@@ -112,8 +115,19 @@ class ScreenController extends GetxController {
     set_background();
   }
 
+  void set_kakako_container() {
+    kakao_container(!kakao_container.value);
+    set_background();
+  }
+
+  void set_save_container() {
+    save_container(!save_container.value);
+    print(save_container.value);
+    set_background();
+  }
+
   void set_background() {
-    if (petfood_detail_container.value == false && search_container.value == false) {
+    if (!petfood_detail_container.value && !search_container.value && !kakao_container.value && !save_container.value) {
       grey_background(false);
     } else {
       grey_background(true);
