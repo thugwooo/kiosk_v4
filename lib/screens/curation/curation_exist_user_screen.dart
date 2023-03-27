@@ -73,31 +73,29 @@ class CurationExistUserScreen extends StatelessWidget {
                 ]),
               TableRow(
                 children: [
-                  InkWell(
-                    child: Container(
-                      color: Colors.white,
-                      height: 50.h,
-                      child: Center(
-                          child: Icon(
-                        Icons.backspace,
-                        size: 22.w,
-                      )),
-                    ),
-                    onTap: () {
+                  MaterialButton(
+                    height: 50.h,
+                    color: Colors.white,
+                    elevation: 0,
+                    child: Center(
+                        child: Icon(
+                      Icons.backspace,
+                      size: 22.w,
+                    )),
+                    onPressed: () {
                       user_controller.back_space_phone_number();
                     },
                   ),
                   _single_touchpad(0),
                   Obx(
-                    () => InkWell(
-                      child: Container(
-                        decoration: BoxDecoration(color: user_controller.phone_number_validator() ? main_color : grey_2),
-                        height: 50.h,
-                        child: Center(
-                          child: Text('확 인', style: TextStyle(fontSize: 17.sp, color: user_controller.phone_number_validator() ? Colors.white : Colors.grey)),
-                        ),
+                    () => MaterialButton(
+                      color: user_controller.phone_number_validator() ? main_color : grey_2,
+                      height: 50.h,
+                      elevation: 0,
+                      child: Center(
+                        child: Text('확 인', style: TextStyle(fontSize: 17.sp, color: user_controller.phone_number_validator() ? Colors.white : Colors.grey)),
                       ),
-                      onTap: () {
+                      onPressed: () {
                         if (user_controller.phone_number.value.length != 8) {
                           return;
                         }
@@ -155,15 +153,14 @@ class CurationExistUserScreen extends StatelessWidget {
   }
 
   Widget _single_touchpad(index) {
-    return InkWell(
-      child: Container(
-        color: Colors.white,
-        height: 50.h,
-        child: Center(
-          child: Text('${index}', style: TextStyle(fontSize: 22.sp)),
-        ),
+    return MaterialButton(
+      height: 50.h,
+      color: Colors.white,
+      elevation: 0,
+      child: Center(
+        child: Text('${index}', style: TextStyle(fontSize: 22.sp)),
       ),
-      onTap: () {
+      onPressed: () {
         user_controller.add_number_phone_number(index);
         print(index);
       },
