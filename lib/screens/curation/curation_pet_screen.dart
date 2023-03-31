@@ -46,8 +46,8 @@ class CurationPetScreen extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(10.w),
         child: Container(
-          width: 100.w,
-          height: 130.h,
+          width: 120.w,
+          height: 160.h,
           decoration: pet_container_style,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -76,18 +76,18 @@ class CurationPetScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(10.w),
           child: Container(
-            width: 100.w,
-            height: 130.h,
+            width: 120.w,
+            height: 160.h,
             decoration: pet_container_style,
             child: Column(
               children: [
                 SizedBox(height: 8.h),
                 Container(
-                  width: 90.w,
+                  width: 100.w,
                   child: Center(
                     child: Text(
                       user_controller.pet_list[pet_index]['name'],
-                      style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold, color: main_color),
+                      style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.bold, color: main_color),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -97,19 +97,19 @@ class CurationPetScreen extends StatelessWidget {
                   children: [
                     Text(
                       user_controller.pet_age_sex_data(index: pet_index),
-                      style: TextStyle(fontSize: 10.sp),
+                      style: TextStyle(fontSize: 11.sp),
                     ),
-                    user_controller.pet_list[pet_index]['sex'] == '0' ? Icon(Icons.male, color: main_color, size: 15.w) : Icon(Icons.female, color: Colors.red, size: 15.w),
+                    user_controller.pet_list[pet_index]['sex'] == '0' ? Icon(Icons.male, color: main_color, size: 17.w) : Icon(Icons.female, color: Colors.red, size: 17.w),
                   ],
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 6.h),
                 InkWell(
                   child: Container(
-                    width: 40.w,
-                    height: 15.h,
+                    width: 50.w,
+                    height: 20.h,
                     decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
                     child: Center(
-                      child: Text('정보 수정'),
+                      child: Text('정보 수정', style: TextStyle(fontSize: 10.sp)),
                     ),
                   ),
                   onTap: () {
@@ -120,8 +120,8 @@ class CurationPetScreen extends StatelessWidget {
                 SizedBox(height: 10.h),
                 InkWell(
                   child: Container(
-                    width: 75.w,
-                    height: 22.h,
+                    width: 85.w,
+                    height: 25.h,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: main_color),
                     child: Center(
                       child: Text('추천받기', style: TextStyle(fontSize: 10.sp, color: Colors.white, fontWeight: FontWeight.bold)),
@@ -135,8 +135,8 @@ class CurationPetScreen extends StatelessWidget {
                 SizedBox(height: 5.h),
                 InkWell(
                   child: Container(
-                    width: 75.w,
-                    height: 22.h,
+                    width: 85.w,
+                    height: 25.h,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.w), color: Color.fromRGBO(239, 245, 255, 1)),
                     child: Center(
                       child: Text('사료기록', style: TextStyle(fontSize: 10.sp, color: main_color)),

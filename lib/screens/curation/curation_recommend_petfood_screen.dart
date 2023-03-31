@@ -21,6 +21,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     user_controller.get_curation_petfood();
     screen_controller.set_sort_index(0);
+    slider_controller.show_pet_info(true);
     return Obx(
       () => Stack(
         children: [
@@ -35,7 +36,7 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '[${user_controller.curation_data['name']}를 위한 맞춤형 사료]',
+                        '[${user_controller.curation_data['name']}(을)를 위한 맞춤형 사료]',
                         style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                       ),
                       if (!screen_controller.is_new_user.value)

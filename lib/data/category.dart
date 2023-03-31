@@ -7,7 +7,7 @@ final dog_popular_category_text = ['퍼피', '어덜트', '시니어', '그레�
 final cat_popular_category_text = ['키튼', '어덜트', '시니어', '그레인프리', '단일단백질', '곤충사료', '다이어트'];
 final pet_text = ['강아지', '고양이'];
 final sort_text = ['판매량 순', '높은가격 순', '낮은가격 순', '큰 알갱이순', '작은 알갱이순'];
-final curation_sort_text = ['판매량 순', '높은가격 순', '낮은가격 순', '하루 권장량 대비 높은 가격순', '하루 권장량 대비 낮은 가격순'];
+final curation_sort_text = ['판매량 순', '높은가격 순', '낮은가격 순', '하루 권장량 기준 높은 가격순', '하루 권장량 기준 낮은 가격순'];
 
 final big_category_list = ['브랜드', 'Life Stage', '반려동물 크기', '건강고려사항', '사료특징', '주원료', '알갱이크기'];
 final filter_category_list = [dog_category, cat_category];
