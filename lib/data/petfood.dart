@@ -936,7 +936,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '퍼피 스몰브리드',
-      'short_name': '퍼피 스몰브리드',
+      'short_name': '퍼피 스몰',
       'eng_name': 'acana puppy small breed',
       'location': 'A9',
       'shape': '건식',
@@ -1072,7 +1072,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '심플 스몰브리드 살몬&포테이토',
-      'short_name': '심플 살몬&포테이토',
+      'short_name': '살몬&포테이토',
       'eng_name': 'wellness simple salmon&potato',
       'location': 'A11',
       'shape': '건식',
@@ -1269,7 +1269,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '컴플리트헬스 그레인프리 스몰브리드',
-      'short_name': '그레인프리 스몰브리드',
+      'short_name': '그레인프리 스몰',
       'eng_name': 'wellness grainfree small breed',
       'location': 'A13',
       'shape': '건식',
@@ -2144,7 +2144,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '프레쉬(그레인프리) 스몰브리드 어덜트 피쉬',
-      'short_name': '스몰브리드 어덜트 피쉬',
+      'short_name': '스몰 어덜트 피쉬',
       'eng_name': 'now small breed adult fish',
       'location': 'A25',
       'shape': '건식',
@@ -2258,7 +2258,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '프레쉬(그레인프리) 스몰브리드 시니어',
-      'short_name': '스몰브리드 시니어',
+      'short_name': '스몰 시니어',
       'eng_name': 'now small breed senior',
       'location': 'A26',
       'shape': '건식',
@@ -2404,7 +2404,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '프레쉬(그레인프리) 스몰브리드 어덜트',
-      'short_name': '스몰브리드 어덜트',
+      'short_name': '스몰 어덜트',
       'eng_name': 'now small breed adult',
       'location': 'A27',
       'shape': '건식',
@@ -2549,7 +2549,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '프레쉬(그레인프리) 스몰브리드 퍼피',
-      'short_name': '스몰브리드 퍼피',
+      'short_name': '스몰 퍼피',
       'eng_name': 'now small breed puppy',
       'location': 'A28',
       'shape': '건식',
@@ -2927,7 +2927,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'LID 연어 레시피 스몰브리드',
-      'short_name': 'LID 연어 스몰브리드',
+      'short_name': 'LID 연어 스몰',
       'eng_name': 'go lid salmon small breed',
       'location': 'A32',
       'shape': '건식',
@@ -4453,7 +4453,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '방목치킨 시니어&라이트',
-      'short_name': '방목치킨 시니어&라이트',
+      'short_name': '시니어&라이트',
       'eng_name': 'mcadams chicken senior&light',
       'location': 'B23',
       'shape': '건식',

@@ -661,46 +661,55 @@ class UserController extends GetxController {
 
   Future send_kakao() async {
     var options = Options(headers: {'X-secret-Key': secretkey});
-    var send_petfood = curation_petfood.where((element) => [0, 1, 2].contains(element['health_ranking'])).toList();
-    var message = """[루이스홈 견생사료 찾기 결과 안내]
-이름 : ${curation_data['name']}
-나이 : ${curation_data['month'] ~/ 12}
-중성화 여부 : ${curation_data['sex'].toString() == '0' ? 'O' : 'X'}
-알러지 : ${list_to_str(curation_data['algs'])}
-건강고민 : ${list_to_str(curation_data['health'])}
-
-${curation_data['name']}의 설문 데이터를 분석하여
-루이스홈이 고른 사료들 입니다.\n""";
-
-    for (var p_index = 0; p_index < send_petfood.length; p_index++) {
-      message += '${send_petfood[p_index]['health_ranking'] + 1}. [${send_petfood[p_index]['brand']}] ${send_petfood[p_index]['short_name']}\n';
+    var send_petfood_1 = curation_petfood.where((element) => [0].contains(element['health_ranking'])).toList();
+    var send_petfood_2 = curation_petfood.where((element) => [1].contains(element['health_ranking'])).toList();
+    var send_petfood_3 = curation_petfood.where((element) => [2].contains(element['health_ranking'])).toList();
+    var message = "";
+    message += "[루이스홈 견생사료 찾기 결과 안내]\n";
+    message += "이름 : ${curation_data['name']}\n";
+    message += "나이 : ${curation_data['month'] ~/ 12}\n";
+    message += "중성화 여부 : ${curation_data['sex'].toString() == '0' ? 'O' : 'X'}\n";
+    message += "알러지 : ${list_to_str(curation_data['algs'])}\n";
+    message += "건강고민 : ${list_to_str(curation_data['health'])}\n\n";
+    message += "${curation_data['name']}의 설문 데이터를 분석하여\n";
+    message += "루이스홈이 고른 사료들 입니다.\n";
+    message += "\n1순위 ${curation_data['health'][0]}\n";
+    for (var p_index = 0; p_index < send_petfood_1.length; p_index++) {
+      message += '${send_petfood_1[p_index]['health_ranking'] + 1}. [${send_petfood_1[p_index]['brand']}] ${send_petfood_1[p_index]['short_name']}\n';
     }
-    message += """버튼을 클릭 하시면 사료 구매
-페이지로 이동하실 수 있습니다.""";
+    message += "\n2순위 ${curation_data['health'][1]}\n";
+    for (var p_index = 0; p_index < send_petfood_2.length; p_index++) {
+      message += '${send_petfood_2[p_index]['health_ranking'] + 1}. [${send_petfood_2[p_index]['brand']}] ${send_petfood_2[p_index]['short_name']}\n';
+    }
+    message += "\n3순위 ${curation_data['health'][2]}\n";
+    for (var p_index = 0; p_index < send_petfood_3.length; p_index++) {
+      message += '${send_petfood_3[p_index]['health_ranking'] + 1}. [${send_petfood_3[p_index]['brand']}] ${send_petfood_3[p_index]['short_name']}\n';
+    }
+
     print(message);
     print(message.length);
-    var data = {
-      "senderKey": senderkey,
-      "recipientList": [
-        {
-          "recipientNo": user_info['member_id'].value,
-          "content": message,
-          "imageSeq": 66915,
-          "imageLink": friend_talk_image,
-          "buttons": [
-            {
-              "ordering": 1,
-              "type": "WL",
-              "name": "사료 구매 바로가기",
-              "linkPc": "https://www.louis-home.com/product/list.html?cate_no=269",
-              "linkMo": "https://m.louis-home.com/product/list.html?cate_no=269",
-            },
-          ],
-        },
-      ],
-    };
-    final response = await dio.post(nhn_url + 'friendtalk/v2.2/appkeys/${appkey}/messages', data: data, options: options);
-    return response.data;
+    // var data = {
+    //   "senderKey": senderkey,
+    //   "recipientList": [
+    //     {
+    //       "recipientNo": user_info['member_id'].value,
+    //       "content": message,
+    //       "imageSeq": 66915,
+    //       "imageLink": friend_talk_image,
+    //       "buttons": [
+    //         {
+    //           "ordering": 1,
+    //           "type": "WL",
+    //           "name": "사료 구매 바로가기",
+    //           "linkPc": "https://www.louis-home.com/product/list.html?cate_no=269",
+    //           "linkMo": "https://m.louis-home.com/product/list.html?cate_no=269",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // };
+    // final response = await dio.post(nhn_url + 'friendtalk/v2.2/appkeys/${appkey}/messages', data: data, options: options);
+    // return response.data;
   }
 
   // Future<dynamic> post_image() async {
