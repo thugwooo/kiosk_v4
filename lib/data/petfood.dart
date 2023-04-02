@@ -251,7 +251,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '오리지날 독',
-      'short_name': '오리지날 독',
+      'short_name': '오리지날',
       'eng_name': 'orijen original dog',
       'location': 'A3',
       'shape': '건식',
@@ -381,7 +381,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '스몰브리드',
-      'short_name': '스몰브리드 독',
+      'short_name': '스몰브리드',
       'eng_name': 'orijen small breed',
       'location': 'A4',
       'shape': '건식',
@@ -512,7 +512,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '시니어 독',
-      'short_name': '시니어 독',
+      'short_name': '시니어',
       'eng_name': 'orijen senior dog',
       'location': 'A5',
       'shape': '건식',
@@ -639,7 +639,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '피트&트림 독',
-      'short_name': '피트&트림 독',
+      'short_name': '피트&트림',
       'eng_name': 'orijen fit&trim',
       'location': 'A6',
       'shape': '건식',
@@ -776,7 +776,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '싱글즈 프리런 덕',
-      'short_name': '싱글즈 프리런 덕',
+      'short_name': '프리런 덕',
       'eng_name': 'acana singles free run duck',
       'location': 'A7',
       'shape': '건식',
@@ -856,7 +856,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '싱글즈 요크셔 포크',
-      'short_name': '싱글즈 요크셔 포크',
+      'short_name': '요크셔 포크',
       'eng_name': 'acana yorkshire pork',
       'location': 'A8',
       'shape': '건식',
@@ -1442,7 +1442,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'RBK 헬시웨이트 독',
-      'short_name': 'RBK 헬시웨이트 독',
+      'short_name': 'RBK 헬시웨이트',
       'eng_name': 'instinct rbk healthy weight dog',
       'location': 'A15',
       'shape': '건식',
@@ -1519,7 +1519,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'RBK 시니어 독',
-      'short_name': 'RBK 시니어 독',
+      'short_name': 'RBK 시니어',
       'eng_name': 'instinct rbk senior dog',
       'location': 'A16',
       'shape': '건식',
@@ -1598,7 +1598,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'RBK 치킨 독',
-      'short_name': 'RBK 치킨 독',
+      'short_name': 'RBK 치킨',
       'eng_name': 'instinct rbk chicken dog',
       'location': 'A18',
       'shape': '건식',
@@ -1688,7 +1688,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'BE 내추럴 독',
-      'short_name': 'BE 내추럴 독',
+      'short_name': '내추럴 치킨',
       'eng_name': 'instinct be natural dog',
       'location': 'A20',
       'shape': '건식',
@@ -1769,7 +1769,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'BE 내추럴 연어',
-      'short_name': 'BE 내추럴 연어',
+      'short_name': '내추럴 연어',
       'eng_name': 'instinct be natural salmon dog',
       'location': 'A21',
       'shape': '건식',
@@ -3642,7 +3642,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': 'N&D 독 그레인프리 펌프킨 닭고기&석류 미니',
-      'short_name': '닭고기&석류',
+      'short_name': '치킨&석류',
       'eng_name': 'farmina grainfree chicken',
       'location': 'B7',
       'shape': '건식',
@@ -4088,7 +4088,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '훈제연어&고구마 퍼피',
-      'short_name': '훈제연어&고구마 퍼피',
+      'short_name': '연어&고구마 퍼피',
       'eng_name': 'tow salmon&sweetpotato puppy',
       'location': 'B22',
       'shape': '건식',
@@ -4181,7 +4181,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '구운오리&고구마 독',
-      'short_name': '구운오리&고구마',
+      'short_name': '오리&고구마',
       'eng_name': 'tow fowl&sweetpotato dog',
       'location': 'B20',
       'shape': '건식',
@@ -4362,7 +4362,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '훈제연어&고구마 독',
-      'short_name': '훈제연어&고구마',
+      'short_name': '연어&고구마',
       'eng_name': 'tow salmon&sweetpotato dog',
       'location': 'B21',
       'shape': '건식',
@@ -4822,7 +4822,7 @@ final petfood_list = [
     {
       'pet': '강아지',
       'name': '프로플랜 슈레드 소형견',
-      'short_name': '프로를랜 소형',
+      'short_name': '프로플랜 소형',
       'eng_name': 'purina proplan small breed',
       'location': 'B29',
       'shape': '건식',

@@ -318,7 +318,24 @@ class BasicForm extends StatelessWidget {
                       child: Center(child: Text('카톡보내기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
                     ),
                     onTap: () {
-                      user_controller.send_kakao().then((value) => print(value));
+                      user_controller.send_kakao().then((value) {
+                        print(value['message']['sendResults'][0]['resultCode'] == 0);
+                        if (value['message']['sendResults'][0]['resultCode'] == -2023) {
+                        } else if (value['message']['sendResults'][0]['resultCode'] == 0) {
+                          Get.defaultDialog(
+                            title: '전송 성공',
+                            middleText: '카카오톡 정보 받기 성공',
+                            actions: [
+                              TextButton(
+                                child: Text('확인'),
+                                onPressed: () {
+                                  Get.back();
+                                },
+                              )
+                            ],
+                          );
+                        }
+                      });
                     },
                   ),
                 ]),

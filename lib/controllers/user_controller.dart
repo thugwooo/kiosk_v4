@@ -670,14 +670,14 @@ class UserController extends GetxController {
 건강고민 : ${list_to_str(curation_data['health'])}
 
 ${curation_data['name']}의 설문 데이터를 분석하여
-루이스홈이 고른 사료들입니다.\n""";
+루이스홈이 고른 사료들 입니다.\n""";
 
     for (var p_index = 0; p_index < send_petfood.length; p_index++) {
       message += '${send_petfood[p_index]['health_ranking'] + 1}. [${send_petfood[p_index]['brand']}] ${send_petfood[p_index]['short_name']}\n';
     }
-    message += """[견생사료 찾기 결과 보기]
-버튼을 클릭 하시면 더 자세한
-내용을 확인하실 수 있습니다.""";
+    message += """버튼을 클릭 하시면 사료 구매
+페이지로 이동하실 수 있습니다.""";
+    print(message);
     print(message.length);
     var data = {
       "senderKey": senderkey,
@@ -691,9 +691,9 @@ ${curation_data['name']}의 설문 데이터를 분석하여
             {
               "ordering": 1,
               "type": "WL",
-              "name": "버튼 이름",
-              "linkPc": "https://louis-home.com/",
-              "linkMo": "https://m.louis-home.com/",
+              "name": "사료 구매 바로가기",
+              "linkPc": "https://www.louis-home.com/product/list.html?cate_no=269",
+              "linkMo": "https://m.louis-home.com/product/list.html?cate_no=269",
             },
           ],
         },
