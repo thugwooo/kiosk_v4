@@ -201,15 +201,35 @@ class BasicForm extends StatelessWidget {
                                       middleText: '아이 정보를 저장하였습니다.',
                                       actions: [
                                         TextButton(
-                                          child: Text('확인'),
+                                          child: Text(''),
                                           onPressed: () {
-                                            Get.back();
-                                            screen_controller.set_save_container();
                                             // screen_controller.set_kakako_container();
                                           },
                                         )
                                       ],
-                                    )
+                                    ),
+                                    Future.delayed(Duration(seconds: 1), () {
+                                      if (value) {
+                                        Get.back();
+                                        screen_controller.set_save_container();
+                                      }
+                                    })
+                                  }
+                                else
+                                  {
+                                    Get.defaultDialog(
+                                      title: '저장',
+                                      middleText: '저장 실패',
+                                      actions: [
+                                        TextButton(
+                                          child: Text('확인'),
+                                          onPressed: () {
+                                            // screen_controller.set_kakako_container();
+                                            Get.back();
+                                          },
+                                        )
+                                      ],
+                                    ),
                                   }
                               });
                         }

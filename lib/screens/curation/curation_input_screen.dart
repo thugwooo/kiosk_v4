@@ -51,7 +51,7 @@ class CurationInputScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _screen_move_button(text: '저장하기', fill: true),
+                  _screen_move_button(text: screen_controller.is_new_user.value ? '추천받기' : '저장하기', fill: true),
                 ],
               ),
               SizedBox(height: 30.h),
@@ -177,8 +177,8 @@ class CurationInputScreen extends StatelessWidget {
                       // 58.w,20.h
                       InkWell(
                         child: Container(
-                          width: 58.w,
-                          height: 20.h,
+                          width: small_container_width,
+                          height: curation_box_height,
                           decoration: user_controller.is_selected_list_button(text: 'health', value: healthcare[user_controller.user_info['pet'].value][health_index])
                               ? BoxDecoration(
                                   color: health_background_color[user_controller.user_info['health'].indexOf(healthcare[user_controller.user_info['pet'].value][health_index])],
@@ -209,7 +209,11 @@ class CurationInputScreen extends StatelessWidget {
           width: small_container_width,
           height: curation_box_height,
           decoration: BoxDecoration(border: Border.all(color: health_border_color[index]), borderRadius: BorderRadius.circular(5.w), color: Colors.white),
-          child: Center(child: Text(user_controller.user_info['health'][index] == '' ? '${index + 1}순위' : user_controller.user_info['health'][index])),
+          child: Center(
+              child: Text(
+            user_controller.user_info['health'][index] == '' ? '${index + 1}순위' : user_controller.user_info['health'][index],
+            style: TextStyle(fontSize: 11.sp),
+          )),
         ),
         onTap: () {
           user_controller.remove_health_ranking(index);

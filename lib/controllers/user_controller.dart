@@ -204,15 +204,15 @@ class UserController extends GetxController {
   }
 
   void set_whole_user_info(data) {
-    user_info['member_id'](data['member_id']['member_id']);
+    // user_info['member_id'](data['member_id']['member_id']);
     user_info['name'](data['name']);
     user_info['breed'](data['breed']);
     user_info['birth_year'](data['birth_year']);
     user_info['birth_month'](data['birth_month']);
     user_info['birth_day'](data['birth_day']);
-    user_info['sex'](int.parse(data['sex']));
-    user_info['neutering'](int.parse(data['neutering']));
-    user_info['bcs'](int.parse(data['bcs']));
+    user_info['sex'](int.parse(data['sex'].toString()));
+    user_info['neutering'](int.parse(data['neutering'].toString()));
+    user_info['bcs'](int.parse(data['bcs'].toString()));
     user_info['alg'](str_to_list(data['alg']));
     user_info['show_alg'](user_info['alg'].length > 0 ? 0 : 1);
     user_info['alg_sub'](str_to_list(data['alg_sub']));
