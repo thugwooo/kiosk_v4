@@ -39,43 +39,65 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
                         '[${user_controller.curation_data['name']}(을)를 위한 맞춤형 사료]',
                         style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                       ),
-                      if (!screen_controller.is_new_user.value)
-                        InkWell(
-                          child: Container(
-                            width: 65.w,
-                            height: 25.h,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
-                              ],
+                      Row(
+                        children: [
+                          InkWell(
+                            child: Container(
+                              width: 65.w,
+                              height: 25.h,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                                ],
+                              ),
+                              child: Center(child: Text('수정하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
                             ),
-                            child: Center(child: Text('카톡보내기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                            onTap: () {
+                              user_controller.modify_button();
+                              screen_controller.screen_index(ScreenState.curation_input_screen.index);
+                            },
                           ),
-                          onTap: () {
-                            screen_controller.set_kakako_container();
-                          },
-                        ),
-                      if (screen_controller.is_new_user.value)
-                        InkWell(
-                          child: Container(
-                            width: 65.w,
-                            height: 25.h,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
-                              ],
+                          SizedBox(width: 20.w),
+                          if (!screen_controller.is_new_user.value)
+                            InkWell(
+                              child: Container(
+                                width: 65.w,
+                                height: 25.h,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                                  ],
+                                ),
+                                child: Center(child: Text('카톡보내기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                              ),
+                              onTap: () {
+                                screen_controller.set_kakako_container();
+                              },
                             ),
-                            child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
-                          ),
-                          onTap: () {
-                            user_controller.set_user_info(text: 'member_id', value: '');
-                            user_controller.phone_number.value = '';
-                            // user_controller.send_kakao().then((value) => {print(value)});
-                            screen_controller.set_save_container();
-                          },
-                        ),
+                          if (screen_controller.is_new_user.value)
+                            InkWell(
+                              child: Container(
+                                width: 65.w,
+                                height: 25.h,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(color: Colors.grey.withOpacity(0.7), blurRadius: 1.0.w, spreadRadius: 1.0.w, offset: Offset(1.w, 1.h)),
+                                  ],
+                                ),
+                                child: Center(child: Text('저장하기', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w500))),
+                              ),
+                              onTap: () {
+                                user_controller.set_user_info(text: 'member_id', value: '');
+                                user_controller.phone_number.value = '';
+                                // user_controller.send_kakao().then((value) => {print(value)});
+                                screen_controller.set_save_container();
+                              },
+                            ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

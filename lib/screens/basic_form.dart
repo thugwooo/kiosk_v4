@@ -205,7 +205,7 @@ class BasicForm extends StatelessWidget {
                                           onPressed: () {
                                             Get.back();
                                             screen_controller.set_save_container();
-                                            screen_controller.set_kakako_container();
+                                            // screen_controller.set_kakako_container();
                                           },
                                         )
                                       ],
