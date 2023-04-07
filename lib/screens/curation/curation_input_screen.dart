@@ -82,12 +82,32 @@ class CurationInputScreen extends StatelessWidget {
       ),
       onTap: () {
         var dialog_data = user_controller.input_check_form();
-        if (screen_controller.is_new_user.value) {
-          user_controller.selected_pet_index.value = 0;
-          user_controller.pet_list = [
-            {
+        if (dialog_data['dialog_text'] == '') {
+          if (screen_controller.is_new_user.value) {
+            user_controller.selected_pet_index.value = 0;
+            user_controller.pet_list = [
+              {
+                'member_id': user_controller.user_info['member_id'].value,
+                'pet': user_controller.user_info['pet'].value.toString(),
+                'name': user_controller.user_info['name'].value,
+                'breed': user_controller.user_info['breed'].value,
+                'birth_year': user_controller.user_info['birth_year'].value,
+                'birth_month': user_controller.user_info['birth_month'].value,
+                'birth_day': user_controller.user_info['birth_day'].value,
+                'sex': user_controller.user_info['sex'].value,
+                'neutering': user_controller.user_info['neutering'].value,
+                'weight': user_controller.user_info['weight'].value,
+                'bcs': user_controller.user_info['bcs'].value,
+                'alg': user_controller.user_info['alg'].value,
+                'alg_sub': user_controller.user_info['alg_sub'].value,
+                'health': user_controller.user_info['health'].value,
+              }
+            ];
+            screen_controller.set_screen_index(ScreenState.curation_recommend_petfood_screen.index);
+          } else {
+            post_data(url: 'pet-save/', data: {
               'member_id': user_controller.user_info['member_id'].value,
-              'pet': user_controller.user_info['pet'].value.toString(),
+              'pet': user_controller.user_info['pet'].value,
               'name': user_controller.user_info['name'].value,
               'breed': user_controller.user_info['breed'].value,
               'birth_year': user_controller.user_info['birth_year'].value,
@@ -100,26 +120,8 @@ class CurationInputScreen extends StatelessWidget {
               'alg': user_controller.user_info['alg'].value,
               'alg_sub': user_controller.user_info['alg_sub'].value,
               'health': user_controller.user_info['health'].value,
-            }
-          ];
-          screen_controller.set_screen_index(ScreenState.curation_recommend_petfood_screen.index);
-        } else if (dialog_data['dialog_text'] == '') {
-          post_data(url: 'pet-save/', data: {
-            'member_id': user_controller.user_info['member_id'].value,
-            'pet': user_controller.user_info['pet'].value,
-            'name': user_controller.user_info['name'].value,
-            'breed': user_controller.user_info['breed'].value,
-            'birth_year': user_controller.user_info['birth_year'].value,
-            'birth_month': user_controller.user_info['birth_month'].value,
-            'birth_day': user_controller.user_info['birth_day'].value,
-            'sex': user_controller.user_info['sex'].value,
-            'neutering': user_controller.user_info['neutering'].value,
-            'weight': user_controller.user_info['weight'].value,
-            'bcs': user_controller.user_info['bcs'].value,
-            'alg': user_controller.user_info['alg'].value,
-            'alg_sub': user_controller.user_info['alg_sub'].value,
-            'health': user_controller.user_info['health'].value,
-          }).then((value) => {screen_controller.set_screen_index(ScreenState.curation_pet_screen.index)});
+            }).then((value) => {screen_controller.set_screen_index(ScreenState.curation_pet_screen.index)});
+          }
         } else {
           Get.dialog(
             AlertDialog(
@@ -212,7 +214,7 @@ class CurationInputScreen extends StatelessWidget {
           child: Center(
               child: Text(
             user_controller.user_info['health'][index] == '' ? '${index + 1}순위' : user_controller.user_info['health'][index],
-            style: TextStyle(fontSize: 11.sp),
+            style: TextStyle(fontSize: 9.sp),
           )),
         ),
         onTap: () {
