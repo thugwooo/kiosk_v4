@@ -198,15 +198,10 @@ class BasicForm extends StatelessWidget {
                                   {
                                     Get.defaultDialog(
                                       title: '저장',
+                                      titlePadding: EdgeInsets.only(top: 10.h, bottom: 10.h),
                                       middleText: '아이 정보를 저장하였습니다.',
-                                      actions: [
-                                        TextButton(
-                                          child: Text(''),
-                                          onPressed: () {
-                                            // screen_controller.set_kakako_container();
-                                          },
-                                        )
-                                      ],
+                                      contentPadding: EdgeInsets.only(bottom: 15.sp),
+                                      middleTextStyle: TextStyle(fontSize: 11.sp),
                                     ),
                                     Future.delayed(Duration(seconds: 1), () {
                                       if (value) {
@@ -323,7 +318,7 @@ class BasicForm extends StatelessWidget {
                     style: TextStyle(fontSize: 12.sp),
                   ),
                   SizedBox(height: 20.h),
-                  Image.asset('assets/qr/qrcode_350.png', width: 100.w),
+                  Image.asset('assets/qr/qrcode_350.png', width: 100.w),
                   SizedBox(height: 20.h),
                   InkWell(
                     child: Container(

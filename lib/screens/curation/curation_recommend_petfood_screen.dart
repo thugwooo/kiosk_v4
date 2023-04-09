@@ -214,9 +214,12 @@ class CurationRecommendPetfoodScreen extends StatelessWidget {
             '${title}',
             style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
           ),
-          Text(
-            '${contents}',
-            style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Text(
+              '${contents}',
+              style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+            ),
           ),
         ],
       ),
