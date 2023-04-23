@@ -111,7 +111,7 @@ class CurationExistUserScreen extends StatelessWidget {
                                     child: Text('예'),
                                     onPressed: () {
                                       Get.back();
-                                      screen_controller.set_screen_index(ScreenState.curation_new_user_screen.index);
+                                      screen_controller.set_screen_index(ScreenState.curation_input_screen.index);
                                     }),
                                 TextButton(
                                     child: Text('아니오'),
